@@ -123,7 +123,51 @@
     .nav-drawer a:hover, .nav-drawer a.active-link { background: var(--blue-light); color: var(--blue-dark); }
     .page-view { display: none; }
     .page-view.active-view { display: block; }
-    .scroll-hint-bar { text-align: center; padding: 12px 0 2px; }
+
+    /* قسم شهادة الخبرة في أول الواجهة تحت الهيدر مباشرة */
+    .cert-top-section { padding: 14px 0 6px; }
+    .cert-box {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 20px;
+      align-items: center;
+      box-shadow: 0 4px 16px rgba(11, 61, 117, 0.05);
+    }
+    .cert-preview {
+      background: var(--bg);
+      padding: 10px;
+      border-radius: 14px;
+      border: 2px solid var(--blue-card);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .cert-preview:active { transform: scale(0.98); }
+    .cert-preview img { max-height: 270px; margin: 0 auto; border-radius: 8px; object-fit: contain; }
+    .cert-zoom-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 10px;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .cert-info h1, .cert-info h2 { font-size: 20px; color: var(--blue-dark); margin-bottom: 10px; font-weight: 900; }
+    .check-list { list-style: none; }
+    .check-list li { padding: 6px 0; font-size: 15px; display: flex; align-items: flex-start; gap: 8px; }
+    .check-icon { color: var(--green); font-weight: 900; }
+
+    /* شريط النزول السريع لمعرض الأعمال */
+    .scroll-hint-bar { text-align: center; padding: 10px 0 4px; }
     .scroll-hint-link {
       display: inline-flex;
       align-items: center;
@@ -136,7 +180,9 @@
       font-size: 14px;
       font-weight: 800;
     }
-    .trust-highlights-wrap { padding: 12px 0 4px; }
+
+    /* البطاقات التعريفية الثلاث */
+    .trust-highlights-wrap { padding: 8px 0 6px; }
     .trust-highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .trust-pill-card {
       background: var(--white);
@@ -163,6 +209,7 @@
       flex-shrink: 0;
     }
     .trust-pill-text { font-size: 13.5px; font-weight: 800; color: var(--blue-dark); line-height: 1.45; }
+
     .hero-banner {
       background-color: var(--blue-dark);
       background-size: cover;
@@ -207,47 +254,8 @@
       cursor: pointer;
     }
     .btn-blue { background: var(--blue-card); color: var(--white); }
-    .cert-top-section { padding: 14px 0 6px; }
-    .cert-box {
-      background: var(--white);
-      border-radius: 18px;
-      padding: 20px;
-      border: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1fr 1.25fr;
-      gap: 20px;
-      align-items: center;
-      box-shadow: 0 4px 16px rgba(11, 61, 117, 0.05);
-    }
-    .cert-preview {
-      background: var(--bg);
-      padding: 10px;
-      border-radius: 14px;
-      border: 2px solid var(--blue-card);
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.15s ease;
-    }
-    .cert-preview:active { transform: scale(0.98); }
-    .cert-preview img { max-height: 270px; margin: 0 auto; border-radius: 8px; object-fit: contain; }
-    .cert-zoom-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 10px;
-      background: var(--blue-light);
-      color: var(--blue-dark);
-      padding: 6px 14px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-    .cert-info h1, .cert-info h2 { font-size: 20px; color: var(--blue-dark); margin-bottom: 10px; font-weight: 900; }
-    .check-list { list-style: none; }
-    .check-list li { padding: 6px 0; font-size: 15px; display: flex; align-items: flex-start; gap: 8px; }
-    .check-icon { color: var(--green); font-weight: 900; }
-    .content-section { padding: 24px 0; }
+
+    .content-section { padding: 18px 0 24px; }
     .persuasive-article-card {
       background: var(--white);
       border-radius: 18px;
@@ -632,29 +640,7 @@
 
   <main id="view-home" class="page-view active-view">
 
-    <div class="scroll-hint-bar">
-      <a href="#gallery-section" class="scroll-hint-link">⬇️ لمشاهدة نماذج الأعمال والصور انزل للأسفل ⬇️</a>
-    </div>
-
-    <section class="trust-highlights-wrap">
-      <div class="container">
-        <div class="trust-highlights-grid">
-          <div class="trust-pill-card">
-            <span class="trust-pill-icon">✓</span>
-            <span class="trust-pill-text">معاينة فورية وتقدير دقيق للتكلفة في جميع أنحاء جدة</span>
-          </div>
-          <div class="trust-pill-card">
-            <span class="trust-pill-icon">✓</span>
-            <span class="trust-pill-text">وزن كامل بالليزر يمنع التطبيل ويضمن استقامة البلاط بالملي</span>
-          </div>
-          <div class="trust-pill-card">
-            <span class="trust-pill-icon">✓</span>
-            <span class="trust-pill-text">التزام تام بالمواعيد وتشطيب احترافي بأعلى جودة</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- 1. شهادة الخبرة في أول الواجهة تحت جوهرة جدة مباشرة -->
     <section class="cert-top-section">
       <div class="container">
         <div class="cert-box">
@@ -675,6 +661,32 @@
       </div>
     </section>
 
+    <!-- 2. شريط النزول السريع لمعرض الأعمال -->
+    <div class="scroll-hint-bar">
+      <a href="#gallery-section" class="scroll-hint-link">⬇️ لمشاهدة نماذج الأعمال والصور انزل للأسفل ⬇️</a>
+    </div>
+
+    <!-- 3. البطاقات التعريفية المشجعة -->
+    <section class="trust-highlights-wrap">
+      <div class="container">
+        <div class="trust-highlights-grid">
+          <div class="trust-pill-card">
+            <span class="trust-pill-icon">✓</span>
+            <span class="trust-pill-text">معاينة فورية وتقدير دقيق للتكلفة في جميع أنحاء جدة</span>
+          </div>
+          <div class="trust-pill-card">
+            <span class="trust-pill-icon">✓</span>
+            <span class="trust-pill-text">وزن كامل بالليزر يمنع التطبيل ويضمن استقامة البلاط بالملي</span>
+          </div>
+          <div class="trust-pill-card">
+            <span class="trust-pill-icon">✓</span>
+            <span class="trust-pill-text">التزام تام بالمواعيد وتشطيب احترافي بأعلى جودة</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. المقالة التسويقية والخدمات التفصيلية والضمان والأسئلة الشائعة -->
     <section class="content-section">
       <div class="container">
         <div class="persuasive-article-card">
@@ -731,6 +743,7 @@
       </div>
     </section>
 
+    <!-- 5. معرض الصور وأحدث الأعمال -->
     <section class="gallery-strip-section" id="gallery-section">
       <div class="container">
         <h3 class="gallery-strip-title">معرض الصور وأحدث الأعمال</h3>

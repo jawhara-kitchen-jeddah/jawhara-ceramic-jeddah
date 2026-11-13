@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>جوهرة جدة | تركيب السيراميك والبورسلين والرخام بالليزر في جدة</title>
-  <meta name="description" content="جوهرة جدة بإشراف المعلم صلاح منصور لتركيب السيراميك والبورسلين والرخام والألواح الكبيرة بالليزر في جدة مع ضمان استقامة الليزر ومستوى التركيب ومنع التطبيل">
-  <meta name="keywords" content="جوهرة جدة, معلم سيراميك جدة, تركيب بورسلين جدة, تركيب سيراميك بالليزر جدة, تركيب رخام والواح كبيرة جدة, ترميم حمامات ومطابخ جدة">
-  <meta name="theme-color" content="#132630">
+  <title>جوهرة جدة | أفضل معلم تركيب سيراميك وبورسلين بالليزر في جدة</title>
+  <meta name="description" content="جوهرة جدة لتركيب السيراميك والبورسلين والرخام والألواح الكبيرة بالليزر في جدة مع ضمان استقامة الليزر ومستوى التركيب ومنع التطبيل">
+  <meta name="keywords" content="جوهرة جدة, تركيب سيراميك جدة, تركيب بورسلين جدة, تركيب سيراميك بالليزر جدة, تركيب رخام والواح كبيرة جدة, ترميم حمامات ومطابخ جدة">
+  <meta name="theme-color" content="#0b3d75">
   <!-- مكان إضافة كود التتبع والتحقق لاحقا -->
   <style>
     :root {
-      --primary: #132630;
-      --primary-light: #1e3a47;
-      --gold: #c89b4b;
-      --gold-dark: #a87d32;
-      --bg: #f6f4ef;
+      --blue-dark: #0b3d75;
+      --blue-mid: #1565c0;
+      --blue-card: #1976d2;
+      --blue-light: #e8f1fb;
+      --gold: #f5b400;
+      --green: #25d366;
+      --green-dark: #168b50;
+      --bg: #f8fafc;
       --white: #ffffff;
-      --text: #1f2d33;
-      --muted: #5a6970;
-      --green: #15803d;
-      --green-dark: #116630;
-      --border: #e5e0d5;
+      --text: #1e293b;
+      --muted: #526071;
+      --border: #e2e8f0;
     }
 
     * {
@@ -38,7 +39,7 @@
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.85;
-      padding-bottom: 135px;
+      overflow-x: hidden;
     }
 
     a {
@@ -52,320 +53,477 @@
     }
 
     .container {
-      width: min(1100px, 92%);
+      width: min(1080px, 92%);
       margin: 0 auto;
     }
 
-    /* الشريط العلوي */
-    .top-bismillah {
-      background: #0d1b22;
-      color: var(--gold);
+    /* شريط البسملة العلوي */
+    .bismillah-bar {
+      background: var(--blue-dark);
+      color: #ffffff;
       text-align: center;
-      padding: 8px 12px;
-      font-size: 16px;
+      padding: 6px 12px;
+      font-size: 15px;
       font-weight: 700;
-      letter-spacing: 0.5px;
-      border-bottom: 1px solid rgba(200, 155, 75, 0.25);
     }
 
+    /* الهيدر الأبيض الثابت */
     header {
-      background: var(--primary);
-      color: var(--white);
-      padding: 12px 0;
+      background: var(--white);
       position: sticky;
       top: 0;
-      z-index: 900;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+      z-index: 950;
+      box-shadow: 0 2px 12px rgba(11, 61, 117, 0.09);
+      border-bottom: 1px solid var(--border);
     }
 
-    .nav {
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
+      padding: 10px 0;
     }
 
-    .brand {
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .logo-text-box {
       display: flex;
       flex-direction: column;
     }
 
-    .brand-title {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--gold);
-      line-height: 1.2;
+    .logo-main {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--blue-dark);
+      line-height: 1.1;
+      letter-spacing: 0.3px;
     }
 
-    .brand-sub {
-      font-size: 12px;
-      color: #d6dfe3;
+    .logo-sub {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue-mid);
     }
 
-    .top-actions {
+    .menu-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
       display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 5px;
     }
 
-    .btn-top {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 9px 15px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: transform 0.15s ease;
+    .menu-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: #1e293b;
+      border-radius: 3px;
     }
 
-    .btn-top:active {
-      transform: scale(0.97);
+    /* القائمة المنسدلة للتنقل السريع */
+    .nav-drawer {
+      display: none;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 12px 4%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     }
 
-    .btn-call {
-      background: var(--gold);
-      color: #111e24;
+    .nav-drawer.open {
+      display: block;
     }
 
-    .btn-wa {
-      background: var(--green);
-      color: var(--white);
-    }
-
-    /* الواجهة الرئيسية */
-    .hero {
-      background: linear-gradient(145deg, #132630 0%, #1d3947 100%);
-      color: var(--white);
-      padding: 48px 0 54px;
-      text-align: center;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(200, 155, 75, 0.18);
-      color: var(--gold);
-      border: 1px solid rgba(200, 155, 75, 0.45);
-      padding: 5px 16px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-size: clamp(24px, 5vw, 40px);
-      line-height: 1.45;
-      margin-bottom: 16px;
-      font-weight: 800;
-    }
-
-    .hero p {
-      max-width: 760px;
-      margin: 0 auto 24px;
-      color: #e4ecef;
+    .nav-drawer a {
+      display: block;
+      padding: 11px 14px;
       font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      border-bottom: 1px solid #f1f5f9;
+      border-radius: 8px;
     }
 
-    .hero-buttons {
+    .nav-drawer a:hover,
+    .nav-drawer a.active-link {
+      background: var(--blue-light);
+      color: var(--blue-dark);
+    }
+
+    /* التبديل الفوري بين الصفحات بدون أي تأخير */
+    .page-view {
+      display: none;
+    }
+
+    .page-view.active-view {
+      display: block;
+    }
+
+    /* البانر الداكن العلوي */
+    .hero-banner {
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.84), rgba(11, 61, 117, 0.88)),
+        repeating-linear-gradient(45deg, #1e293b 0, #1e293b 20px, #0f172a 20px, #0f172a 40px);
+      color: var(--white);
+      text-align: center;
+      padding: 54px 16px 64px;
+    }
+
+    .hero-banner h1 {
+      font-size: clamp(26px, 5.5vw, 42px);
+      font-weight: 900;
+      line-height: 1.4;
+      max-width: 780px;
+      margin: 0 auto 14px;
+    }
+
+    .hero-banner p {
+      font-size: 16px;
+      color: #e2e8f0;
+      max-width: 680px;
+      margin: 0 auto 22px;
+    }
+
+    .hero-cta-row {
       display: flex;
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
     }
 
-    .btn-hero {
+    .btn-pill {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 13px 26px;
+      padding: 12px 26px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 800;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      transition: transform 0.15s ease;
+    }
+
+    .btn-pill:active {
+      transform: scale(0.97);
+    }
+
+    .btn-blue {
+      background: var(--blue-card);
+      color: var(--white);
+    }
+
+    .btn-green {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    /* بطاقة العرض البارزة برقم الجوال */
+    .showcase-card-wrap {
+      margin-top: -32px;
+      padding-bottom: 18px;
+    }
+
+    .showcase-card {
+      background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+      border: 2px solid var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase-badge {
+      display: inline-block;
+      background: #1e293b;
+      color: var(--white);
+      padding: 7px 22px;
       border-radius: 10px;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 800;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
-    }
-
-    /* الأقسام العامة */
-    section {
-      padding: 46px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 26px;
-      color: var(--primary);
-      margin-bottom: 10px;
-      font-weight: 800;
-    }
-
-    .section-desc {
-      text-align: center;
-      color: var(--muted);
-      max-width: 720px;
-      margin: 0 auto 30px;
-      font-size: 15px;
-    }
-
-    /* النبذة التعريفية والضمان */
-    .about-card {
-      background: var(--white);
-      border-radius: 14px;
-      padding: 26px;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    }
-
-    .about-card p {
       margin-bottom: 14px;
-      font-size: 16px;
     }
 
-    .warranty-box {
-      background: #fdf8ee;
-      border-right: 4px solid var(--gold);
-      padding: 14px 18px;
-      border-radius: 8px;
-      color: #3b2f18;
+    .phone-display-box {
+      display: inline-block;
+      background: var(--white);
+      color: #0f172a;
+      font-size: clamp(24px, 5vw, 32px);
+      font-weight: 900;
+      padding: 8px 28px;
+      border-radius: 10px;
+      border: 2px solid #1e293b;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* قسم المحتوى التعريفي */
+    .content-section {
+      padding: 34px 0;
+    }
+
+    .main-article-title {
+      font-size: clamp(24px, 4.8vw, 34px);
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .lead-paragraph {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .highlight-mark {
+      background: #fef08a;
+      padding: 1px 6px;
+      border-radius: 4px;
       font-weight: 700;
+    }
+
+    .service-detail-block {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .service-detail-block h2,
+    .service-detail-block h3 {
+      color: var(--blue-dark);
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .service-detail-block p {
+      color: var(--muted);
       font-size: 15px;
-      margin-top: 12px;
+    }
+
+    .warranty-alert {
+      background: #eff6ff;
+      border-right: 5px solid var(--blue-card);
+      padding: 16px 18px;
+      border-radius: 12px;
+      color: var(--blue-dark);
+      font-weight: 800;
+      font-size: 15px;
+      margin: 22px 0;
     }
 
     /* قسم شهادة الخبرة */
-    .cert-section {
+    .cert-box {
       background: var(--white);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .cert-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 24px;
-      align-items: center;
-      background: var(--bg);
-      padding: 22px;
-      border-radius: 14px;
+      border-radius: 18px;
+      padding: 24px;
       border: 1px solid var(--border);
+      margin: 26px 0;
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 22px;
+      align-items: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     }
 
-    .cert-img-box {
-      background: var(--white);
+    .cert-preview {
+      background: var(--bg);
       padding: 10px;
-      border-radius: 12px;
-      border: 2px solid var(--gold);
-      cursor: pointer;
+      border-radius: 14px;
+      border: 2px solid var(--blue-card);
       text-align: center;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
     }
 
-    .cert-img-box img {
-      width: 100%;
-      max-height: 320px;
-      object-fit: contain;
+    .cert-preview img {
+      max-height: 290px;
       margin: 0 auto;
       border-radius: 8px;
+      object-fit: contain;
     }
 
-    .cert-zoom-hint {
+    .cert-preview span {
       display: block;
       margin-top: 8px;
       font-size: 13px;
-      color: var(--gold-dark);
       font-weight: 700;
+      color: var(--blue-mid);
     }
 
-    .cert-details h3 {
-      font-size: 22px;
-      color: var(--primary);
+    .cert-info h3 {
+      font-size: 21px;
+      color: var(--blue-dark);
       margin-bottom: 12px;
     }
 
-    .cert-list {
+    .check-list {
       list-style: none;
     }
 
-    .cert-list li {
+    .check-list li {
       padding: 7px 0;
       font-size: 15px;
-      border-bottom: 1px dashed var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
     }
 
-    .cert-list li:last-child {
+    .check-icon {
+      color: var(--green-dark);
+      font-weight: 900;
+    }
+
+    /* قسم الأسئلة الشائعة */
+    .faq-section {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      margin: 24px 0;
+    }
+
+    .faq-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 14px;
+    }
+
+    .faq-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
       border-bottom: none;
     }
 
-    /* شبكة الخدمات والتخصصات */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+    .faq-q {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 16px;
+      margin-bottom: 6px;
     }
 
-    .service-card {
-      background: var(--white);
-      padding: 22px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    }
-
-    .service-card h3 {
-      color: var(--primary);
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .service-card p {
+    .faq-a {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
     }
 
-    /* أحياء جدة */
-    .areas-box {
-      background: var(--primary);
-      color: var(--white);
-      border-radius: 14px;
-      padding: 26px;
-      text-align: center;
-      margin-top: 28px;
+    /* بطاقات صفحة خدماتنا */
+    .services-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 22px;
     }
 
-    .areas-tags {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-
-    .area-tag {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(200, 155, 75, 0.45);
-      color: var(--gold);
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    /* شريط تمرير الصور في أسفل الصفحة الرئيسية */
-    .slider-section {
+    .s-card {
       background: var(--white);
-      border-top: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 22px;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
     }
 
-    .slider-track-wrap {
-      position: relative;
-      overflow: hidden;
+    .s-card-icon {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 14px;
+      background: var(--blue-light);
+      color: var(--blue-card);
       border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .s-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .s-card p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .s-card-link {
+      color: var(--blue-card);
+      font-weight: 800;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* بطاقات الإحصائيات في صفحة من نحن */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .stat-box {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
       border: 1px solid var(--border);
-      background: var(--bg);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+
+    .stat-num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 4px;
+      direction: ltr;
+    }
+
+    .stat-label {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    /* شريط الصور التلقائي في أسفل الصفحة الرئيسية */
+    .gallery-strip-section {
+      padding: 28px 0 38px;
+    }
+
+    .gallery-strip-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--blue-dark);
+      margin-bottom: 16px;
+    }
+
+    .slider-container {
+      overflow: hidden;
+      background: var(--white);
+      border-radius: 18px;
       padding: 14px;
+      border: 1px solid var(--border);
     }
 
     .slider-track {
@@ -380,160 +538,362 @@
       display: none;
     }
 
-    .slide-item {
-      flex: 0 0 270px;
-      background: var(--white);
-      border-radius: 12px;
+    .slide-card {
+      flex: 0 0 265px;
+      border-radius: 14px;
       overflow: hidden;
       border: 1px solid var(--border);
+      background: var(--bg);
       cursor: pointer;
     }
 
-    .slide-item img {
+    .slide-card img {
       width: 100%;
-      height: 195px;
+      height: 190px;
       object-fit: cover;
     }
 
-    .slide-caption {
+    .slide-card-title {
       padding: 10px 12px;
       font-size: 14px;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--blue-dark);
       text-align: center;
     }
 
-    /* الفوتر وعداد المشاهدات */
+    /* الفوتر الأزرق الملكي */
     footer {
-      background: var(--primary);
-      color: #d6dfe3;
-      text-align: center;
-      padding: 28px 15px;
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 36px 0 95px;
+      margin-top: 20px;
     }
 
-    .views-counter {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(200, 155, 75, 0.4);
-      padding: 10px 22px;
-      border-radius: 50px;
+    .footer-top-card {
+      background: var(--blue-card);
+      border-radius: 22px;
+      padding: 26px 20px;
+      text-align: center;
+      margin-bottom: 32px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .footer-brand-name {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .footer-top-card p {
+      font-size: 15px;
+      color: #eff6ff;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .footer-col h4 {
+      font-size: 19px;
+      font-weight: 800;
       margin-bottom: 14px;
       color: var(--white);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #dbeafe;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: #dbeafe;
       font-size: 15px;
       font-weight: 700;
     }
 
-    .views-number {
-      color: var(--gold);
-      font-size: 18px;
+    .footer-socials-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 22px 0;
+    }
+
+    .footer-social-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.75);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 14px;
       font-weight: 800;
     }
 
-    /* الشريط السفلي الثابت (آراء العملاء + أزرار التواصل) */
-    .fixed-bottom-dock {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.22);
+    .views-box {
+      text-align: center;
+      margin-bottom: 18px;
     }
 
-    /* شريط آراء العملاء الدائري المتحرك */
-    .reviews-ticker {
-      background: #102029;
-      color: var(--white);
-      border-top: 2px solid var(--gold);
-      padding: 7px 0;
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-    }
-
-    .reviews-marquee {
-      display: inline-block;
-      padding-right: 100%;
-      animation: marqueeScroll 34s linear infinite;
-    }
-
-    .reviews-ticker:hover .reviews-marquee,
-    .reviews-ticker:active .reviews-marquee {
-      animation-play-state: paused;
-    }
-
-    .review-pill {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(200, 155, 75, 0.35);
+    .views-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 20px;
       border-radius: 50px;
-      padding: 3px 14px;
-      margin-left: 18px;
-      font-size: 13px;
+      font-size: 15px;
+      font-weight: 700;
     }
 
-    .review-pill strong {
+    .views-num {
       color: var(--gold);
+      font-size: 18px;
+      font-weight: 900;
     }
 
-    @keyframes marqueeScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(100%); }
+    .copyright-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 13.5px;
+      color: #dbeafe;
+      line-height: 1.9;
     }
 
-    /* أزرار الاتصال والواتساب والأيقونات الإضافية الثابتة */
-    .sticky-contact-bar {
+    .designer-credit {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .designer-phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(245, 180, 0, 0.65);
+      color: var(--gold);
+      padding: 5px 16px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 900;
+      direction: ltr;
+      letter-spacing: 0.5px;
+    }
+
+    .designer-phone-link:active {
+      transform: scale(0.96);
+    }
+
+    /* إشعار تعليق فيسبوك المنبثق (يظهر 3 ثوان ويختفي ثانيتين) */
+    .fb-review-toast {
+      position: fixed;
+      bottom: 86px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      width: min(92%, 410px);
       background: var(--white);
-      padding: 8px 10px;
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.24);
+      border: 1px solid #dbeafe;
+      z-index: 1050;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .fb-review-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .fb-review-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .fb-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1877f2, #0b3d75);
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .sticky-btn {
-      flex: 1;
-      min-width: 120px;
-      max-width: 220px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 11px 14px;
-      border-radius: 10px;
+      font-weight: 800;
       font-size: 15px;
+      flex-shrink: 0;
+      border: 2px solid #e2e8f0;
+    }
+
+    .fb-user-meta {
+      flex: 1;
+      text-align: right;
+    }
+
+    .fb-user-name {
+      font-size: 14px;
       font-weight: 800;
-      text-align: center;
+      color: #050505;
+      direction: ltr;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
     }
 
-    .sticky-call {
-      background: var(--primary);
-      color: var(--gold);
-      border: 1px solid var(--gold);
-    }
-
-    .sticky-wa {
-      background: var(--green);
+    .fb-badge {
+      background: #1877f2;
       color: var(--white);
-    }
-
-    .social-extra-btn {
+      font-size: 10px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 11px 13px;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 800;
-      background: #eef2f5;
-      color: var(--primary);
-      border: 1px solid #d5dde2;
     }
 
-    /* نافذة تكبير الصور */
+    .fb-stars {
+      color: #f59e0b;
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .fb-comment-body {
+      background: #f0f2f5;
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 13.5px;
+      color: #1c1e21;
+      line-height: 1.55;
+    }
+
+    /* الأزرار العائمة في أسفل اليمين (واتساب + اتصال) */
+    .floating-right-stack {
+      position: fixed;
+      bottom: 18px;
+      right: 16px;
+      z-index: 1100;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .float-circle-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      transition: transform 0.15s ease;
+    }
+
+    .float-circle-btn:active {
+      transform: scale(0.93);
+    }
+
+    .float-wa {
+      background: #25d366;
+    }
+
+    .float-call {
+      background: #1976d2;
+    }
+
+    /* قائمة التواصل العائمة في أسفل اليسار */
+    .floating-left-stack {
+      position: fixed;
+      bottom: 18px;
+      left: 16px;
+      z-index: 1100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .left-socials-list {
+      display: none;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .left-socials-list.expanded {
+      display: flex;
+    }
+
+    .social-bubble {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+    }
+
+    .sb-tiktok { background: #111111; }
+    .sb-insta { background: #e1306c; }
+    .sb-fb { background: #1877f2; }
+    .sb-snap { background: #facc15; color: #111111; }
+
+    .social-toggle-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #111827;
+      color: var(--white);
+      border: none;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* نافذة تكبير الصورة */
     .lightbox {
       display: none;
       position: fixed;
@@ -552,29 +912,28 @@
     .lightbox img {
       max-width: 95%;
       max-height: 85vh;
-      border-radius: 10px;
-      border: 2px solid var(--gold);
+      border-radius: 12px;
+      border: 2px solid var(--white);
     }
 
     .lightbox-close {
       position: absolute;
       top: 18px;
-      left: 22px;
-      background: var(--gold);
-      color: #111;
+      left: 20px;
+      background: var(--blue-card);
+      color: var(--white);
       border: none;
-      padding: 8px 16px;
+      padding: 8px 18px;
       border-radius: 8px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
       cursor: pointer;
     }
 
-    @media (max-width: 820px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-      .cert-wrapper {
+    @media (max-width: 768px) {
+      .cert-box,
+      .services-cards-grid,
+      .footer-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -582,181 +941,366 @@
 </head>
 <body>
 
-  <!-- البسملة في أعلى الصفحة -->
-  <div class="top-bismillah">بسم الله الرحمن الرحيم</div>
+  <!-- البسملة في أعلى الموقع -->
+  <div class="bismillah-bar">بسم الله الرحمن الرحيم</div>
 
-  <!-- الشريط العلوي وأزرار التواصل الفورية -->
+  <!-- الهيدر الأبيض الثابت -->
   <header>
-    <div class="container nav">
-      <div class="brand">
-        <span class="brand-title">جوهرة جدة</span>
-        <span class="brand-sub">إشراف المعلم صلاح منصور | تركيب السيراميك والبورسلين بالليزر في جدة</span>
+    <div class="container header-inner">
+      <div class="logo-wrap" onclick="switchView('home')">
+        <svg width="42" height="42" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect x="4" y="4" width="40" height="40" rx="10" fill="#0b3d75"/>
+          <path d="M24 10L36 22L24 38L12 22L24 10Z" fill="#1976d2" stroke="#f5b400" stroke-width="2.5"/>
+          <path d="M12 22H36M24 10V38" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-text-box">
+          <span class="logo-main">جوهرة جدة</span>
+          <span class="logo-sub">تركيب السيراميك والبورسلين بالليزر</span>
+        </div>
       </div>
-      <div class="top-actions">
-        <a href="tel:0561201914" class="btn-top btn-call js-phone-link">اتصال مباشر <span class="js-phone-text">0561201914</span></a>
-        <a href="#" class="btn-top btn-wa js-wa-link" target="_blank" rel="noopener">واتساب فوري</a>
-      </div>
+
+      <button class="menu-toggle" type="button" aria-label="القائمة" onclick="toggleDrawer()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+
+    <nav class="nav-drawer" id="navDrawer">
+      <a href="#home" class="active-link" onclick="switchView('home')">الرئيسية</a>
+      <a href="#about" onclick="switchView('about')">من نحن</a>
+      <a href="#services" onclick="switchView('services')">خدماتنا</a>
+      <a href="#articles" onclick="switchView('articles')">المقالات</a>
+      <a href="#contact-footer" onclick="closeDrawer()">تواصل معنا</a>
+    </nav>
   </header>
 
-  <!-- القسم الترحيبي الرئيسي -->
-  <section class="hero">
-    <div class="container">
-      <span class="hero-badge">خدمة متخصصة داخل أحياء جدة فقط</span>
-      <h1>جوهرة جدة لتركيب السيراميك والبورسلين والرخام والألواح الكبيرة بالليزر</h1>
-      <p>ننفذ جميع أعمال البلاط للأرضيات والحوائط والحمامات والمطابخ والمداخل والدرج والمسابح بأحدث أجهزة الوزن بالليزر لضمان استقامة تامة ومنع التطبيل والفراغات بإشراف المعلم صلاح منصور</p>
-      <div class="hero-buttons">
-        <a href="tel:0561201914" class="btn-hero btn-call js-phone-link">اتصل الآن <span class="js-phone-text">0561201914</span></a>
-        <a href="#" class="btn-hero btn-wa js-wa-link" target="_blank" rel="noopener">تواصل عبر واتساب</a>
+  <!-- ==================== 1. الصفحة الرئيسية ==================== -->
+  <main id="view-home" class="page-view active-view">
+
+    <!-- البانر الداكن العلوي -->
+    <section class="hero-banner">
+      <div class="container">
+        <h1>أفضل معلم تركيب سيراميك وبورسلين بالليزر في جدة</h1>
+        <p>تنفيذ جميع أعمال البورسلين والسيراميك والرخام والألواح الكبيرة بأحدث أجهزة الوزن بالليزر لضمان استقامة تامة ومنع التطبيل في جميع أنحاء جدة</p>
+        <div class="hero-cta-row">
+          <a href="tel:0561201914" class="btn-pill btn-blue js-phone-link">اتصال مباشر <span class="js-phone-text">0561201914</span></a>
+          <a href="#" class="btn-pill btn-green js-wa-link" target="_blank" rel="noopener">واتساب فوري</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- بطاقة العرض البارزة برقم الجوال -->
+    <div class="container showcase-card-wrap">
+      <div class="showcase-card">
+        <div class="showcase-badge">أفضل فني تركيب سيراميك وبورسلين في جدة</div>
+        <div>
+          <a href="tel:0561201914" class="phone-display-box js-phone-link js-phone-text">0561201914</a>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- النبذة التعريفية ونطاق الضمان -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">نبذة عن جوهرة جدة</h2>
-      <p class="section-desc">خبرة عملية متقنة في تنفيذ وتشطيب الأرضيات والجدران بأعلى معايير الدقة الهندسية في جدة</p>
-      <div class="about-card">
-        <p>تقدم <strong>جوهرة جدة</strong> بقيادة <strong>المعلم صلاح منصور</strong> خدمات تركيب السيراميك والبورسلين والرخام والألواح الكبيرة في جدة باستخدام أدوات الوزن بالليزر الحديثة وضبط الفواصل والترويبة بدقة عالية تضمن سطحا مستويا خاليا من العيوب أو التطبيل</p>
-        <p>نحرص على فحص استقامة الأسطح قبل التركيب وتوزيع العروق بشكل متناسق واختيار الغراء والخلطة المناسبة لكل نوع بلاط سواء في الفلل أو الشقق أو الترميم والتجديد</p>
-        <div class="warranty-box">
+    <!-- المحتوى التعريفي والخدمات المفصلة -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="main-article-title">جوهرة جدة لتركيب السيراميك والبورسلين بالليزر</h2>
+        <p class="lead-paragraph">
+          هل تعاني من تطبيل البلاط أو عدم استقامة الفواصل؟ لا تضيع وقتك في الحلول المؤقتة تواصل الآن مع <span class="highlight-mark">جوهرة جدة لتركيب السيراميك والبورسلين في جدة</span> لإعادة أرضيات وجدران منزلك بأعلى درجات الدقة والاتزان الهندسي باستخدام أجهزة الليزر الحديثة
+        </p>
+
+        <div class="service-detail-block">
+          <h3>تركيب البورسلين بالليزر في جدة</h3>
+          <p>نعتمد على أجهزة الوزن بالليزر الدقيقة لضبط استقامة البورسلين للأرضيات والجدران بمقاساته المختلفة مع استخدام الكلبسات المخصصة لتوحيد الفواصل ومنع أي ميلان أو فراغات أسفل البلاط</p>
+        </div>
+
+        <div class="service-detail-block">
+          <h3>تركيب الألواح الكبيرة والرخام وتنسيق العروق</h3>
+          <p>تنفيذ تركيب الألواح الكبيرة والرخام للمجالس والصالات والمداخل مع العناية الفائقة بتنسيق العروق وقص الزوايا بدقة متناهية تمنح المكان فخامة متكاملة</p>
+        </div>
+
+        <div class="service-detail-block">
+          <h3>ضبط الفراغات والفواصل والترويبة</h3>
+          <p>تحديد عرض الفواصل المناسب لكل نوع بلاط وتعبئة الترويبة المقاومة للرطوبة والأوساخ بشكل متساو ونظيف يحافظ على جمال الأرضيات لسنوات طويلة</p>
+        </div>
+
+        <div class="service-detail-block">
+          <h3>ترميم وتجديد الحمامات والمطابخ في جدة</h3>
+          <p>إزالة وتجديد سيراميك وبورسلين الحمامات والمطابخ القديمة مع ضبط ميول تصريف المياه بدقة عالية وتشطيب الحواف والزوايا بأحدث الأدوات</p>
+        </div>
+
+        <div class="service-detail-block">
+          <h3>تركيب سيراميك المداخل والدرج والمسابح</h3>
+          <p>تنفيذ أعمال التبليط للمداخل والدرج والمسابح والأسطح بمواد لاصقة قوية تتحمل الاستخدام المستمر والرطوبة وتضمن ثبات البلاط</p>
+        </div>
+
+        <div class="warranty-alert">
           تنويه الضمان: يشمل ضمان جوهرة جدة استقامة الليزر ومستوى التركيب أثناء التنفيذ فقط ولا يشمل أعمال العزل نهائيا
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- قسم شهادة الخبرة -->
-  <section class="cert-section">
-    <div class="container">
-      <h2 class="section-title">شهادة الخبرة والاعتماد المهني</h2>
-      <p class="section-desc">توثيق الخبرة العملية في تنفيذ أعمال البلاط والبورسلين والرخام بأعلى جودة</p>
-      <div class="cert-wrapper">
-        <div class="cert-img-box" onclick="openLightbox('1.png')">
-          <img src="1.png" alt="شهادة خبرة جوهرة جدة المعلم صلاح منصور" loading="lazy">
-          <span class="cert-zoom-hint">اضغط على الشهادة لتكبيرها ومعاينتها بوضوح</span>
+        <!-- قسم شهادة الخبرة -->
+        <div class="cert-box">
+          <div class="cert-preview" onclick="openLightbox('1.png')">
+            <img src="1.png" alt="شهادة الخبرة المهنية جوهرة جدة" loading="lazy">
+            <span>اضغط على الشهادة لتكبيرها ومعاينتها</span>
+          </div>
+          <div class="cert-info">
+            <h3>خدمة احترافية تضمن لك راحة البال</h3>
+            <ul class="check-list">
+              <li><span class="check-icon">✔</span> وزن كامل للأرضيات والحوائط بالليزر قبل وأثناء التركيب</li>
+              <li><span class="check-icon">✔</span> منع تطبيل البلاط وضمان امتلاء الغراء أسفل كل قطعة</li>
+              <li><span class="check-icon">✔</span> قص نظيف للزوايا والفتحات بدون تكسير أو تشويه</li>
+              <li><span class="check-icon">✔</span> التزام تام بالمواعيد ونظافة موقع العمل في جميع أنحاء جدة</li>
+            </ul>
+          </div>
         </div>
-        <div class="cert-details">
-          <h3>لماذا يثق بنا عملاء جدة في مشاريعهم</h3>
-          <ul class="cert-list">
-            <li>وزن كامل للأرضيات والحوائط بأجهزة الليزر الدقيقة قبل وأثناء التركيب</li>
-            <li>منع تطبيل البلاط وضمان امتلاء الغراء أو الخلطة أسفل كل قطعة بالكامل</li>
-            <li>توحيد الفواصل والفراغات وقص الزوايا بدقة متناهية بدون تكسير</li>
-            <li>تنسيق عروق الرخام والألواح الكبيرة لإظهار جمالية المكان</li>
-            <li>التزام تام بالمواعيد ونظافة موقع العمل طوال فترة التنفيذ في جدة</li>
-          </ul>
+
+        <!-- الأسئلة الشائعة -->
+        <div class="faq-section">
+          <h3 class="faq-title">الأسئلة الشائعة حول تركيب السيراميك والبورسلين في جدة</h3>
+          <div class="faq-item">
+            <div class="faq-q">س: هل يمكن تركيب البورسلين الجديد فوق البلاط القديم بدون تكسير؟</div>
+            <div class="faq-a">ج: نعم في حال كانت الأرضية القديمة ثابتة وغير مطبلة يتم تجهيز السطح بمواد التأسيس المناسبة والغراء المخصص للبورسلين والوزن بالليزر لضمان ثبات عال</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">س: كيف تضمنون عدم تطبيل البلاط أو انفصاله مستقبلا؟</div>
+            <div class="faq-a">ج: نعتمد على فرد الغراء بالكامل على الأرضية وظهر البلاطة مع تفريغ الهواء والوزن بالليزر واستخدام فواصل الكلبسات الدقيقة</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">س: ما الذي يشمله الضمان المقدم من جوهرة جدة؟</div>
+            <div class="faq-a">ج: يشمل الضمان استقامة الليزر ومستوى التركيب أثناء التنفيذ فقط ولا يشمل أعمال العزل نهائيا</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- تخصصات وخدمات جوهرة جدة -->
-  <section>
+    <!-- شريط الصور التلقائي في أسفل الصفحة الرئيسية -->
+    <section class="gallery-strip-section">
+      <div class="container">
+        <h3 class="gallery-strip-title">معرض الصور وأحدث الأعمال</h3>
+        <div class="slider-container">
+          <div class="slider-track" id="homeGallerySlider"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 2. صفحة خدماتنا ==================== -->
+  <section id="view-services" class="page-view content-section">
     <div class="container">
-      <h2 class="section-title">تخصصاتنا في تركيب البلاط والترميم</h2>
-      <p class="section-desc">نغطي جميع أعمال التركيب والتجديد بأحدث الأدوات الفنية</p>
-      <div class="services-grid">
-        <div class="service-card">
+      <div style="text-align:center; margin-bottom:24px;">
+        <span style="color:var(--blue-card); font-weight:800; font-size:14px;">خدمات جوهرة جدة لتركيب البلاط</span>
+        <h2 class="main-article-title">حلول متكاملة لتركيب السيراميك والبورسلين بالليزر</h2>
+      </div>
+
+      <div class="services-cards-grid">
+        <div class="s-card">
+          <div class="s-card-icon">📐</div>
           <h3>تركيب البورسلين بالليزر</h3>
           <p>تركيب بورسلين الأرضيات والجدران بمقاساته المختلفة مع ضبط الاستقامة بالليزر ومنع التطبيل تماما</p>
+          <a href="tel:0561201914" class="s-card-link js-phone-link">اتصل الآن &rsaquo;</a>
         </div>
-        <div class="service-card">
+
+        <div class="s-card">
+          <div class="s-card-icon">🏛️</div>
           <h3>الألواح الكبيرة والرخام</h3>
           <p>تركيب الألواح الكبيرة والرخام وتنسيق العروق بدقة هندسية عالية للمجالس والصالات والمداخل</p>
+          <a href="tel:0561201914" class="s-card-link js-phone-link">اتصل الآن &rsaquo;</a>
         </div>
-        <div class="service-card">
-          <h3>ضبط الفراغات والترويبة</h3>
-          <p>توحيد الفواصل باستخدام الكلبسات المخصصة وتعبئة الترويبة المقاومة للرطوبة والأوساخ</p>
-        </div>
-        <div class="service-card">
+
+        <div class="s-card">
+          <div class="s-card-icon">🚿</div>
           <h3>ترميم الحمامات والمطابخ</h3>
-          <p>تكسير وتجديد سيراميك وبورسلين الحمامات والمطابخ القديمة في جدة مع ضبط ميول التصريف</p>
+          <p>تجديد سيراميك وبورسلين الحمامات والمطابخ القديمة في جدة مع ضبط ميول التصريف بدقة</p>
+          <a href="tel:0561201914" class="s-card-link js-phone-link">اتصل الآن &rsaquo;</a>
         </div>
-        <div class="service-card">
+
+        <div class="s-card">
+          <div class="s-card-icon">🪜</div>
           <h3>المداخل والدرج والمسابح</h3>
-          <p>تركيب سيراميك وبورسلين المداخل والدرج والمسابح والأسطح بتشطيب متين يتحمل الاستخدام</p>
-        </div>
-        <div class="service-card">
-          <h3>معالجة انفصال البلاط</h3>
-          <p>فحص ومعالجة البلاط المنفصل أو المطبل وإعادة تركيبه بمواد لاصقة قوية تضمن ثباته</p>
-        </div>
-      </div>
-
-      <div class="areas-box">
-        <h3>نخدم جميع أحياء جدة بسرعة ومباشرة</h3>
-        <div class="areas-tags">
-          <span class="area-tag">حي الحمدانية</span>
-          <span class="area-tag">حي الشاطئ</span>
-          <span class="area-tag">حي الخالدية</span>
-          <span class="area-tag">حي مشرفة</span>
-          <span class="area-tag">حي السلامة</span>
-          <span class="area-tag">وجميع أحياء جدة</span>
+          <p>تركيب سيراميك وبورسلين المداخل والدرج والمسابح بتشطيب متين يتحمل الاستخدام المستمر</p>
+          <a href="tel:0561201914" class="s-card-link js-phone-link">اتصل الآن &rsaquo;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- شريط تمرير الصور التلقائي في أسفل الصفحة الرئيسية -->
-  <section class="slider-section">
-    <div class="container">
-      <h2 class="section-title">معرض الصور وأحدث الأعمال</h2>
-      <p class="section-desc">تظهر هنا تلقائيا صور الشهادات وأحدث صور المقالات والأعمال المنفذة في جدة</p>
-      <div class="slider-track-wrap">
-        <div class="slider-track" id="homeGallerySlider"></div>
+  <!-- ==================== 3. صفحة من نحن ==================== -->
+  <section id="view-about" class="page-view">
+    <div class="hero-banner" style="padding:38px 16px;">
+      <div class="container">
+        <h1>من نحن</h1>
+        <p>جوهرة جدة متخصصة في خدمات تركيب السيراميك والبورسلين والرخام والألواح الكبيرة بالليزر في جميع أنحاء جدة وفق أعلى معايير الدقة والجودة</p>
+      </div>
+    </div>
+
+    <div class="container content-section">
+      <div class="service-detail-block">
+        <h3>أهدافنا في جوهرة جدة</h3>
+        <ul class="check-list">
+          <li><span class="check-icon">✔</span> توفير حلول دقيقة لتركيب البورسلين والسيراميك بدون تطبيل</li>
+          <li><span class="check-icon">✔</span> ضبط الاستقامة بالليزر وتوحيد الفواصل في جميع المساحات</li>
+          <li><span class="check-icon">✔</span> الاهتمام بالتفاصيل وتنسيق العروق لإظهار فخامة المكان</li>
+          <li><span class="check-icon">✔</span> الالتزام التام بالمواعيد والوضوح الكامل مع العملاء في جدة</li>
+        </ul>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-num">+9</div>
+          <div class="stat-label">سنوات من الخبرة</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">+260</div>
+          <div class="stat-label">عميل سعيد</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">+3,257</div>
+          <div class="stat-label">عملية تركيب وتشطيب</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">للتواصل والاستفسارات</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- الفوتر وعداد المشاهدات -->
-  <footer>
+  <!-- ==================== 4. صفحة المقالات ==================== -->
+  <section id="view-articles" class="page-view content-section">
     <div class="container">
-      <div class="views-counter">
-        <span>👁️ عدد الزوار الذين شاهدونا</span>
-        <span class="views-number" id="visitorCount">7591</span>
+      <h2 class="main-article-title" style="text-align:center;">مقالات ونصائح تركيب البلاط والبورسلين</h2>
+      <div id="articlesContainer" class="services-cards-grid">
+        <div class="s-card">
+          <h3>تركيب البورسلين بالليزر وضمان استقامة الأسطح</h3>
+          <p>تعرف على خطوات وزن الأرضيات بالليزر وأهمية استخدام الكلبسات والغراء المخصص لمنع التطبيل</p>
+          <a href="tel:0561201914" class="s-card-link js-phone-link">استفسر الآن &rsaquo;</a>
+        </div>
+        <div class="s-card">
+          <h3>تنسيق عروق الرخام والألواح الكبيرة</h3>
+          <p>كيف يتم تخطيط وتوزيع الألواح الكبيرة والرخام قبل التركيب للحصول على لوحة فنية متناسقة</p>
+          <a href="tel:0561201914" class="s-card-link js-phone-link">استفسر الآن &rsaquo;</a>
+        </div>
       </div>
-      <p>جوهرة جدة لتركيب السيراميك والبورسلين بالليزر في جدة بإشراف المعلم صلاح منصور</p>
+    </div>
+  </section>
+
+  <!-- ==================== الفوتر الأزرق الملكي ==================== -->
+  <footer id="contact-footer">
+    <div class="container">
+      <div class="footer-top-card">
+        <div class="footer-brand-name">جوهرة جدة</div>
+        <p>متخصصون في تركيب السيراميك والبورسلين والرخام والألواح الكبيرة بالليزر وتجديد الحمامات والمطابخ في جميع أنحاء جدة</p>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>أهم الروابط</h4>
+          <ul class="footer-links">
+            <li><a href="#home" onclick="switchView('home')">الرئيسية</a></li>
+            <li><a href="#about" onclick="switchView('about')">من نحن</a></li>
+            <li><a href="#services" onclick="switchView('services')">خدماتنا</a></li>
+            <li><a href="#articles" onclick="switchView('articles')">المقالات</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>تواصل معنا على</h4>
+          <div class="footer-contact-item">
+            <span>📞</span>
+            <a href="tel:0561201914" class="js-phone-link js-phone-text">0561201914</a>
+          </div>
+          <div class="footer-contact-item">
+            <span>💬</span>
+            <a href="#" class="js-wa-link" target="_blank" rel="noopener">محادثة واتساب مباشرة</a>
+          </div>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <span>جدة، المملكة العربية السعودية</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-socials-row" id="footerSocialsRow"></div>
+
+      <div class="views-box">
+        <div class="views-pill">
+          <span>👁️ عدد الزوار الذين شاهدونا</span>
+          <span class="views-num" id="visitorCount">7591</span>
+        </div>
+      </div>
+
+      <div class="copyright-bar">
+        <div>جميع الحقوق محفوظة &copy; جوهرة جدة لتركيب السيراميك والبورسلين بالليزر</div>
+        <div class="designer-credit">
+          تم التصميم بواسطة <span id="designerNameText">القمة للحلول الرقمية وتصميم المواقع</span>
+        </div>
+        <div>
+          <a href="tel:+201055707291" class="designer-phone-link" id="designerPhoneLink">📞 <span id="designerPhoneText">00201055707291</span></a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- الشريط السفلي الثابت (شريط التعليقات الدائري + أزرار الاتصال والواتساب والأيقونات) -->
-  <div class="fixed-bottom-dock">
-    <div class="reviews-ticker" id="reviewsTickerWrap">
-      <div class="reviews-marquee" id="reviewsMarquee"></div>
+  <!-- ==================== إشعار تعليقات فيسبوك (يظهر 3 ثوان ويختفي ثانيتين) ==================== -->
+  <div class="fb-review-toast" id="fbReviewToast" aria-live="polite">
+    <div class="fb-review-header">
+      <div class="fb-avatar" id="fbReviewAvatar">M</div>
+      <div class="fb-user-meta">
+        <div class="fb-user-name">
+          <span id="fbReviewName">Mohammed Al-Harbi</span>
+          <span class="fb-badge">✓</span>
+        </div>
+        <div class="fb-stars">★★★★★</div>
+      </div>
     </div>
-    <div class="sticky-contact-bar" id="stickyContactBar">
-      <a href="tel:0561201914" class="sticky-btn sticky-call js-phone-link">📞 اتصال <span class="js-phone-text">0561201914</span></a>
-      <a href="#" class="sticky-btn sticky-wa js-wa-link" target="_blank" rel="noopener">💬 واتساب</a>
-    </div>
+    <div class="fb-comment-body" id="fbReviewText"></div>
   </div>
 
-  <!-- نافذة تكبير الصورة -->
+  <!-- ==================== الأزرار العائمة في أسفل اليمين (واتساب + اتصال) ==================== -->
+  <div class="floating-right-stack">
+    <a href="#" class="float-circle-btn float-wa js-wa-link" target="_blank" rel="noopener" aria-label="واتساب">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.82 14.01c-.24.68-1.41 1.3-1.96 1.38-.51.08-1.15.11-1.85-.11-.43-.14-.98-.32-1.68-.62-2.96-1.28-4.89-4.26-5.04-4.46-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.83 2.03.9 2.18.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.38-.45.51-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.65-.07.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.72.81 2.02.96.3.15.49.22.56.35.08.12.08.71-.16 1.39z"/></svg>
+    </a>
+    <a href="tel:0561201914" class="float-circle-btn float-call js-phone-link" aria-label="اتصال مباشر">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+  </div>
+
+  <!-- ==================== قائمة أيقونات التواصل في أسفل اليسار ==================== -->
+  <div class="floating-left-stack">
+    <div class="left-socials-list" id="leftSocialsList"></div>
+    <button class="social-toggle-btn" id="socialToggleBtn" type="button" onclick="toggleLeftSocials()" aria-label="حسابات التواصل">✕</button>
+  </div>
+
+  <!-- نافذة تكبير الصور -->
   <div class="lightbox" id="imageLightbox" onclick="closeLightbox()">
     <button class="lightbox-close" type="button" onclick="closeLightbox()">إغلاق</button>
     <img id="lightboxImg" src="" alt="معاينة الصورة">
   </div>
 
-  <!-- ملف البيانات الموحد للموقع والمقالات -->
   <script src="site-data.js"></script>
   <script>
-    // الإعدادات المركزية الافتراضية (تتحدث تلقائيا من ملف site-data.js عند إنشائه)
     var DEFAULT_CONFIG = {
       phone: "0561201914",
       whatsappInternational: "966561201914",
       whatsappMessage: "السلام عليكم ورحمة الله وبركاته حياك الله معلم صلاح منصور عندي شغل تركيب سيراميك أو بورسلين في جدة وأرغب في الاستفسار والمعاينة",
+      designerName: "القمة للحلول الرقمية وتصميم المواقع",
+      designerPhoneDisplay: "00201055707291",
+      designerPhoneDial: "+201055707291",
       baseViews: 7591,
       showTestimonials: true,
       testimonials: [
-        { name: "أبو عبدالله - حي الحمدانية", text: "كان عندي مشكلة تطبيل في بورسلين الصالة وتم حل المشكلة وضبط الاستقامة بالليزر مع المعلم صلاح منصور شغل نظيف جدا" },
-        { name: "م. طارق - حي الشاطئ", text: "تم تركيب ألواح كبيرة وتنسيق العروق بدقة ممتازة في جدة انصح بالتعامل مع جوهرة جدة" },
-        { name: "أبو فهد - حي الخالدية", text: "جددت حمامين ومطبخ عندهم استقامة البلاط والفواصل بالملي والتزام تام بالمواعيد" },
-        { name: "خالد الحربي - حي السلامة", text: "دقة عالية في الوزن بالليزر ووضوح في التعامل من البداية للنهاية" },
-        { name: "سعيد الغامدي - حي مشرفة", text: "أفضل شغل تركيب بورسلين في جدة بدون فراغات أو ميول خاطئ يعطيهم العافية" }
+        { name: "Mohammed Al-Harbi", initials: "MH", text: "كان عندي مشكلة تطبيل في بورسلين الصالة وتم حل المشكلة وضبط الاستقامة بالليزر شغل نظيف جدا" },
+        { name: "Tariq Al-Zahrani", initials: "TZ", text: "تم تركيب ألواح كبيرة وتنسيق العروق بدقة ممتازة في جدة انصح بالتعامل مع جوهرة جدة" },
+        { name: "Abdullah Al-Ghamdi", initials: "AG", text: "جددت حمامين ومطبخ عندهم استقامة البلاط والفواصل بالملي والتزام تام بالمواعيد" },
+        { name: "Faisal Al-Otaibi", initials: "FO", text: "دقة عالية في الوزن بالليزر ووضوح في التعامل من البداية للنهاية" },
+        { name: "Khaled Al-Shehri", initials: "KS", text: "أفضل شغل تركيب بورسلين في جدة بدون فراغات أو ميول خاطئ يعطيهم العافية" }
       ],
-      extraSocials: [
-        // لإضافة أي أيقونة مستقبلا أزل الشرطتين من أمام السطر أو أضف رابطك هنا ليظهر في كل الصفحات
-        // { label: "تيك توك", url: "https://tiktok.com" },
-        // { label: "ماسنجر", url: "https://m.me" }
+      socials: [
+        { name: "تيك توك", short: "TT", cls: "sb-tiktok", url: "#contact-footer" },
+        { name: "انستقرام", short: "IG", cls: "sb-insta", url: "#contact-footer" },
+        { name: "فيسبوك", short: "FB", cls: "sb-fb", url: "#contact-footer" },
+        { name: "سناب شات", short: "SC", cls: "sb-snap", url: "#contact-footer" }
       ],
       galleryImages: [
         { src: "1.png", title: "شهادة الخبرة والاعتماد المهني - جوهرة جدة" }
@@ -765,8 +1309,8 @@
 
     var CONFIG = window.JAWHARA_CONFIG || DEFAULT_CONFIG;
 
-    // 1. تحديث رقم الجوال ورسالة الواتساب تلقائيا في كل الصفحة
-    (function applyContactInfo() {
+    // 1. تحديث أرقام الاتصال وبيانات التصميم في الفوتر تلقائيا
+    (function initContactLinks() {
       var phoneTexts = document.querySelectorAll(".js-phone-text");
       for (var i = 0; i < phoneTexts.length; i++) {
         phoneTexts[i].textContent = CONFIG.phone;
@@ -781,45 +1325,83 @@
         waLinks[k].setAttribute("href", waUrl);
       }
 
-      // إضافة أيقونات التواصل الإضافية إن وجدت
-      var contactBar = document.getElementById("stickyContactBar");
-      if (contactBar && CONFIG.extraSocials && CONFIG.extraSocials.length > 0) {
-        CONFIG.extraSocials.forEach(function(item) {
-          var a = document.createElement("a");
-          a.href = item.url;
-          a.target = "_blank";
-          a.rel = "noopener";
-          a.className = "social-extra-btn";
-          a.textContent = item.label;
-          contactBar.appendChild(a);
-        });
+      var dName = document.getElementById("designerNameText");
+      var dPhoneText = document.getElementById("designerPhoneText");
+      var dPhoneLink = document.getElementById("designerPhoneLink");
+      if (dName && CONFIG.designerName) {
+        dName.textContent = CONFIG.designerName;
+      }
+      if (dPhoneText && CONFIG.designerPhoneDisplay) {
+        dPhoneText.textContent = CONFIG.designerPhoneDisplay;
+      }
+      if (dPhoneLink && CONFIG.designerPhoneDial) {
+        dPhoneLink.setAttribute("href", "tel:" + CONFIG.designerPhoneDial);
       }
     })();
 
-    // 2. تشغيل شريط آراء العملاء الدائري المتحرك أو إخفاؤه حسب الإعداد
-    (function renderTestimonials() {
-      var wrap = document.getElementById("reviewsTickerWrap");
-      var marquee = document.getElementById("reviewsMarquee");
-      if (!CONFIG.showTestimonials || !CONFIG.testimonials || CONFIG.testimonials.length === 0) {
-        if (wrap) wrap.style.display = "none";
+    // 2. تشغيل أيقونات التواصل في اليسار والفوتر
+    (function initSocials() {
+      var leftList = document.getElementById("leftSocialsList");
+      var footerRow = document.getElementById("footerSocialsRow");
+      if (!CONFIG.socials) return;
+      CONFIG.socials.forEach(function(s) {
+        if (leftList) {
+          var a = document.createElement("a");
+          a.href = s.url;
+          a.className = "social-bubble " + (s.cls || "sb-fb");
+          a.textContent = s.short;
+          a.title = s.name;
+          leftList.appendChild(a);
+        }
+        if (footerRow) {
+          var fa = document.createElement("a");
+          fa.href = s.url;
+          fa.className = "footer-social-circle";
+          fa.textContent = s.short;
+          fa.title = s.name;
+          footerRow.appendChild(fa);
+        }
+      });
+    })();
+
+    // 3. إشعار تعليقات فيسبوك (يظهر 3 ثوان ويختفي ثانيتين بالتناوب)
+    (function initFacebookReviewsLoop() {
+      var toast = document.getElementById("fbReviewToast");
+      var avatarEl = document.getElementById("fbReviewAvatar");
+      var nameEl = document.getElementById("fbReviewName");
+      var textEl = document.getElementById("fbReviewText");
+
+      if (!toast || !CONFIG.showTestimonials || !CONFIG.testimonials || CONFIG.testimonials.length === 0) {
         return;
       }
-      var html = "";
-      CONFIG.testimonials.forEach(function(rev) {
-        html += '<span class="review-pill"><strong>' + rev.name + ':</strong> ' + rev.text + '</span>';
-      });
-      marquee.innerHTML = html + html;
+
+      var index = 0;
+      function showNextComment() {
+        var item = CONFIG.testimonials[index];
+        avatarEl.textContent = item.initials || item.name.charAt(0);
+        nameEl.textContent = item.name;
+        textEl.textContent = item.text;
+        toast.classList.add("show");
+
+        setTimeout(function() {
+          toast.classList.remove("show");
+          index = (index + 1) % CONFIG.testimonials.length;
+          setTimeout(showNextComment, 2000);
+        }, 3000);
+      }
+
+      setTimeout(showNextComment, 1000);
     })();
 
-    // 3. تشغيل شريط تمرير الصور التلقائي في الصفحة الرئيسية
-    (function renderGallerySlider() {
+    // 4. شريط الصور التلقائي في أسفل الصفحة الرئيسية
+    (function initGallerySlider() {
       var track = document.getElementById("homeGallerySlider");
       if (!track || !CONFIG.galleryImages) return;
       var html = "";
       CONFIG.galleryImages.forEach(function(img) {
-        html += '<div class="slide-item" onclick="openLightbox(\'' + img.src + '\')">' +
+        html += '<div class="slide-card" onclick="openLightbox(\'' + img.src + '\')">' +
                 '<img src="' + img.src + '" alt="' + img.title + '" loading="lazy">' +
-                '<div class="slide-caption">' + img.title + '</div>' +
+                '<div class="slide-card-title">' + img.title + '</div>' +
                 '</div>';
       });
       track.innerHTML = html;
@@ -829,28 +1411,60 @@
           if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 5) {
             track.scrollTo({ left: 0, behavior: "smooth" });
           } else {
-            track.scrollBy({ left: -284, behavior: "smooth" });
+            track.scrollBy({ left: -279, behavior: "smooth" });
           }
         }, 3200);
       }
     })();
 
-    // 4. عداد المشاهدات يبدأ من 7591 ويزيد تلقائيا
-    (function updateViews() {
+    // 5. عداد المشاهدات يبدأ من 7591
+    (function initViewsCounter() {
       var el = document.getElementById("visitorCount");
       if (!el) return;
-      var stored = parseInt(localStorage.getItem("jawhara_views") || "0", 10);
-      stored = stored + 1;
-      localStorage.setItem("jawhara_views", stored);
-      el.textContent = (CONFIG.baseViews + stored).toLocaleString("en-US");
+      var count = parseInt(localStorage.getItem("jawhara_views") || "0", 10) + 1;
+      localStorage.setItem("jawhara_views", count);
+      el.textContent = (CONFIG.baseViews + count).toLocaleString("en-US");
     })();
 
-    // 5. تكبير الصور عند الضغط عليها
+    // 6. التنقل الفوري بين الصفحات والقائمة
+    function toggleDrawer() {
+      document.getElementById("navDrawer").classList.toggle("open");
+    }
+
+    function closeDrawer() {
+      document.getElementById("navDrawer").classList.remove("open");
+    }
+
+    function switchView(viewName) {
+      var views = document.querySelectorAll(".page-view");
+      for (var i = 0; i < views.length; i++) {
+        views[i].classList.remove("active-view");
+      }
+      var target = document.getElementById("view-" + viewName);
+      if (target) {
+        target.classList.add("active-view");
+      }
+      var links = document.querySelectorAll(".nav-drawer a");
+      for (var j = 0; j < links.length; j++) {
+        links[j].classList.remove("active-link");
+        if (links[j].getAttribute("href") === "#" + viewName) {
+          links[j].classList.add("active-link");
+        }
+      }
+      closeDrawer();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function toggleLeftSocials() {
+      var list = document.getElementById("leftSocialsList");
+      var btn = document.getElementById("socialToggleBtn");
+      list.classList.toggle("expanded");
+      btn.textContent = list.classList.contains("expanded") ? "✕" : "☰";
+    }
+
     function openLightbox(src) {
-      var box = document.getElementById("imageLightbox");
-      var img = document.getElementById("lightboxImg");
-      img.src = src;
-      box.classList.add("active");
+      document.getElementById("lightboxImg").src = src;
+      document.getElementById("imageLightbox").classList.add("active");
     }
 
     function closeLightbox() {

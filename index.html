@@ -58,73 +58,92 @@
       margin: 0 auto;
     }
 
-    /* شريط البسملة العلوي */
+    /* شريط البسملة الرفيع في أعلى الشاشة */
     .bismillah-bar {
       background: var(--blue-dark);
       color: #ffffff;
       text-align: center;
-      padding: 6px 12px;
-      font-size: 15px;
+      padding: 5px 12px;
+      font-size: 14px;
       font-weight: 700;
+      letter-spacing: 0.3px;
     }
 
-    /* الهيدر الأبيض الثابت */
+    /* الهيدر الأبيض الموحد والمريح للعين */
     header {
       background: var(--white);
       position: sticky;
       top: 0;
       z-index: 950;
-      box-shadow: 0 2px 10px rgba(11, 61, 117, 0.08);
-      border-bottom: 1px solid var(--border);
+      box-shadow: 0 3px 14px rgba(11, 61, 117, 0.08);
+      border-bottom: 2px solid var(--blue-light);
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 9px 0;
+      gap: 10px;
+      padding: 11px 0;
     }
 
     .logo-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 11px;
       cursor: pointer;
+      min-width: 0;
+    }
+
+    .logo-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0b3d75 0%, #1976d2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(11, 61, 117, 0.22);
     }
 
     .logo-text-box {
       display: flex;
       flex-direction: column;
+      min-width: 0;
     }
 
     .logo-main {
-      font-size: 21px;
+      font-size: 22px;
       font-weight: 900;
       color: var(--blue-dark);
       line-height: 1.15;
     }
 
     .logo-sub {
-      font-size: 11px;
+      font-size: clamp(11px, 3vw, 12.5px);
       font-weight: 700;
       color: var(--blue-mid);
+      line-height: 1.35;
     }
 
     .menu-toggle {
-      background: transparent;
-      border: none;
+      background: var(--blue-light);
+      border: 1px solid #dbeafe;
+      border-radius: 10px;
       cursor: pointer;
-      padding: 6px;
+      padding: 9px 10px;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 4px;
+      flex-shrink: 0;
     }
 
     .menu-toggle span {
       display: block;
-      width: 26px;
-      height: 3px;
-      background: #1e293b;
+      width: 22px;
+      height: 2.5px;
+      background: var(--blue-dark);
       border-radius: 3px;
     }
 
@@ -164,25 +183,6 @@
 
     .page-view.active-view {
       display: block;
-    }
-
-    /* الشريط الأزرق الناعم والصغير أسفل الهيدر في سطر واحد */
-    .slim-title-bar {
-      background: linear-gradient(135deg, #0b3d75 0%, #1565c0 100%);
-      color: var(--white);
-      text-align: center;
-      padding: 11px 8px;
-      box-shadow: 0 3px 10px rgba(11, 61, 117, 0.14);
-    }
-
-    .slim-title-bar h1 {
-      font-size: clamp(13.5px, 3.8vw, 18px);
-      font-weight: 800;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin: 0;
-      line-height: 1.4;
     }
 
     /* بانر الصفحات الداخلية والمقالات */
@@ -255,9 +255,9 @@
       color: var(--white);
     }
 
-    /* قسم شهادة الخبرة في مقدمة الصفحة الرئيسية */
+    /* قسم شهادة الخبرة في مقدمة الصفحة الرئيسية بمساحة مريحة */
     .cert-top-section {
-      padding: 22px 0 8px;
+      padding: 20px 0 6px;
     }
 
     .cert-box {
@@ -307,6 +307,7 @@
       font-weight: 800;
     }
 
+    .cert-info h1,
     .cert-info h2 {
       font-size: 20px;
       color: var(--blue-dark);
@@ -333,7 +334,7 @@
 
     /* قسم المحتوى التعريفي والأنشطة */
     .content-section {
-      padding: 26px 0;
+      padding: 24px 0;
     }
 
     .main-article-title {
@@ -757,16 +758,16 @@
       letter-spacing: 0.5px;
     }
 
-    /* ==================== إشعار التعليق المضغوط والخفيف (10 ثوان ظهور / 10 ثوان اختفاء) ==================== */
+    /* ==================== إشعار التعليق المضغوط بصور رمزية متنوعة (10 ثوان ظهور / 10 ثوان اختفاء) ==================== */
     .fb-review-toast {
       position: fixed;
       bottom: 66px;
       right: 12px;
-      left: 66px;
+      left: 64px;
       max-width: 365px;
       margin: 0 auto;
       background: #ffffff;
-      border-radius: 13px;
+      border-radius: 14px;
       padding: 8px 11px;
       box-shadow: 0 8px 22px rgba(11, 61, 117, 0.22);
       border: 1px solid #bfdbfe;
@@ -792,17 +793,22 @@
     }
 
     .fb-avatar {
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #1877f2 0%, #0b3d75 100%);
-      color: var(--white);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
-      font-size: 12px;
       flex-shrink: 0;
+      border: 1.5px solid #bfdbfe;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    .fb-avatar svg {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     .fb-user-line {
@@ -1020,18 +1026,23 @@
   <!-- البسملة في أعلى الموقع -->
   <div class="bismillah-bar">بسم الله الرحمن الرحيم</div>
 
-  <!-- الهيدر الأبيض الثابت -->
+  <!-- الهيدر الأبيض الموحد الأنيق -->
   <header>
     <div class="container header-inner">
       <div class="logo-wrap" onclick="switchView('home')">
-        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-          <rect x="4" y="4" width="40" height="40" rx="10" fill="#0b3d75"/>
-          <path d="M24 10L36 22L24 38L12 22L24 10Z" fill="#1976d2" stroke="#f5b400" stroke-width="2.5"/>
-          <path d="M12 22H36M24 10V38" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
+        <div class="logo-icon-box" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="7.5" height="7.5" rx="1.5" fill="#ffffff"/>
+            <rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5" fill="#93c5fd"/>
+            <rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5" fill="#93c5fd"/>
+            <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5" fill="#ffffff"/>
+            <line x1="1" y1="12" x2="23" y2="12" stroke="#f5b400" stroke-width="1.6"/>
+            <line x1="12" y1="1" x2="12" y2="23" stroke="#f5b400" stroke-width="1.6"/>
+          </svg>
+        </div>
         <div class="logo-text-box">
           <span class="logo-main">جوهرة جدة</span>
-          <span class="logo-sub">تركيب السيراميك والبورسلين بالليزر</span>
+          <span class="logo-sub">تركيب البورسلين والسيراميك والرخام بالليزر في جدة</span>
         </div>
       </div>
 
@@ -1054,14 +1065,7 @@
   <!-- ==================== 1. الصفحة الرئيسية ==================== -->
   <main id="view-home" class="page-view active-view">
 
-    <!-- الشريط الأزرق الناعم والصغير في سطر واحد -->
-    <div class="slim-title-bar">
-      <div class="container">
-        <h1>جوهرة جدة لتركيب البورسلين والسيراميك بالليزر</h1>
-      </div>
-    </div>
-
-    <!-- قسم شهادة الخبرة في المقدمة مع إمكانية الفتح والتكبير -->
+    <!-- قسم شهادة الخبرة في المقدمة بمساحة واسعة ومريحة -->
     <section class="cert-top-section">
       <div class="container">
         <div class="cert-box">
@@ -1070,7 +1074,7 @@
             <span class="cert-zoom-btn">🔍 اضغط لفتح وتكبير شهادة الخبرة</span>
           </div>
           <div class="cert-info">
-            <h2>شهادة الخبرة والاعتماد المهني</h2>
+            <h1>شهادة الخبرة والاعتماد المهني</h1>
             <ul class="check-list">
               <li><span class="check-icon">✔</span> وزن كامل للأرضيات والحوائط بالليزر قبل وأثناء التركيب</li>
               <li><span class="check-icon">✔</span> منع تطبيل البلاط وضمان امتلاء الغراء أسفل كل قطعة</li>
@@ -1324,10 +1328,10 @@
     </div>
   </footer>
 
-  <!-- ==================== إشعار التعليق المضغوط والخفيف (10 ثوان ظهور / 10 ثوان اختفاء) ==================== -->
+  <!-- ==================== إشعار التعليق المضغوط بصور متنوعة (10 ثوان ظهور / 10 ثوان اختفاء) ==================== -->
   <div class="fb-review-toast" id="fbReviewToast" aria-live="polite">
     <div class="fb-review-top">
-      <div class="fb-avatar" id="fbReviewAvatar">MH</div>
+      <div class="fb-avatar" id="fbReviewAvatar"></div>
       <div class="fb-user-line">
         <div class="fb-user-name">
           <span id="fbReviewName">Mohammed Al-Harbi</span>
@@ -1377,6 +1381,17 @@
       telegram: '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>'
     };
 
+    /* صور رمزية متنوعة لكل عميل بدون حروف إنجليزية */
+    var AVATAR_SVGS = {
+      man: '<svg viewBox="0 0 40 40"><rect width="40" height="40" fill="#dbeafe"/><circle cx="20" cy="15" r="7" fill="#1e3a8a"/><path d="M8 36c1.5-7 6.5-10 12-10s10.5 3 12 10" fill="#2563eb"/><circle cx="20" cy="16" r="5.5" fill="#fde68a"/><path d="M14.5 14c1-3.5 10-3.5 11 0" fill="#1e293b"/></svg>',
+      house: '<svg viewBox="0 0 40 40"><rect width="40" height="40" fill="#e0f2fe"/><path d="M20 8L6 20h4v12h20V20h4L20 8z" fill="#0369a1"/><rect x="17" y="23" width="6" height="9" fill="#fef08a"/><rect x="12" y="21" width="3.5" height="3.5" fill="#ffffff"/><rect x="24.5" y="21" width="3.5" height="3.5" fill="#ffffff"/></svg>',
+      child: '<svg viewBox="0 0 40 40"><rect width="40" height="40" fill="#fef3c7"/><path d="M9 36c1.5-6 6-9 11-9s9.5 3 11 9" fill="#0ea5e9"/><circle cx="20" cy="17" r="7" fill="#fed7aa"/><path d="M13 15c1.5-5 12.5-5 14 0" fill="#78350f"/><circle cx="17.5" cy="17" r="1" fill="#1e293b"/><circle cx="22.5" cy="17" r="1" fill="#1e293b"/><path d="M18 20.5c1.2 1.2 2.8 1.2 4 0" stroke="#9a3412" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>',
+      rose: '<svg viewBox="0 0 40 40"><rect width="40" height="40" fill="#ffe4e6"/><path d="M20 22v12" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/><path d="M20 28c-4-1-6-4-6-4s3-1 6 2" fill="#16a34a"/><path d="M20 26c4-1 6-4 6-4s-3-1-6 2" fill="#16a34a"/><circle cx="20" cy="15" r="7.5" fill="#e11d48"/><circle cx="18" cy="13.5" r="4" fill="#fb7185"/><circle cx="22" cy="15.5" r="3.5" fill="#be123c"/></svg>',
+      flower: '<svg viewBox="0 0 40 40"><rect width="40" height="40" fill="#ecfdf5"/><circle cx="20" cy="11" r="4.5" fill="#f59e0b"/><circle cx="20" cy="29" r="4.5" fill="#f59e0b"/><circle cx="11" cy="20" r="4.5" fill="#f59e0b"/><circle cx="29" cy="20" r="4.5" fill="#f59e0b"/><circle cx="14" cy="14" r="4.2" fill="#fbbf24"/><circle cx="26" cy="14" r="4.2" fill="#fbbf24"/><circle cx="14" cy="26" r="4.2" fill="#fbbf24"/><circle cx="26" cy="26" r="4.2" fill="#fbbf24"/><circle cx="20" cy="20" r="5" fill="#b45309"/></svg>'
+    };
+
+    var AVATAR_KEYS = ["man", "house", "child", "rose", "flower"];
+
     var DEFAULT_CONFIG = {
       phone: "0561201914",
       whatsappInternational: "966561201914",
@@ -1387,11 +1402,11 @@
       baseViews: 7591,
       showTestimonials: true,
       testimonials: [
-        { name: "Mohammed Al-Harbi", initials: "MH", text: "كان عندي مشكلة تطبيل في بورسلين الصالة وتم حل المشكلة وضبط الاستقامة بالليزر شغل نظيف جدا" },
-        { name: "Tariq Al-Zahrani", initials: "TZ", text: "تم تركيب ألواح كبيرة وتنسيق العروق بدقة ممتازة في جدة انصح بالتعامل مع جوهرة جدة" },
-        { name: "Abdullah Al-Ghamdi", initials: "AG", text: "جددت حمامين ومطبخ عندهم استقامة البلاط والفواصل بالملي والتزام تام بالمواعيد" },
-        { name: "Faisal Al-Otaibi", initials: "FO", text: "دقة عالية في الوزن بالليزر ووضوح في التعامل من البداية للنهاية" },
-        { name: "Khaled Al-Shehri", initials: "KS", text: "أفضل شغل تركيب بورسلين في جدة بدون فراغات أو ميول خاطئ يعطيهم العافية" }
+        { name: "Mohammed Al-Harbi", avatar: "man", text: "كان عندي مشكلة تطبيل في بورسلين الصالة وتم حل المشكلة وضبط الاستقامة بالليزر شغل نظيف جدا" },
+        { name: "Tariq Al-Zahrani", avatar: "house", text: "تم تركيب ألواح كبيرة وتنسيق العروق بدقة ممتازة في جدة انصح بالتعامل مع جوهرة جدة" },
+        { name: "Abdullah Al-Ghamdi", avatar: "child", text: "جددت حمامين ومطبخ عندهم استقامة البلاط والفواصل بالملي والتزام تام بالمواعيد" },
+        { name: "Faisal Al-Otaibi", avatar: "rose", text: "دقة عالية في الوزن بالليزر ووضوح في التعامل من البداية للنهاية" },
+        { name: "Khaled Al-Shehri", avatar: "flower", text: "أفضل شغل تركيب بورسلين في جدة بدون فراغات أو ميول خاطئ يعطيهم العافية" }
       ],
       socials: [
         { key: "facebook", name: "فيسبوك", cls: "bg-fb", url: "#contact-footer" },
@@ -1492,7 +1507,7 @@
       });
     })();
 
-    // 3. إشعار التعليق المضغوط (10 ثوان ظهور ثم 10 ثوان اختفاء)
+    // 3. إشعار التعليق المضغوط بصور رمزية متنوعة (10 ثوان ظهور ثم 10 ثوان اختفاء)
     (function initFacebookReviewsLoop() {
       var toast = document.getElementById("fbReviewToast");
       var avatarEl = document.getElementById("fbReviewAvatar");
@@ -1506,7 +1521,8 @@
       var index = 0;
       function showNextComment() {
         var item = CONFIG.testimonials[index];
-        avatarEl.textContent = item.initials || item.name.charAt(0);
+        var avatarKey = item.avatar || AVATAR_KEYS[index % AVATAR_KEYS.length];
+        avatarEl.innerHTML = AVATAR_SVGS[avatarKey] || AVATAR_SVGS.man;
         nameEl.textContent = item.name;
         textEl.textContent = item.text;
         toast.classList.add("show");

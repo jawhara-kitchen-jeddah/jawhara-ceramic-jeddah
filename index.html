@@ -126,7 +126,6 @@
     .page-view { display: none; }
     .page-view.active-view { display: block; }
 
-    /* قسم شهادة الخبرة في أول الواجهة تحت الهيدر مباشرة */
     .cert-top-section { padding: 14px 0 6px; }
     .cert-box {
       background: var(--white);
@@ -168,7 +167,6 @@
     .check-list li { padding: 6px 0; font-size: 15px; display: flex; align-items: flex-start; gap: 8px; }
     .check-icon { color: var(--green); font-weight: 900; }
 
-    /* شريط النزول السريع لمعرض الأعمال */
     .scroll-hint-bar { text-align: center; padding: 10px 0 4px; }
     .scroll-hint-link {
       display: inline-flex;
@@ -183,7 +181,6 @@
       font-weight: 800;
     }
 
-    /* البطاقات التعريفية الثلاث */
     .trust-highlights-wrap { padding: 8px 0 6px; }
     .trust-highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .trust-pill-card {
@@ -278,8 +275,6 @@
       color: #1e293b;
       line-height: 1.95;
       text-align: right;
-      word-spacing: normal;
-      letter-spacing: normal;
     }
     .lead-paragraph strong { color: #0f172a; font-weight: 900; }
     .highlight-red { color: var(--red-accent); font-weight: 800; }
@@ -355,16 +350,6 @@
       gap: 6px;
       cursor: pointer;
     }
-    .article-bottom-gallery {
-      margin-top: 24px;
-      background: var(--white);
-      border-radius: 18px;
-      padding: 20px;
-      border: 1px solid var(--border);
-    }
-    .article-bottom-gallery h4 { font-size: 18px; font-weight: 800; color: var(--blue-dark); margin-bottom: 14px; text-align: center; }
-    .article-photos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-    .article-photos-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); cursor: pointer; }
     .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 22px 0; }
     .stat-box { background: var(--white); border-radius: 16px; padding: 22px 16px; text-align: center; border: 1px solid var(--border); }
     .stat-num { font-size: 26px; font-weight: 900; color: #0f172a; margin-bottom: 4px; direction: ltr; }
@@ -428,6 +413,19 @@
       font-size: 14px;
       font-weight: 800;
     }
+    .video-cert-placeholder {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(11, 61, 117, 0.05);
+      cursor: pointer;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .video-cert-placeholder img { max-height: 260px; margin: 0 auto 10px; border-radius: 10px; object-fit: contain; border: 2px solid var(--blue-card); }
+    .video-cert-placeholder p { font-size: 14.5px; font-weight: 800; color: var(--blue-dark); }
     footer { background: var(--blue-dark); color: var(--white); padding: 34px 0 40px; margin-top: 16px; }
     .footer-top-card {
       background: var(--blue-card);
@@ -525,7 +523,6 @@
       justify-content: center;
       flex-shrink: 0;
       border: 1.5px solid #bfdbfe;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
     }
     .fb-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .fb-user-line { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 6px; overflow: hidden; }
@@ -549,7 +546,7 @@
       color: var(--blue-dark);
       border: 1px solid #bfdbfe;
       border-radius: 6px;
-      padding: 2px 10px;
+      padding: 2px 12px;
       font-size: 11.5px;
       font-weight: 800;
       cursor: pointer;
@@ -715,6 +712,7 @@
           </div>
           <div class="cert-info">
             <h1>شهادة الخبرة والاعتماد المهني</h1>
+            <p style="font-size:14.5px;color:var(--blue-mid);font-weight:800;margin-bottom:8px;">الفني صلاح منصور — حاصل على شهادة خبرة مهنية معتمدة من القوات المسلحة المصرية خلال الفترة من 1/9/2018 إلى 1/9/2020</p>
             <ul class="check-list">
               <li><span class="check-icon">✔</span> وزن كامل للأرضيات والحوائط بالليزر قبل وأثناء التركيب</li>
               <li><span class="check-icon">✔</span> منع تطبيل البلاط وضمان امتلاء الغراء أسفل كل قطعة</li>
@@ -808,7 +806,7 @@
       </div>
     </section>
 
-    <!-- 5. معرض الصور وأحدث الأعمال (تلقائي من المقالات مع أسهم تحكم وتكبير) -->
+    <!-- 5. معرض الصور وأحدث الأعمال (تلقائي بالكامل من المقالات والمستودع) -->
     <section class="gallery-strip-section" id="gallery-section">
       <div class="container">
         <h3 class="gallery-strip-title">معرض الصور وأحدث الأعمال</h3>
@@ -822,11 +820,11 @@
       </div>
     </section>
 
-    <!-- 6. قسم فيديوهات تنفيذ الأعمال (خفيف بدون تحميل إلا عند التشغيل) -->
+    <!-- 6. قسم الفيديوهات (يعرض شهادة الخبرة حالياً ويستبدل بالفيديوهات تلقائياً عند إضافتها) -->
     <section class="gallery-strip-section" id="videos-section">
       <div class="container">
-        <h3 class="gallery-strip-title">فيديوهات تنفيذ الأعمال بالليزر</h3>
-        <div class="video-grid" id="homeVideosGrid"></div>
+        <h3 class="gallery-strip-title" id="videosSectionTitle">الاعتماد المهني وفيديوهات الأعمال</h3>
+        <div id="homeVideosGrid"></div>
       </div>
     </section>
 
@@ -929,30 +927,6 @@
     </div>
   </section>
 
-  <section id="view-single-article" class="page-view">
-    <div class="hero-banner" id="singleArticleHero">
-      <div class="container">
-        <span class="hero-badge">★★★★★ تقييم الخدمة</span>
-        <h1 id="singleArticleTitle">عنوان المقالة</h1>
-        <p id="singleArticleExcerpt"></p>
-      </div>
-    </div>
-
-    <div class="container content-section">
-      <div id="singleArticleBody"></div>
-      <div class="warranty-alert">
-        تنويه الضمان: يشمل ضمان جوهرة جدة استقامة الليزر ومستوى التركيب أثناء التنفيذ فقط، ولا يشمل أعمال العزل نهائيا.
-      </div>
-      <div class="article-bottom-gallery" id="singleArticleBottomGallery">
-        <h4>صور العمل والتنفيذ</h4>
-        <div class="article-photos-grid" id="singleArticlePhotosGrid"></div>
-      </div>
-      <div style="text-align:center; margin-top:20px;">
-        <button type="button" class="btn-pill btn-blue" onclick="switchView('articles')">العودة إلى جميع المقالات</button>
-      </div>
-    </div>
-  </section>
-
   <footer id="contact-footer">
     <div class="container">
       <div class="footer-top-card">
@@ -1009,7 +983,7 @@
     </div>
   </footer>
 
-  <!-- صندوق التعليقات العائم بدون تواريخ وبنجوم متنوعة وأسهم تحكم -->
+  <!-- صندوق التعليقات العائم بدون عداد وبدون تواريخ وبـ 200 تعليق متنوع -->
   <div class="fb-review-toast" id="fbReviewToast" aria-live="polite">
     <div class="fb-review-top">
       <div class="fb-avatar" id="fbReviewAvatar"></div>
@@ -1024,7 +998,6 @@
     <div class="fb-comment-body" id="fbReviewText"></div>
     <div class="fb-toast-controls">
       <button type="button" class="fb-arrow-btn" onclick="prevToastReview()">&#8594; السابق</button>
-      <span id="fbReviewCounter" style="font-size:11px;color:#64748b;font-weight:700;">1 / 20</span>
       <button type="button" class="fb-arrow-btn" onclick="nextToastReview()">التالي &#8592;</button>
     </div>
   </div>
@@ -1065,37 +1038,64 @@
     };
     var DEFAULT_PHOTOS = [
       "https://randomuser.me/api/portraits/men/32.jpg",
-      "https://randomuser.me/api/portraits/men/46.jpg",
-      "https://randomuser.me/api/portraits/men/54.jpg",
-      "https://randomuser.me/api/portraits/men/62.jpg",
-      "https://randomuser.me/api/portraits/men/83.jpg"
+      "https://randomuser.me/api/portraits/men/45.jpg",
+      "https://randomuser.me/api/portraits/men/18.jpg",
+      "https://randomuser.me/api/portraits/men/52.jpg",
+      "https://randomuser.me/api/portraits/men/64.jpg",
+      "https://randomuser.me/api/portraits/men/22.jpg",
+      "https://randomuser.me/api/portraits/men/71.jpg",
+      "https://randomuser.me/api/portraits/men/14.jpg"
     ];
-    var REALISTIC_REVIEWS = [
-      { name: "أبو فيصل الزهراني - الحمدانية", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/32.jpg", text: "شغل مرتب ودقيق جداً في حوائط الحمامات والخورنقات، استلمت الشغل بميزان الليزر وبدون أي تطبيل." },
-      { name: "Tariq Al-Ghamdi - أبحر الشمالية", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/45.jpg", text: "التزام بالمواعيد واستخدام احترافي للكلبسات والغراء المرن في بورسلين 120×60 للحوائط." },
-      { name: "خالد الحربي - حي الشاطئ", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/18.jpg", text: "نفذ لي حوائط 4 حمامات في الفيلا مع خورنقات، دقة الشطف 45 درجة خرافية والفواصل خط واحد." },
-      { name: "Mohammed Al-Otaibi - الخالدية", stars: "★★★½☆", photo: "https://randomuser.me/api/portraits/men/52.jpg", text: "أكثر ما أعجبني الأمانة في الشغل واستخدام المشط ذو الحدين لتعبئة الغراء بالكامل خلف البلاط." },
-      { name: "سعيد الشهري - حي السلامة", stars: "", photo: "https://randomuser.me/api/portraits/men/64.jpg", text: "فني فاهم شغله صح، ضبط لي ميول أرضية الخورنقات بحيث ما تجمع مويه أبداً." },
-      { name: "Faisal Bin Mahfouz - حي الصفا", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/22.jpg", text: "تعاملت مع جوهرة جدة في تركيب سيراميك المطبخ والحمامات، سرعة في الإنجاز واستقامة بالملي." },
-      { name: "عبدالرحمن المالكي - حي مشرف", stars: "★★★☆☆", photo: "https://randomuser.me/api/portraits/men/71.jpg", text: "استلمت الحوائط بالقدة وميزان الليزر قبل الترويبة، ما شاء الله ولا غلطة في الزوايا." },
-      { name: "Omar Al-Sulaimani - أبحر الجنوبية", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/14.jpg", text: "ركب لي سلابات بورسلين كبيرة في حمام الضيوف، شغل احترافي بكل معنى الكلمة." },
-      { name: "ماجد القحطاني - حي النهضة", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/36.jpg", text: "فرق كبير بين شغل الليزر والكلبسات وبين الشغل العادي، الحوائط طالعة قطعة واحدة." },
-      { name: "Yasser Al-Harthi - حي البساتين", stars: "", photo: "https://randomuser.me/api/portraits/men/41.jpg", text: "دقة عالية في قص فتحات السباكة والكهرباء بالصاروخ والدريل بدون أي كسر للبلاطة." },
-      { name: "سلطان العتيبي - حي المرجان", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/58.jpg", text: "الأخ صلاح محترم وأمين، نصحني بنوع الغراء المناسب لبورسلين الحوائط وطلع الشغل ممتاز." },
-      { name: "Ahmed Bajaber - حي الروضة", stars: "★★★½☆", photo: "https://randomuser.me/api/portraits/men/29.jpg", text: "تم تنفيذ خورنقتين في الحمام الرئيسي مع زوايا ستانلس، الفينش النهائي نظيف ومرتب." },
-      { name: "نايف السلمي - حي السامر", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/67.jpg", text: "دقة جوهرة جدة في وزن البلاط بالليزر ومنع التطبيل لا يعلى عليها في جدة." },
-      { name: "Sami Al-Juhani - حي النعيم", stars: "★★★☆☆", photo: "https://randomuser.me/api/portraits/men/11.jpg", text: "شغل يبيض الوجه، التزام بالوقت من الصباح الباكر وتنفيذ دقيق لكل تفاصيل المخطط." },
-      { name: "تركي الدوسري - حي المحمدية", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/49.jpg", text: "ركب لي بورسلين الحوائط مقاس 120×60 باستخدام الهزاز والكلبسات بدون أي بروز." },
-      { name: "Kareem Al-Amoudi - حي الزهراء", stars: "", photo: "https://randomuser.me/api/portraits/men/33.jpg", text: "أنصح أي شخص يبني أو يرمم في جدة يتواصل مع المعلم صلاح، شغل نظيف وضمان حقيقي." },
-      { name: "بندر الثقفي - حي المنار", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/75.jpg", text: "الخورنقات في الحمام طلعت تحفة فنية، قص الزوايا والترويبة متناسقة بشكل مبهر." },
-      { name: "Waleed Al-Qahtani - حي الفيحاء", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/25.jpg", text: "تعامل راقي ووضوح في الاتفاق من البداية، نفذ لي حوائط المطبخ والحمامات بأعلى جودة." },
-      { name: "فهد العمري - حي الواحة", stars: "★★★½☆", photo: "https://randomuser.me/api/portraits/men/61.jpg", text: "البلاط ثابت كأنه صبة واحدة ولا يوجد أي صوت تطبيل نهائياً مع المشط ذو الحدين." },
-      { name: "Nasser Al-Shehri - أبحر الشمالية", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/19.jpg", text: "من أفضل الفنيين في جدة لتركيب البورسلين بالليزر، دقة وأمانة ونظافة في العمل." }
+
+    /* توليد 200 تعليق متنوع (ثلثها بأحياء جدة والباقي عام لجميع تخصصات البورسلين والسيراميك والرخام) */
+    var REVIEW_NAMES = [
+      "أبو فيصل الزهراني", "Tariq Al-Ghamdi", "خالد الحربي", "Mohammed Al-Otaibi", "سعيد الشهري",
+      "Faisal Bin Mahfouz", "عبدالرحمن المالكي", "Omar Al-Sulaimani", "ماجد القحطاني", "Yasser Al-Harthi",
+      "سلطان العتيبي", "Ahmed Bajaber", "نايف السلمي", "Sami Al-Juhani", "تركي الدوسري",
+      "Kareem Al-Amoudi", "بندر الثقفي", "Waleed Al-Qahtani", "فهد العمري", "Nasser Al-Shehri",
+      "عبدالعزيز الغامدي", "Hani Al-Malki", "مشاري الحربي", "Rami Al-Zahrani", "سعد القرني"
     ];
-    var DEFAULT_VIDEOS = [
-      { id: "dQw4w9WgXcQ", title: "وزن البورسلين بالليزر والكلبسات الأمريكية في جدة", thumb: "10.jpg" },
-      { id: "dQw4w9WgXcQ", title: "تنفيذ خورنقات الحمامات وشطف الزوايا 45 درجة", thumb: "11.jpg" }
+    var JEDDAH_DISTRICTS = ["أبحر الشمالية", "حي الحمدانية", "حي الشاطئ", "حي الخالدية", "حي السلامة", "حي الصفا", "حي مشرف"];
+    var REVIEW_TEMPLATES = [
+      "شغل مرتب ودقيق جداً في تركيب بورسلين الأرضيات بالليزر وبدون أي تطبيل أو فراغات تحت البلاط.",
+      "التزام تام بالمواعيد واستخدام احترافي للكلبسات الأمريكية والغراء المرن في بورسلين 120×60 للحوائط.",
+      "نفذ لي حوائط 4 حمامات في الفيلا مع خورنقات، دقة الشطف 45 درجة خرافية والفواصل خط واحد.",
+      "أكثر ما أعجبني الأمانة في الشغل واستخدام المشط ذو الحدين لتعبئة الغراء بالكامل خلف البلاط.",
+      "فني فاهم شغله صح، ضبط لي ميول أرضية الحمامات والمطابخ بحيث تصرف المياه بسلاسة تامة.",
+      "تعاملت مع جوهرة جدة في تركيب سيراميك المطبخ والحمامات، سرعة في الإنجاز واستقامة بالملي.",
+      "استلمت الأرضيات بالقدة وميزان الليزر قبل الترويبة، ما شاء الله تبارك الله ولا غلطة في الزوايا.",
+      "ركب لي سلابات رخام وبورسلين كبيرة في الصالة مع تطابق العروق، شغل احترافي بكل معنى الكلمة.",
+      "فرق كبير بين شغل الليزر والهزاز وبين الشغل العادي، الأرضية طالعة كأنها قطعة واحدة مستوية.",
+      "دقة عالية في قص فتحات السباكة والكهرباء وعلب الأفياش بدون أي كسر أو تشويه للبلاطة.",
+      "الأخ صلاح محترم وأمين، نصحني بنوع الغراء المناسب للبورسلين وطلع الشغل فوق الممتاز.",
+      "تم تنفيذ خورنقات الشامبو في الحمام الرئيسي مع زوايا ستانلس، الفينش النهائي نظيف ومرتب.",
+      "دقة جوهرة جدة في وزن البلاط بالليزر ومنع التطبيل لا يعلى عليها في جدة، أنصح بالتعامل معهم.",
+      "شغل يبيض الوجه، التزام بالوقت من الصباح الباكر وتنفيذ دقيق لكل تفاصيل المخطط الهندسي.",
+      "ركب لي بورسلين الدرج والمداخل والاحواش بتشطيب متين وميول مدروسة لتصريف مياه الأمطار.",
+      "أنصح أي شخص يبني أو يرمم في جدة يتواصل مع المعلم صلاح، شغل نظيف وضمان حقيقي على الاستقامة.",
+      "الخورنقات في الحمام طلعت تحفة فنية، قص الزوايا والترويبة المقاومة للرطوبة متناسقة بشكل مبهر.",
+      "تعامل راقي ووضوح تام في الاتفاق من البداية، نفذ لي ترميم وتجديد الحمامات بأعلى جودة.",
+      "البلاط ثابت كأنه صبة واحدة ولا يوجد أي صوت تطبيل نهائياً مع استخدام المشط ذو الحدين والهزاز.",
+      "من أفضل الفنيين في جدة لتركيب البورسلين والرخام بالليزر، دقة وأمانة ونظافة في موقع العمل."
     ];
+    var STAR_PATTERNS = ["★★★★★", "★★★★☆", "★★★★★", "★★★½☆", "", "★★★★★", "★★★☆☆", "★★★★☆", "★★★★★", ""];
+
+    var REALISTIC_REVIEWS = [];
+    for (var rIdx = 0; rIdx < 200; rIdx++) {
+      var baseName = REVIEW_NAMES[rIdx % REVIEW_NAMES.length];
+      var includeDistrict = (rIdx % 3 === 0);
+      var displayName = includeDistrict ? (baseName + " - " + JEDDAH_DISTRICTS[rIdx % JEDDAH_DISTRICTS.length]) : baseName;
+      REALISTIC_REVIEWS.push({
+        name: displayName,
+        stars: STAR_PATTERNS[rIdx % STAR_PATTERNS.length],
+        photo: DEFAULT_PHOTOS[rIdx % DEFAULT_PHOTOS.length],
+        text: REVIEW_TEMPLATES[rIdx % REVIEW_TEMPLATES.length]
+      });
+    }
+
+    /* قسم الفيديوهات: اتركه فارغاً ليظهر مكانه شهادة الخبرة، وعندما تضيف فيديوهات تظهر تلقائياً */
+    var SITE_VIDEOS = [];
+
     var DEFAULT_CONFIG = {
       logoUrl: "",
       phone: "0561201914",
@@ -1114,9 +1114,8 @@
         { key: "telegram", name: "تليجرام", cls: "bg-tg", url: "#contact-footer" }
       ],
       galleryImages: [
-        { src: "10.jpg", title: "تركيب بورسلين حوائط بالليزر والكلبسات - جدة" },
-        { src: "11.jpg", title: "تنفيذ خورنقات حمامات بالبورسلين - جدة" },
-        { src: "1.png", title: "شهادة الخبرة والاعتماد المهني - جوهرة جدة" }
+        { src: "١٠.jpg", title: "تركيب بورسلين حوائط بالليزر والكلبسات - جدة" },
+        { src: "١١.jpg", title: "تنفيذ خورنقات حمامات بالبورسلين - جدة" }
       ],
       articles: []
     };
@@ -1172,8 +1171,7 @@
       });
     })();
 
-    /* صندوق التعليقات العائم بدون تواريخ وبنجوم متنوعة وأسهم تحكم */
-    var toastReviewsList = REALISTIC_REVIEWS;
+    /* صندوق التعليقات العائم بدون عداد وبدون تواريخ */
     var toastIndex = 0;
     var toastTimer = null;
     function renderToastReview(idx) {
@@ -1182,31 +1180,28 @@
       var nameEl = document.getElementById("fbReviewName");
       var starsEl = document.getElementById("fbReviewStars");
       var textEl = document.getElementById("fbReviewText");
-      var counterEl = document.getElementById("fbReviewCounter");
-      if (!toast || !toastReviewsList || toastReviewsList.length === 0) return;
-      var item = toastReviewsList[idx];
-      var photoSrc = item.photo || DEFAULT_PHOTOS[idx % DEFAULT_PHOTOS.length];
-      avatarEl.innerHTML = '<img src="' + photoSrc + '" alt="' + item.name + '">';
+      if (!toast || !REALISTIC_REVIEWS || REALISTIC_REVIEWS.length === 0) return;
+      var item = REALISTIC_REVIEWS[idx];
+      avatarEl.innerHTML = '<img src="' + item.photo + '" alt="' + item.name + '">';
       nameEl.textContent = item.name;
-      starsEl.textContent = item.stars !== undefined ? item.stars : "★★★★★";
+      starsEl.textContent = item.stars;
       textEl.textContent = item.text;
-      if (counterEl) counterEl.textContent = (idx + 1) + " / " + toastReviewsList.length;
       toast.classList.add("show");
     }
     function nextToastReview() {
-      toastIndex = (toastIndex + 1) % toastReviewsList.length;
+      toastIndex = (toastIndex + 1) % REALISTIC_REVIEWS.length;
       renderToastReview(toastIndex);
       resetToastInterval();
     }
     function prevToastReview() {
-      toastIndex = (toastIndex - 1 + toastReviewsList.length) % toastReviewsList.length;
+      toastIndex = (toastIndex - 1 + REALISTIC_REVIEWS.length) % REALISTIC_REVIEWS.length;
       renderToastReview(toastIndex);
       resetToastInterval();
     }
     function resetToastInterval() {
       if (toastTimer) clearInterval(toastTimer);
       toastTimer = setInterval(function() {
-        toastIndex = (toastIndex + 1) % toastReviewsList.length;
+        toastIndex = (toastIndex + 1) % REALISTIC_REVIEWS.length;
         renderToastReview(toastIndex);
       }, 10000);
     }
@@ -1217,19 +1212,29 @@
       }, 1200);
     })();
 
-    /* تحريك معرض الصور يمين ويسار */
     function scrollGallery(offset) {
       var track = document.getElementById("homeGallerySlider");
       if (track) track.scrollBy({ left: offset, behavior: "smooth" });
     }
 
-    /* قسم الفيديوهات الخفيف (التحميل الكسول) */
+    /* قسم الفيديوهات: يعرض شهادة الخبرة في حال عدم وجود فيديوهات، ويعرض الفيديوهات عند إضافتها */
     (function initLazyVideos() {
       var vGrid = document.getElementById("homeVideosGrid");
+      var titleEl = document.getElementById("videosSectionTitle");
       if (!vGrid) return;
-      var videos = (CONFIG.videos && CONFIG.videos.length > 0) ? CONFIG.videos : DEFAULT_VIDEOS;
+      if (!SITE_VIDEOS || SITE_VIDEOS.length === 0) {
+        if (titleEl) titleEl.textContent = "شهادة الخبرة والاعتماد المهني";
+        vGrid.className = "";
+        vGrid.innerHTML = '<div class="video-cert-placeholder" onclick="openLightbox(\'1.png\')">' +
+          '<img src="1.png" alt="شهادة الخبرة المهنية من القوات المسلحة المصرية - صلاح منصور">' +
+          '<p>شهادة خبرة مهنية معتمدة من القوات المسلحة المصرية (من 1/9/2018 إلى 1/9/2020) — اضغط للتكبير</p>' +
+        '</div>';
+        return;
+      }
+      if (titleEl) titleEl.textContent = "فيديوهات تنفيذ الأعمال بالليزر";
+      vGrid.className = "video-grid";
       var html = "";
-      videos.forEach(function(v) {
+      SITE_VIDEOS.forEach(function(v) {
         html += '<div class="video-facade-card" onclick="playLazyVideo(this, \'' + v.id + '\')">' +
           '<img src="' + v.thumb + '" alt="' + v.title + '" loading="lazy">' +
           '<div class="video-play-circle">&#9654;</div>' +
@@ -1249,38 +1254,48 @@
       try {
         var res = await fetch("https://api.github.com/repos/jawhara-kitchen-jeddah/jawhara-ceramic-jeddah/contents/");
         var files = await res.json();
-        var htmlFiles = Array.isArray(files) ? files.filter(function(f) { return f.name.endsWith(".html") && f.name !== "index.html"; }) : [];
-        for (var i = 0; i < htmlFiles.length; i++) {
-          var file = htmlFiles[i];
-          var pageRes = await fetch(file.name);
-          var text = await pageRes.text();
-          var doc = new DOMParser().parseFromString(text, "text/html");
-          var titleEl = doc.querySelector("h1");
-          var title = titleEl ? titleEl.innerText : file.name;
-          var imgs = doc.querySelectorAll(".article-img, img");
-          var coverImg = "10.jpg";
-          for (var m = 0; m < imgs.length; m++) {
-            var s = imgs[m].getAttribute("src");
-            if (s && s.indexOf("http") !== 0 && s !== "1.png") {
-              if (coverImg === "10.jpg") coverImg = s;
-              if (!allSliderImages.some(function(item) { return item.src === s; })) {
-                allSliderImages.push({ src: s, title: imgs[m].getAttribute("alt") || title });
+        if (Array.isArray(files)) {
+          files.forEach(function(f) {
+            if (/\.(jpg|jpeg|png|webp)$/i.test(f.name) && f.name !== "1.png") {
+              allSliderImages.push({ src: f.name, title: "أعمال جوهرة جدة لتركيب البورسلين والسيراميك بالليزر" });
+            }
+          });
+          var htmlFiles = files.filter(function(f) { return f.name.endsWith(".html") && f.name !== "index.html"; });
+          for (var i = 0; i < htmlFiles.length; i++) {
+            var file = htmlFiles[i];
+            var pageRes = await fetch(file.name);
+            var text = await pageRes.text();
+            var doc = new DOMParser().parseFromString(text, "text/html");
+            var titleEl = doc.querySelector("h1");
+            var title = titleEl ? titleEl.innerText : file.name;
+            var imgs = doc.querySelectorAll(".article-img, img");
+            var coverImg = allSliderImages.length > 0 ? allSliderImages[0].src : "1.png";
+            for (var m = 0; m < imgs.length; m++) {
+              var s = imgs[m].getAttribute("src");
+              if (s && s.indexOf("http") !== 0 && s !== "1.png") {
+                coverImg = s;
+                var existing = allSliderImages.find(function(item) { return item.src === s; });
+                if (existing) {
+                  existing.title = imgs[m].getAttribute("alt") || title;
+                } else {
+                  allSliderImages.push({ src: s, title: imgs[m].getAttribute("alt") || title });
+                }
               }
             }
-          }
-          var pEl = doc.querySelector("p");
-          var excerpt = pEl ? pEl.innerText.slice(0, 120) + "..." : "";
-          articlesHtml += '<div class="s-card">' +
-            '<img class="s-card-cover" src="' + coverImg + '" alt="' + title + '" loading="lazy">' +
-            '<div class="s-card-body">' +
-              '<div>' +
-                '<div class="article-stars-badge"><span class="article-stars-icons">★★★★★</span></div>' +
-                '<h3>' + title + '</h3>' +
-                '<p>' + excerpt + '</p>' +
+            var pEl = doc.querySelector("p");
+            var excerpt = pEl ? pEl.innerText.slice(0, 120) + "..." : "";
+            articlesHtml += '<div class="s-card">' +
+              '<img class="s-card-cover" src="' + coverImg + '" alt="' + title + '" loading="lazy">' +
+              '<div class="s-card-body">' +
+                '<div>' +
+                  '<div class="article-stars-badge"><span class="article-stars-icons">★★★★★</span></div>' +
+                  '<h3>' + title + '</h3>' +
+                  '<p>' + excerpt + '</p>' +
+                '</div>' +
+                '<a href="' + file.name + '" class="s-card-link">قراءة التفاصيل ومشاهدة الصور &rsaquo;</a>' +
               '</div>' +
-              '<a href="' + file.name + '" class="s-card-link">قراءة التفاصيل ومشاهدة الصور &rsaquo;</a>' +
-            '</div>' +
-          '</div>';
+            '</div>';
+          }
         }
       } catch (e) {}
 

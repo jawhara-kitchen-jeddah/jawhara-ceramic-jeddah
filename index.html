@@ -41,7 +41,7 @@
       color: var(--text);
       line-height: 1.85;
       overflow-x: hidden;
-      padding-bottom: 135px;
+      padding-bottom: 70px;
     }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
@@ -227,33 +227,8 @@
       z-index: 1;
     }
     .hero-banner .container { position: relative; z-index: 2; }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.32);
-      color: #ffffff;
-      padding: 4px 14px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
     .hero-banner h1 { font-size: clamp(22px, 4.8vw, 34px); font-weight: 900; line-height: 1.4; max-width: 760px; margin: 0 auto 10px; }
     .hero-banner p { font-size: 15px; color: #e2e8f0; max-width: 660px; margin: 0 auto; }
-    .btn-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 11px 24px;
-      border-radius: 50px;
-      font-size: 15px;
-      font-weight: 800;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-      border: none;
-      cursor: pointer;
-    }
-    .btn-blue { background: var(--blue-card); color: var(--white); }
 
     .content-section { padding: 18px 0 24px; }
     .persuasive-article-card {
@@ -427,7 +402,60 @@
     }
     .video-cert-placeholder img { max-height: 260px; margin: 0 auto 10px; border-radius: 10px; object-fit: contain; border: 2px solid var(--blue-card); }
     .video-cert-placeholder p { font-size: 14.5px; font-weight: 800; color: var(--blue-dark); }
-    footer { background: var(--blue-dark); color: var(--white); padding: 34px 0 40px; margin-top: 16px; }
+
+    /* قسم آراء وتقييمات العملاء الثابت في آخر الصفحة الرئيسية بحركة دائرية وسحب باللمس بدون نقط أو أسهم */
+    .static-reviews-section { padding: 12px 0 28px; }
+    .fb-review-card-static {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-shadow: 0 6px 22px rgba(11, 61, 117, 0.08);
+      border: 1px solid #bfdbfe;
+      border-right: 5px solid var(--fb-blue);
+      touch-action: pan-y;
+      user-select: none;
+      cursor: grab;
+    }
+    .fb-review-top { display: flex; align-items: center; gap: 11px; margin-bottom: 10px; }
+    .fb-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 2px solid #bfdbfe;
+    }
+    .fb-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .fb-user-line { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+    .fb-user-name { font-size: 15px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 5px; }
+    .fb-verified {
+      background: var(--fb-blue);
+      color: var(--white);
+      font-size: 10px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fb-stars { color: #f59e0b; font-size: 14px; letter-spacing: 1px; }
+    .fb-comment-body {
+      background: #f1f5f9;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14.5px;
+      color: #1e293b;
+      line-height: 1.75;
+    }
+
+    footer { background: var(--blue-dark); color: var(--white); padding: 34px 0 40px; margin-top: 10px; }
     .footer-top-card {
       background: var(--blue-card);
       border-radius: 22px;
@@ -491,84 +519,6 @@
       font-weight: 900;
       direction: ltr;
       letter-spacing: 0.5px;
-    }
-    /* صندوق التعليقات الثابت أسفل الشاشة بحركة دائرية مستمرة ونقطتين للتنقل */
-    .fb-review-toast {
-      position: fixed;
-      bottom: 64px;
-      right: 12px;
-      left: 64px;
-      max-width: 390px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 8px 12px;
-      box-shadow: 0 8px 22px rgba(11, 61, 117, 0.22);
-      border: 1px solid #bfdbfe;
-      border-right: 4px solid var(--fb-blue);
-      z-index: 1050;
-      opacity: 1;
-      pointer-events: auto;
-      touch-action: pan-y;
-      user-select: none;
-    }
-    .fb-review-top { display: flex; align-items: center; gap: 9px; margin-bottom: 4px; }
-    .fb-avatar {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: #e2e8f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      border: 1.5px solid #bfdbfe;
-    }
-    .fb-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .fb-user-line { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 6px; overflow: hidden; }
-    .fb-user-name { font-size: 12.5px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
-    .fb-verified {
-      background: var(--fb-blue);
-      color: var(--white);
-      font-size: 9px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .fb-stars { color: #f59e0b; font-size: 11.5px; letter-spacing: 0.5px; flex-shrink: 0; }
-    .fb-comment-body {
-      background: #f1f5f9;
-      border-radius: 8px;
-      padding: 5px 9px;
-      font-size: 12.5px;
-      color: #1e293b;
-      line-height: 1.45;
-      transition: opacity 0.2s ease;
-    }
-    .fb-toast-dots {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-top: 5px;
-    }
-    .fb-dot-btn {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      border: none;
-      background: #cbd5e1;
-      cursor: pointer;
-      padding: 0;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    .fb-dot-btn.active {
-      background: var(--fb-blue);
-      transform: scale(1.25);
     }
     .sticky-bottom-bar {
       position: fixed;
@@ -720,12 +670,11 @@
 
   <main id="view-home" class="page-view active-view">
 
-    <!-- 1. شهادة الخبرة في أول الواجهة تحت جوهرة جدة مباشرة -->
     <section class="cert-top-section">
       <div class="container">
         <div class="cert-box">
           <div class="cert-preview" onclick="openLightbox('1.png')">
-            <img src="1.png" alt="شهادة الخبرة المهنية جوهرة جدة" loading="eager">
+            <img src="1.png" alt="شهادة الخبرة المهنية جوهرة جدة" fetchpriority="high" decoding="async">
             <span class="cert-zoom-btn">🔍 اضغط لفتح وتكبير شهادة الخبرة</span>
           </div>
           <div class="cert-info">
@@ -742,12 +691,10 @@
       </div>
     </section>
 
-    <!-- 2. شريط النزول السريع لمعرض الأعمال -->
     <div class="scroll-hint-bar">
       <a href="#gallery-section" class="scroll-hint-link">⬇️ لمشاهدة نماذج الأعمال والصور انزل للأسفل ⬇️</a>
     </div>
 
-    <!-- 3. البطاقات التعريفية المشجعة -->
     <section class="trust-highlights-wrap">
       <div class="container">
         <div class="trust-highlights-grid">
@@ -767,7 +714,6 @@
       </div>
     </section>
 
-    <!-- 4. المقالة التسويقية والخدمات التفصيلية والضمان والأسئلة الشائعة -->
     <section class="content-section">
       <div class="container">
         <div class="persuasive-article-card">
@@ -824,7 +770,6 @@
       </div>
     </section>
 
-    <!-- 5. معرض الصور وأحدث الأعمال (تلقائي بالكامل من المقالات والمستودع) -->
     <section class="gallery-strip-section" id="gallery-section">
       <div class="container">
         <h3 class="gallery-strip-title">معرض الصور وأحدث الأعمال</h3>
@@ -838,7 +783,6 @@
       </div>
     </section>
 
-    <!-- 6. قسم الفيديوهات (يعرض شهادة الخبرة حالياً ويستبدل بالفيديوهات تلقائياً عند إضافتها) -->
     <section class="gallery-strip-section" id="videos-section">
       <div class="container">
         <h3 class="gallery-strip-title" id="videosSectionTitle">الاعتماد المهني وفيديوهات الأعمال</h3>
@@ -846,13 +790,33 @@
       </div>
     </section>
 
-    <!-- 7. قسم أحدث المقالات المنشورة تلقائياً في الموقع -->
     <section class="content-section" id="home-auto-articles-section">
       <div class="container">
         <h3 class="gallery-strip-title">أحدث المقالات والأدلة الفنية</h3>
         <div id="homeAutoArticlesGrid" class="services-cards-grid"></div>
       </div>
     </section>
+
+    <!-- قسم آراء وتقييمات العملاء الثابت في آخر الصفحة الرئيسية بحركة دائرية وسحب يمين ويسار بدون نقط أو أسهم -->
+    <section class="static-reviews-section" id="reviews-section">
+      <div class="container">
+        <h3 class="gallery-strip-title">آراء وتقييمات عملائنا في جدة</h3>
+        <div class="fb-review-card-static" id="fbReviewToast" aria-live="polite">
+          <div class="fb-review-top">
+            <div class="fb-avatar" id="fbReviewAvatar"></div>
+            <div class="fb-user-line">
+              <div class="fb-user-name">
+                <span id="fbReviewName">أبو فيصل الزهراني</span>
+                <span class="fb-verified">✓</span>
+              </div>
+              <span class="fb-stars" id="fbReviewStars">★★★★★</span>
+            </div>
+          </div>
+          <div class="fb-comment-body" id="fbReviewText"></div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <section id="view-services" class="page-view content-section">
@@ -1001,25 +965,6 @@
     </div>
   </footer>
 
-  <!-- صندوق التعليقات الثابت أسفل الشاشةبحركة دائرية مستمرة ونقطتين للتمرير يمين ويسار وبدون ذكر العدد -->
-  <div class="fb-review-toast" id="fbReviewToast" aria-live="polite">
-    <div class="fb-review-top">
-      <div class="fb-avatar" id="fbReviewAvatar"></div>
-      <div class="fb-user-line">
-        <div class="fb-user-name">
-          <span id="fbReviewName">أبو فيصل الزهراني</span>
-          <span class="fb-verified">✓</span>
-        </div>
-        <span class="fb-stars" id="fbReviewStars">★★★★★</span>
-      </div>
-    </div>
-    <div class="fb-comment-body" id="fbReviewText"></div>
-    <div class="fb-toast-dots">
-      <button type="button" class="fb-dot-btn active" id="fbDotRight" onclick="prevToastReview()" aria-label="السابق"></button>
-      <button type="button" class="fb-dot-btn" id="fbDotLeft" onclick="nextToastReview()" aria-label="التالي"></button>
-    </div>
-  </div>
-
   <div class="sticky-bottom-bar">
     <a href="tel:0561201914" class="bar-action-btn bar-call-btn js-phone-link">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -1046,7 +991,6 @@
     <img id="lightboxImg" src="" alt="معاينة الصورة" onclick="toggleZoomImage()">
   </div>
 
-  <script src="site-data.js"></script>
   <script>
     var SVG_SOCIALS = {
       facebook: '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>',
@@ -1112,7 +1056,7 @@
 
     var SITE_VIDEOS = [];
 
-    var DEFAULT_CONFIG = {
+    var CONFIG = {
       logoUrl: "",
       phone: "0561201914",
       whatsappInternational: "966561201914",
@@ -1121,8 +1065,6 @@
       designerPhoneDisplay: "00201055707291",
       designerPhoneDial: "+201055707291",
       baseViews: 7591,
-      showTestimonials: true,
-      testimonials: REALISTIC_REVIEWS,
       socials: [
         { key: "facebook", name: "فيسبوك", cls: "bg-fb", url: "#contact-footer" },
         { key: "tiktok", name: "تيك توك", cls: "bg-tt", url: "#contact-footer" },
@@ -1132,17 +1074,9 @@
       galleryImages: [
         { src: "١٠.jpg", title: "تركيب بورسلين حوائط بالليزر والكلبسات - جدة" },
         { src: "١١.jpg", title: "تنفيذ خورنقات حمامات بالبورسلين - جدة" }
-      ],
-      articles: []
+      ]
     };
-    var CONFIG = window.JAWHARA_CONFIG || DEFAULT_CONFIG;
-    (function initSiteLogo() {
-      var box = document.getElementById("siteLogoBox");
-      if (box && CONFIG.logoUrl && CONFIG.logoUrl.trim() !== "") {
-        box.classList.add("has-logo");
-        box.innerHTML = '<img src="' + CONFIG.logoUrl + '" alt="شعار جوهرة جدة">';
-      }
-    })();
+
     (function initContactLinks() {
       var phoneTexts = document.querySelectorAll(".js-phone-text");
       for (var i = 0; i < phoneTexts.length; i++) { phoneTexts[i].textContent = CONFIG.phone; }
@@ -1151,43 +1085,33 @@
       var waUrl = "https://wa.me/" + CONFIG.whatsappInternational + "?text=" + encodeURIComponent(CONFIG.whatsappMessage);
       var waLinks = document.querySelectorAll(".js-wa-link");
       for (var k = 0; k < waLinks.length; k++) { waLinks[k].setAttribute("href", waUrl); }
-      var dName = document.getElementById("designerNameText");
-      var dPhoneText = document.getElementById("designerPhoneText");
-      var dPhoneLink = document.getElementById("designerPhoneLink");
-      if (dName && CONFIG.designerName) dName.textContent = CONFIG.designerName;
-      if (dPhoneText && CONFIG.designerPhoneDisplay) dPhoneText.textContent = CONFIG.designerPhoneDisplay;
-      if (dPhoneLink && CONFIG.designerPhoneDial) dPhoneLink.setAttribute("href", "tel:" + CONFIG.designerPhoneDial);
     })();
+
     (function initSocials() {
       var leftList = document.getElementById("leftSocialsList");
       var footerRow = document.getElementById("footerSocialsRow");
-      if (!CONFIG.socials) return;
       CONFIG.socials.forEach(function(s) {
         var iconSvg = SVG_SOCIALS[s.key] || "";
         if (leftList) {
           var a = document.createElement("a");
           a.href = s.url;
-          if (s.url && s.url.indexOf("http") === 0) { a.target = "_blank"; a.rel = "noopener"; }
           a.className = "social-bubble " + (s.cls || "bg-fb");
           a.innerHTML = iconSvg;
           a.title = s.name;
-          a.setAttribute("aria-label", s.name);
           leftList.appendChild(a);
         }
         if (footerRow) {
           var fa = document.createElement("a");
           fa.href = s.url;
-          if (s.url && s.url.indexOf("http") === 0) { fa.target = "_blank"; fa.rel = "noopener"; }
           fa.className = "footer-social-circle " + (s.cls || "bg-fb");
           fa.innerHTML = iconSvg;
           fa.title = s.name;
-          fa.setAttribute("aria-label", s.name);
           footerRow.appendChild(fa);
         }
       });
     })();
 
-    /* شريط التعليقات الثابت بحركة دائرية متواصلة ونقطتين للتنقل والسحب باللمس */
+    /* حركة دائرية مستمرة للتعليقات في آخر الصفحة مع إمكانية التمرير باللمس يمين ويسار بدون نقط أو أسهم */
     var toastIndex = 0;
     var toastTimer = null;
     function renderToastReview(idx) {
@@ -1195,23 +1119,11 @@
       var nameEl = document.getElementById("fbReviewName");
       var starsEl = document.getElementById("fbReviewStars");
       var textEl = document.getElementById("fbReviewText");
-      var dotR = document.getElementById("fbDotRight");
-      var dotL = document.getElementById("fbDotLeft");
-      if (!REALISTIC_REVIEWS || REALISTIC_REVIEWS.length === 0) return;
       var item = REALISTIC_REVIEWS[idx];
-      avatarEl.innerHTML = '<img src="' + item.photo + '" alt="' + item.name + '">';
+      avatarEl.innerHTML = '<img src="' + item.photo + '" alt="' + item.name + '" loading="lazy">';
       nameEl.textContent = item.name;
       starsEl.textContent = item.stars;
       textEl.textContent = item.text;
-      if (dotR && dotL) {
-        if (idx % 2 === 0) {
-          dotR.classList.add("active");
-          dotL.classList.remove("active");
-        } else {
-          dotL.classList.add("active");
-          dotR.classList.remove("active");
-        }
-      }
     }
     function nextToastReview() {
       toastIndex = (toastIndex + 1) % REALISTIC_REVIEWS.length;
@@ -1228,7 +1140,7 @@
       toastTimer = setInterval(function() {
         toastIndex = (toastIndex + 1) % REALISTIC_REVIEWS.length;
         renderToastReview(toastIndex);
-      }, 6500);
+      }, 5000);
     }
     (function initFacebookReviewsLoop() {
       renderToastReview(0);
@@ -1236,16 +1148,11 @@
       var toastBox = document.getElementById("fbReviewToast");
       var startX = 0;
       if (toastBox) {
-        toastBox.addEventListener("touchstart", function(e) {
-          startX = e.touches[0].clientX;
-        }, { passive: true });
+        toastBox.addEventListener("touchstart", function(e) { startX = e.touches[0].clientX; }, { passive: true });
         toastBox.addEventListener("touchend", function(e) {
           var endX = e.changedTouches[0].clientX;
-          if (startX - endX > 30) {
-            nextToastReview();
-          } else if (endX - startX > 30) {
-            prevToastReview();
-          }
+          if (startX - endX > 30) nextToastReview();
+          else if (endX - startX > 30) prevToastReview();
         }, { passive: true });
       }
     })();
@@ -1261,9 +1168,8 @@
       if (!vGrid) return;
       if (!SITE_VIDEOS || SITE_VIDEOS.length === 0) {
         if (titleEl) titleEl.textContent = "شهادة الخبرة والاعتماد المهني";
-        vGrid.className = "";
         vGrid.innerHTML = '<div class="video-cert-placeholder" onclick="openLightbox(\'1.png\')">' +
-          '<img src="1.png" alt="شهادة الخبرة المهنية من القوات المسلحة المصرية - صلاح منصور">' +
+          '<img src="1.png" alt="شهادة الخبرة المهنية من القوات المسلحة المصرية - صلاح منصور" loading="lazy" decoding="async">' +
           '<p>شهادة خبرة مهنية معتمدة من القوات المسلحة المصرية (<span class="date-ltr">2018/09/01</span> إلى <span class="date-ltr">2020/09/01</span>) — اضغط للتكبير</p>' +
         '</div>';
         return;
@@ -1284,100 +1190,43 @@
       cardEl.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     }
 
-    /* السحب التلقائي لجميع المقالات من articles.json ومستودع جيت هاب معاً */
-    (async function syncAutoArticlesAndGallery() {
-      var allSliderImages = [];
+    /* التحميل الخفيف الفائق السرعة من ملف articles.json فقط */
+    (async function loadFastArticlesAndGallery() {
+      var allSliderImages = CONFIG.galleryImages.slice();
       var articlesHtml = "";
-      var addedUrls = {};
 
-      /* 1. الجلب الفوري من ملف articles.json */
       try {
-        var jsonRes = await fetch("articles.json?v=" + Date.now());
+        var jsonRes = await fetch("articles.json");
         if (jsonRes.ok) {
           var jsonArticles = await jsonRes.json();
           if (Array.isArray(jsonArticles)) {
             jsonArticles.forEach(function(art) {
-              if (art.url && !addedUrls[art.url]) {
-                addedUrls[art.url] = true;
-                var imgSrc = art.image || "١٠.jpg";
-                articlesHtml += '<div class="s-card">' +
-                  '<img class="s-card-cover" src="' + imgSrc + '" alt="' + art.title + '" loading="lazy">' +
-                  '<div class="s-card-body">' +
-                    '<div>' +
-                      '<div class="article-stars-badge"><span class="article-stars-icons">★★★★★</span></div>' +
-                      '<h3>' + art.title + '</h3>' +
-                      '<p>' + (art.desc || "") + '</p>' +
-                    '</div>' +
-                    '<a href="' + art.url + '" class="s-card-link">قراءة التفاصيل ومشاهدة الصور &rsaquo;</a>' +
-                  '</div>' +
-                '</div>';
+              var imgSrc = art.image || "١٠.jpg";
+              if (art.image && !allSliderImages.some(function(i) { return i.src === art.image; })) {
+                allSliderImages.push({ src: art.image, title: art.title });
               }
-            });
-          }
-        }
-      } catch (errJson) {}
-
-      /* 2. الفحص التلقائي لملفات المستودع والصور */
-      try {
-        var res = await fetch("https://api.github.com/repos/jawhara-kitchen-jeddah/jawhara-ceramic-jeddah/contents/");
-        var files = await res.json();
-        if (Array.isArray(files)) {
-          files.forEach(function(f) {
-            if (/\.(jpg|jpeg|png|webp)$/i.test(f.name) && f.name !== "1.png") {
-              allSliderImages.push({ src: f.name, title: "أعمال جوهرة جدة لتركيب البورسلين والسيراميك بالليزر" });
-            }
-          });
-          var htmlFiles = files.filter(function(f) { return f.name.endsWith(".html") && f.name !== "index.html"; });
-          for (var i = 0; i < htmlFiles.length; i++) {
-            var file = htmlFiles[i];
-            var pageRes = await fetch(file.name);
-            var text = await pageRes.text();
-            var doc = new DOMParser().parseFromString(text, "text/html");
-            var titleEl = doc.querySelector("h1");
-            var title = titleEl ? titleEl.innerText : file.name;
-            var imgs = doc.querySelectorAll(".article-img, img");
-            var coverImg = allSliderImages.length > 0 ? allSliderImages[0].src : "1.png";
-            for (var m = 0; m < imgs.length; m++) {
-              var s = imgs[m].getAttribute("src");
-              if (s && s.indexOf("http") !== 0 && s !== "1.png") {
-                coverImg = s;
-                var existing = allSliderImages.find(function(item) { return item.src === s; });
-                if (existing) {
-                  existing.title = imgs[m].getAttribute("alt") || title;
-                } else {
-                  allSliderImages.push({ src: s, title: imgs[m].getAttribute("alt") || title });
-                }
-              }
-            }
-            if (!addedUrls[file.name]) {
-              addedUrls[file.name] = true;
-              var pEl = doc.querySelector("p");
-              var excerpt = pEl ? pEl.innerText.slice(0, 120) + "..." : "";
               articlesHtml += '<div class="s-card">' +
-                '<img class="s-card-cover" src="' + coverImg + '" alt="' + title + '" loading="lazy">' +
+                '<img class="s-card-cover" src="' + imgSrc + '" alt="' + art.title + '" loading="lazy" decoding="async">' +
                 '<div class="s-card-body">' +
                   '<div>' +
                     '<div class="article-stars-badge"><span class="article-stars-icons">★★★★★</span></div>' +
-                    '<h3>' + title + '</h3>' +
-                    '<p>' + excerpt + '</p>' +
+                    '<h3>' + art.title + '</h3>' +
+                    '<p>' + (art.desc || "") + '</p>' +
                   '</div>' +
-                  '<a href="' + file.name + '" class="s-card-link">قراءة التفاصيل ومشاهدة الصور &rsaquo;</a>' +
+                  '<a href="' + art.url + '" class="s-card-link">قراءة التفاصيل ومشاهدة الصور &rsaquo;</a>' +
                 '</div>' +
               '</div>';
-            }
+            });
           }
         }
       } catch (e) {}
 
-      if (allSliderImages.length === 0 && CONFIG.galleryImages) {
-        allSliderImages = CONFIG.galleryImages;
-      }
       var track = document.getElementById("homeGallerySlider");
       if (track && allSliderImages.length > 0) {
         var sliderHtml = "";
         allSliderImages.forEach(function(img) {
           sliderHtml += '<div class="slide-card" onclick="openLightbox(\'' + img.src + '\')">' +
-            '<img src="' + img.src + '" alt="' + img.title + '" loading="lazy">' +
+            '<img src="' + img.src + '" alt="' + img.title + '" loading="lazy" decoding="async">' +
             '<div class="slide-card-title">' + img.title + '</div>' +
           '</div>';
         });

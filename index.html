@@ -41,7 +41,7 @@
       color: var(--text);
       line-height: 1.85;
       overflow-x: hidden;
-      padding-bottom: 66px;
+      padding-bottom: 135px;
     }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
@@ -163,6 +163,7 @@
       font-weight: 800;
     }
     .cert-info h1, .cert-info h2 { font-size: 20px; color: var(--blue-dark); margin-bottom: 10px; font-weight: 900; }
+    .date-ltr { direction: ltr; unicode-bidi: embed; display: inline-block; font-weight: 900; }
     .check-list { list-style: none; }
     .check-list li { padding: 6px 0; font-size: 15px; display: flex; align-items: flex-start; gap: 8px; }
     .check-icon { color: var(--green); font-weight: 900; }
@@ -491,30 +492,30 @@
       direction: ltr;
       letter-spacing: 0.5px;
     }
+    /* صندوق التعليقات الثابت أسفل الشاشة بحركة دائرية مستمرة ونقطتين للتنقل */
     .fb-review-toast {
       position: fixed;
-      bottom: 66px;
+      bottom: 64px;
       right: 12px;
       left: 64px;
-      max-width: 375px;
+      max-width: 390px;
       margin: 0 auto;
       background: #ffffff;
       border-radius: 14px;
-      padding: 8px 11px;
+      padding: 8px 12px;
       box-shadow: 0 8px 22px rgba(11, 61, 117, 0.22);
       border: 1px solid #bfdbfe;
       border-right: 4px solid var(--fb-blue);
       z-index: 1050;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(14px);
-      transition: opacity 0.35s ease, transform 0.35s ease;
+      opacity: 1;
+      pointer-events: auto;
+      touch-action: pan-y;
+      user-select: none;
     }
-    .fb-review-toast.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
     .fb-review-top { display: flex; align-items: center; gap: 9px; margin-bottom: 4px; }
     .fb-avatar {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       overflow: hidden;
       background: #e2e8f0;
@@ -526,7 +527,7 @@
     }
     .fb-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .fb-user-line { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 6px; overflow: hidden; }
-    .fb-user-name { font-size: 13px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+    .fb-user-name { font-size: 12.5px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
     .fb-verified {
       background: var(--fb-blue);
       color: var(--white);
@@ -538,20 +539,37 @@
       align-items: center;
       justify-content: center;
     }
-    .fb-stars { color: #f59e0b; font-size: 12px; letter-spacing: 0.5px; flex-shrink: 0; }
-    .fb-comment-body { background: #f1f5f9; border-radius: 8px; padding: 5px 9px; font-size: 12.5px; color: #1e293b; line-height: 1.45; }
-    .fb-toast-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 5px; padding-top: 4px; border-top: 1px solid #e2e8f0; }
-    .fb-arrow-btn {
-      background: var(--blue-light);
-      color: var(--blue-dark);
-      border: 1px solid #bfdbfe;
-      border-radius: 6px;
-      padding: 2px 12px;
-      font-size: 11.5px;
-      font-weight: 800;
-      cursor: pointer;
+    .fb-stars { color: #f59e0b; font-size: 11.5px; letter-spacing: 0.5px; flex-shrink: 0; }
+    .fb-comment-body {
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 5px 9px;
+      font-size: 12.5px;
+      color: #1e293b;
+      line-height: 1.45;
+      transition: opacity 0.2s ease;
     }
-    .fb-arrow-btn:hover { background: var(--blue-card); color: #fff; }
+    .fb-toast-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .fb-dot-btn {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: none;
+      background: #cbd5e1;
+      cursor: pointer;
+      padding: 0;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .fb-dot-btn.active {
+      background: var(--fb-blue);
+      transform: scale(1.25);
+    }
     .sticky-bottom-bar {
       position: fixed;
       bottom: 0;
@@ -712,7 +730,7 @@
           </div>
           <div class="cert-info">
             <h1>شهادة الخبرة والاعتماد المهني</h1>
-            <p style="font-size:14.5px;color:var(--blue-mid);font-weight:800;margin-bottom:8px;">الفني صلاح منصور — حاصل على شهادة خبرة مهنية معتمدة من القوات المسلحة المصرية خلال الفترة من 1/9/2018 إلى 1/9/2020</p>
+            <p style="font-size:14.5px;color:var(--blue-mid);font-weight:800;margin-bottom:8px;">الفني صلاح منصور — حاصل على شهادة خبرة مهنية معتمدة من القوات المسلحة المصرية خلال الفترة من <span class="date-ltr">2018/09/01</span> إلى <span class="date-ltr">2020/09/01</span></p>
             <ul class="check-list">
               <li><span class="check-icon">✔</span> وزن كامل للأرضيات والحوائط بالليزر قبل وأثناء التركيب</li>
               <li><span class="check-icon">✔</span> منع تطبيل البلاط وضمان امتلاء الغراء أسفل كل قطعة</li>
@@ -983,22 +1001,22 @@
     </div>
   </footer>
 
-  <!-- صندوق التعليقات العائم بدون عداد وبدون تواريخ وبـ 200 تعليق متنوع -->
+  <!-- صندوق التعليقات الثابت أسفل الشاشةبحركة دائرية مستمرة ونقطتين للتمرير يمين ويسار وبدون ذكر العدد -->
   <div class="fb-review-toast" id="fbReviewToast" aria-live="polite">
     <div class="fb-review-top">
       <div class="fb-avatar" id="fbReviewAvatar"></div>
       <div class="fb-user-line">
         <div class="fb-user-name">
-          <span id="fbReviewName">Mohammed Al-Harbi</span>
+          <span id="fbReviewName">أبو فيصل الزهراني</span>
           <span class="fb-verified">✓</span>
         </div>
         <span class="fb-stars" id="fbReviewStars">★★★★★</span>
       </div>
     </div>
     <div class="fb-comment-body" id="fbReviewText"></div>
-    <div class="fb-toast-controls">
-      <button type="button" class="fb-arrow-btn" onclick="prevToastReview()">&#8594; السابق</button>
-      <button type="button" class="fb-arrow-btn" onclick="nextToastReview()">التالي &#8592;</button>
+    <div class="fb-toast-dots">
+      <button type="button" class="fb-dot-btn active" id="fbDotRight" onclick="prevToastReview()" aria-label="السابق"></button>
+      <button type="button" class="fb-dot-btn" id="fbDotLeft" onclick="nextToastReview()" aria-label="التالي"></button>
     </div>
   </div>
 
@@ -1047,7 +1065,6 @@
       "https://randomuser.me/api/portraits/men/14.jpg"
     ];
 
-    /* توليد 200 تعليق متنوع (ثلثها بأحياء جدة والباقي عام لجميع تخصصات البورسلين والسيراميك والرخام) */
     var REVIEW_NAMES = [
       "أبو فيصل الزهراني", "Tariq Al-Ghamdi", "خالد الحربي", "Mohammed Al-Otaibi", "سعيد الشهري",
       "Faisal Bin Mahfouz", "عبدالرحمن المالكي", "Omar Al-Sulaimani", "ماجد القحطاني", "Yasser Al-Harthi",
@@ -1078,7 +1095,7 @@
       "البلاط ثابت كأنه صبة واحدة ولا يوجد أي صوت تطبيل نهائياً مع استخدام المشط ذو الحدين والهزاز.",
       "من أفضل الفنيين في جدة لتركيب البورسلين والرخام بالليزر، دقة وأمانة ونظافة في موقع العمل."
     ];
-    var STAR_PATTERNS = ["★★★★★", "★★★★☆", "★★★★★", "★★★½☆", "", "★★★★★", "★★★☆☆", "★★★★☆", "★★★★★", ""];
+    var STAR_PATTERNS = ["★★★★★", "★★★★☆", "★★★★★", "★★★½☆", "★★★★★", "★★★★★", "★★★☆☆", "★★★★☆", "★★★★★", "★★★★☆"];
 
     var REALISTIC_REVIEWS = [];
     for (var rIdx = 0; rIdx < 200; rIdx++) {
@@ -1093,7 +1110,6 @@
       });
     }
 
-    /* قسم الفيديوهات: اتركه فارغاً ليظهر مكانه شهادة الخبرة، وعندما تضيف فيديوهات تظهر تلقائياً */
     var SITE_VIDEOS = [];
 
     var DEFAULT_CONFIG = {
@@ -1171,22 +1187,31 @@
       });
     })();
 
-    /* صندوق التعليقات العائم بدون عداد وبدون تواريخ */
+    /* شريط التعليقات الثابت بحركة دائرية متواصلة ونقطتين للتنقل والسحب باللمس */
     var toastIndex = 0;
     var toastTimer = null;
     function renderToastReview(idx) {
-      var toast = document.getElementById("fbReviewToast");
       var avatarEl = document.getElementById("fbReviewAvatar");
       var nameEl = document.getElementById("fbReviewName");
       var starsEl = document.getElementById("fbReviewStars");
       var textEl = document.getElementById("fbReviewText");
-      if (!toast || !REALISTIC_REVIEWS || REALISTIC_REVIEWS.length === 0) return;
+      var dotR = document.getElementById("fbDotRight");
+      var dotL = document.getElementById("fbDotLeft");
+      if (!REALISTIC_REVIEWS || REALISTIC_REVIEWS.length === 0) return;
       var item = REALISTIC_REVIEWS[idx];
       avatarEl.innerHTML = '<img src="' + item.photo + '" alt="' + item.name + '">';
       nameEl.textContent = item.name;
       starsEl.textContent = item.stars;
       textEl.textContent = item.text;
-      toast.classList.add("show");
+      if (dotR && dotL) {
+        if (idx % 2 === 0) {
+          dotR.classList.add("active");
+          dotL.classList.remove("active");
+        } else {
+          dotL.classList.add("active");
+          dotR.classList.remove("active");
+        }
+      }
     }
     function nextToastReview() {
       toastIndex = (toastIndex + 1) % REALISTIC_REVIEWS.length;
@@ -1203,13 +1228,26 @@
       toastTimer = setInterval(function() {
         toastIndex = (toastIndex + 1) % REALISTIC_REVIEWS.length;
         renderToastReview(toastIndex);
-      }, 10000);
+      }, 6500);
     }
     (function initFacebookReviewsLoop() {
-      setTimeout(function() {
-        renderToastReview(0);
-        resetToastInterval();
-      }, 1200);
+      renderToastReview(0);
+      resetToastInterval();
+      var toastBox = document.getElementById("fbReviewToast");
+      var startX = 0;
+      if (toastBox) {
+        toastBox.addEventListener("touchstart", function(e) {
+          startX = e.touches[0].clientX;
+        }, { passive: true });
+        toastBox.addEventListener("touchend", function(e) {
+          var endX = e.changedTouches[0].clientX;
+          if (startX - endX > 30) {
+            nextToastReview();
+          } else if (endX - startX > 30) {
+            prevToastReview();
+          }
+        }, { passive: true });
+      }
     })();
 
     function scrollGallery(offset) {
@@ -1217,7 +1255,6 @@
       if (track) track.scrollBy({ left: offset, behavior: "smooth" });
     }
 
-    /* قسم الفيديوهات: يعرض شهادة الخبرة في حال عدم وجود فيديوهات، ويعرض الفيديوهات عند إضافتها */
     (function initLazyVideos() {
       var vGrid = document.getElementById("homeVideosGrid");
       var titleEl = document.getElementById("videosSectionTitle");
@@ -1227,7 +1264,7 @@
         vGrid.className = "";
         vGrid.innerHTML = '<div class="video-cert-placeholder" onclick="openLightbox(\'1.png\')">' +
           '<img src="1.png" alt="شهادة الخبرة المهنية من القوات المسلحة المصرية - صلاح منصور">' +
-          '<p>شهادة خبرة مهنية معتمدة من القوات المسلحة المصرية (من 1/9/2018 إلى 1/9/2020) — اضغط للتكبير</p>' +
+          '<p>شهادة خبرة مهنية معتمدة من القوات المسلحة المصرية (<span class="date-ltr">2018/09/01</span> إلى <span class="date-ltr">2020/09/01</span>) — اضغط للتكبير</p>' +
         '</div>';
         return;
       }
@@ -1247,10 +1284,40 @@
       cardEl.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     }
 
-    /* السحب التلقائي لجميع المقالات والصور من مستودع جيت هاب */
+    /* السحب التلقائي لجميع المقالات من articles.json ومستودع جيت هاب معاً */
     (async function syncAutoArticlesAndGallery() {
       var allSliderImages = [];
       var articlesHtml = "";
+      var addedUrls = {};
+
+      /* 1. الجلب الفوري من ملف articles.json */
+      try {
+        var jsonRes = await fetch("articles.json?v=" + Date.now());
+        if (jsonRes.ok) {
+          var jsonArticles = await jsonRes.json();
+          if (Array.isArray(jsonArticles)) {
+            jsonArticles.forEach(function(art) {
+              if (art.url && !addedUrls[art.url]) {
+                addedUrls[art.url] = true;
+                var imgSrc = art.image || "١٠.jpg";
+                articlesHtml += '<div class="s-card">' +
+                  '<img class="s-card-cover" src="' + imgSrc + '" alt="' + art.title + '" loading="lazy">' +
+                  '<div class="s-card-body">' +
+                    '<div>' +
+                      '<div class="article-stars-badge"><span class="article-stars-icons">★★★★★</span></div>' +
+                      '<h3>' + art.title + '</h3>' +
+                      '<p>' + (art.desc || "") + '</p>' +
+                    '</div>' +
+                    '<a href="' + art.url + '" class="s-card-link">قراءة التفاصيل ومشاهدة الصور &rsaquo;</a>' +
+                  '</div>' +
+                '</div>';
+              }
+            });
+          }
+        }
+      } catch (errJson) {}
+
+      /* 2. الفحص التلقائي لملفات المستودع والصور */
       try {
         var res = await fetch("https://api.github.com/repos/jawhara-kitchen-jeddah/jawhara-ceramic-jeddah/contents/");
         var files = await res.json();
@@ -1282,19 +1349,22 @@
                 }
               }
             }
-            var pEl = doc.querySelector("p");
-            var excerpt = pEl ? pEl.innerText.slice(0, 120) + "..." : "";
-            articlesHtml += '<div class="s-card">' +
-              '<img class="s-card-cover" src="' + coverImg + '" alt="' + title + '" loading="lazy">' +
-              '<div class="s-card-body">' +
-                '<div>' +
-                  '<div class="article-stars-badge"><span class="article-stars-icons">★★★★★</span></div>' +
-                  '<h3>' + title + '</h3>' +
-                  '<p>' + excerpt + '</p>' +
+            if (!addedUrls[file.name]) {
+              addedUrls[file.name] = true;
+              var pEl = doc.querySelector("p");
+              var excerpt = pEl ? pEl.innerText.slice(0, 120) + "..." : "";
+              articlesHtml += '<div class="s-card">' +
+                '<img class="s-card-cover" src="' + coverImg + '" alt="' + title + '" loading="lazy">' +
+                '<div class="s-card-body">' +
+                  '<div>' +
+                    '<div class="article-stars-badge"><span class="article-stars-icons">★★★★★</span></div>' +
+                    '<h3>' + title + '</h3>' +
+                    '<p>' + excerpt + '</p>' +
+                  '</div>' +
+                  '<a href="' + file.name + '" class="s-card-link">قراءة التفاصيل ومشاهدة الصور &rsaquo;</a>' +
                 '</div>' +
-                '<a href="' + file.name + '" class="s-card-link">قراءة التفاصيل ومشاهدة الصور &rsaquo;</a>' +
-              '</div>' +
-            '</div>';
+              '</div>';
+            }
           }
         }
       } catch (e) {}

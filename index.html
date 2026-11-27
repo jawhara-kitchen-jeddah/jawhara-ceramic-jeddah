@@ -307,12 +307,11 @@
       cursor: pointer;
     }
 
-    /* شريط التعليقات القابل للسحب بالإصبع بدون أزرار */
+    /* شريط التعليقات الدائري المستمر بالسحب بدون بداية ونهاية */
     .reviews-swipe-track {
       display: flex;
       gap: 14px;
       overflow-x: auto;
-      scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       padding: 6px 2px 12px;
       scrollbar-width: none;
@@ -321,7 +320,6 @@
     .fb-review-slide {
       flex: 0 0 85%;
       max-width: 340px;
-      scroll-snap-align: center;
       background: #ffffff;
       border-radius: 16px;
       padding: 16px;
@@ -331,8 +329,8 @@
     }
     .fb-review-top { display: flex; align-items: center; gap: 11px; margin-bottom: 10px; }
     .fb-avatar {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       overflow: hidden;
       background: #e2e8f0;
@@ -597,7 +595,6 @@
 
   <main id="view-home" class="page-view active-view">
 
-    <!-- 1. شهادة الخبرة في الواجهة مباشرة تحت جوهرة جدة -->
     <section class="section-block" id="certificate-section">
       <div class="container">
         <div class="cert-box">
@@ -619,7 +616,6 @@
       </div>
     </section>
 
-    <!-- 2. أحدث المقالات أسفل شهادة الخبرة مباشرة -->
     <section class="section-block" id="home-auto-articles-section">
       <div class="container">
         <h2 class="section-heading">أحدث المقالات والأدلة الفنية</h2>
@@ -628,7 +624,6 @@
       </div>
     </section>
 
-    <!-- 3. معرض الصور التلقائي (يسحب صور المقالات والمستودع تلقائياً بدون تكرار وبالتحميل الكسول) -->
     <section class="section-block" id="gallery-section">
       <div class="container">
         <h2 class="section-heading">معرض الصور وأحدث أعمالنا في جدة</h2>
@@ -639,7 +634,6 @@
       </div>
     </section>
 
-    <!-- 4. الواجهة الترحيبية وخدماتنا المنظمة -->
     <section class="section-block" id="home-services-section">
       <div class="container">
         <div class="hero-banner" style="margin-bottom:22px;">
@@ -678,16 +672,14 @@
       </div>
     </section>
 
-    <!-- 5. آراء وتقييمات العملاء (سحب بالإصبع يمين ويسار بدون أزرار وبالتحميل الكسول) -->
     <section class="section-block" id="reviews-section">
       <div class="container">
         <h2 class="section-heading">آراء وتقييمات عملائنا في جدة</h2>
-        <p class="section-sub">اسحب بإصبعك يميناً ويساراً لقراءة تجارب العملاء في أحياء جدة</p>
+        <p class="section-sub">اسحب بإصبعك يميناً ويساراً</p>
         <div class="reviews-swipe-track" id="homeReviewsTrack"></div>
       </div>
     </section>
 
-    <!-- 6. الأسئلة الشائعة -->
     <section class="section-block">
       <div class="container">
         <div class="faq-section">
@@ -882,21 +874,21 @@
     };
 
     var REALISTIC_REVIEWS = [
-      { name: "أبو فيصل الزهراني - أبحر الشمالية", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/11.jpg", text: "شغل مرتب ودقيق جداً في تركيب بورسلين الأرضيات بالليزر وبدون أي تطبيل أو فراغات تحت البلاط." },
-      { name: "طارق الغامدي - حي الشاطئ", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/12.jpg", text: "التزام تام بالمواعيد واستخدام احترافي للكلبسات الأمريكية والغراء المرن في بورسلين 120×60 للحوائط." },
-      { name: "خالد الحربي - حي الحمدانية", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/15.jpg", text: "نفذ لي حوائط 4 حمامات في الفيلا مع خورنقات، دقة الشطف 45 درجة خرافية والفواصل خط واحد." },
-      { name: "محمد العتيبي - حي الخالدية", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/19.jpg", text: "أكثر ما أعجبني الأمانة في الشغل واستخدام المشط ذو الحدين لتعبئة الغراء بالكامل خلف البلاط." },
-      { name: "سعيد الشهري - حي الشاطئ", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/21.jpg", text: "فني فاهم شغله صح، ضبط لي ميول أرضية الحمامات والمطابخ بحيث تصرف المياه بسلاسة تامة." },
-      { name: "فيصل بن محفوظ - حي الروضة", stars: "★★★☆☆", photo: "https://randomuser.me/api/portraits/men/24.jpg", text: "تعاملت مع جوهرة جدة في تركيب سيراميك المطبخ والحمامات، أخذ يوم زيادة للتدقيق لكن النتيجة ممتازة." },
-      { name: "عبدالرحمن المالكي - حي الخالدية", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/28.jpg", text: "استلمت الأرضيات بالقدة وميزان الليزر قبل الترويبة، ما شاء الله تبارك الله ولا غلطة في الزوايا." },
-      { name: "عمر السليماني - حي السلامة", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/31.jpg", text: "ركب لي سلابات رخام وبورسلين كبيرة في الصالة مع تطابق العروق، شغل احترافي بكل معنى الكلمة." },
-      { name: "ماجد القحطاني - حي السلامة", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/34.jpg", text: "فرق كبير بين شغل الليزر والهزاز وبين الشغل العادي، الأرضية طالعة كأنها قطعة واحدة مستوية." },
-      { name: "ياسر الحارثي - حي الصفا", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/36.jpg", text: "دقة عالية في قص فتحات السباكة والكهرباء وعلب الأفياش بدون أي كسر أو تشويه للبلاطة." },
-      { name: "سلطان العتيبي - حي الصفا", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/41.jpg", text: "الأخ صلاح محترم وأمين، نصحني بنوع الغراء المناسب للبورسلين وطلع الشغل فوق الممتاز." },
-      { name: "أحمد باجابر - حي مشرف", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/43.jpg", text: "تم تنفيذ خورنقات الشامبو في الحمام الرئيسي مع زوايا ستانلس، الفينش النهائي نظيف ومرتب." },
-      { name: "نايف السلمي - حي مشرف", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/47.jpg", text: "دقة جوهرة جدة في وزن البلاط بالليزر ومنع التطبيل لا يعلى عليها في جدة، أنصح بالتعامل معهم." },
-      { name: "سامي الجهني - حي المروة", stars: "★★★☆☆", photo: "https://randomuser.me/api/portraits/men/51.jpg", text: "شغل يبيض الوجه وتنفيذ دقيق لكل تفاصيل المخطط الهندسي." },
-      { name: "تركي الدوسري - حي الروضة", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/54.jpg", text: "ركب لي بورسلين الدرج والمداخل والاحواش بتشطيب متين وميول مدروسة لتصريف مياه الأمطار." }
+      { name: "أبو فيصل الزهراني", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/1.jpg", text: "شغل مرتب ودقيق جداً في تركيب بورسلين الأرضيات بالليزر وبدون أي تطبيل أو فراغات تحت البلاط" },
+      { name: "طارق الغامدي - حي الشاطئ", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/2.jpg", text: "التزام تام بالمواعيد واستخدام احترافي للكلبسات الأمريكية والغراء المرن في بورسلين الحوائط" },
+      { name: "خالد الحربي", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/3.jpg", text: "نفذ لي حوائط الحمامات في الفيلا مع خورنقات دقة الشطف ممتازة والفواصل خط واحد" },
+      { name: "محمد العتيبي - حي الخالدية", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/4.jpg", text: "أكثر ما أعجبني الأمانة في الشغل واستخدام المشط ذو الحدين لتعبئة الغراء بالكامل خلف البلاط" },
+      { name: "سعيد الشهري", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/5.jpg", text: "فني فاهم شغله صح ضبط لي ميول أرضية الحمامات والمطابخ بحيث تصرف المياه بسلاسة تامة" },
+      { name: "فيصل بن محفوظ - حي الروضة", stars: "★★★☆☆", photo: "https://randomuser.me/api/portraits/men/6.jpg", text: "تعاملت مع جوهرة جدة في تركيب سيراميك المطبخ والحمامات أخذ يوم زيادة للتدقيق لكن النتيجة ممتازة" },
+      { name: "عبدالرحمن المالكي", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/7.jpg", text: "استلمت الأرضيات بالقدة وميزان الليزر قبل الترويبة ما شاء الله تبارك الله ولا غلطة في الزوايا" },
+      { name: "عمر السليماني - حي السلامة", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/8.jpg", text: "ركب لي سلابات رخام وبورسلين كبيرة في الصالة مع تطابق العروق شغل احترافي بكل معنى الكلمة" },
+      { name: "ماجد القحطاني", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/9.jpg", text: "فرق كبير بين شغل الليزر والهزاز وبين الشغل العادي الأرضية طالعة كأنها قطعة واحدة مستوية" },
+      { name: "ياسر الحارثي - حي الصفا", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/10.jpg", text: "دقة عالية في قص فتحات السباكة والكهرباء وعلب الأفياش بدون أي كسر أو تشويه للبلاطة" },
+      { name: "سلطان العتيبي", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/11.jpg", text: "الأخ صلاح محترم وأمين نصحني بنوع الغراء المناسب للبورسلين وطلع الشغل فوق الممتاز" },
+      { name: "أحمد باجابر - حي مشرف", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/12.jpg", text: "تم تنفيذ خورنقات الشامبو في الحمام الرئيسي مع زوايا ستانلس الفينش النهائي نظيف ومرتب" },
+      { name: "نايف السلمي", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/13.jpg", text: "دقة جوهرة جدة في وزن البلاط بالليزر ومنع التطبيل لا يعلى عليها أنصح بالتعامل معهم" },
+      { name: "سامي الجهني - حي الحمدانية", stars: "★★★☆☆", photo: "https://randomuser.me/api/portraits/men/14.jpg", text: "شغل يبيض الوجه وتنفيذ دقيق لكل تفاصيل المخطط الهندسي" },
+      { name: "تركي الدوسري", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/15.jpg", text: "ركب لي بورسلين الدرج والمداخل والأحواش بتشطيب متين وميول مدروسة لتصريف المياه" }
     ];
 
     var CONFIG = {
@@ -950,9 +942,7 @@
       });
     })();
 
-    function renderReviewsTrack() {
-      var track = document.getElementById("homeReviewsTrack");
-      if (!track) return;
+    function buildReviewsSetHtml() {
       var html = "";
       REALISTIC_REVIEWS.forEach(function(item) {
         html += '<div class="fb-review-slide">' +
@@ -966,10 +956,31 @@
           '<div class="fb-comment-body">' + item.text + '</div>' +
         '</div>';
       });
-      track.innerHTML = html;
+      return html;
     }
 
-    /* سحب جميع صور الأعمال تلقائياً من مستودع جيت هاب بدون تكرار */
+    function renderReviewsTrack() {
+      var track = document.getElementById("homeReviewsTrack");
+      if (!track) return;
+      var oneSet = buildReviewsSetHtml();
+      track.innerHTML = oneSet + oneSet + oneSet;
+
+      setTimeout(function() {
+        var setWidth = track.scrollWidth / 3;
+        if (setWidth > 0) {
+          track.scrollLeft = -setWidth;
+          track.addEventListener("scroll", function() {
+            var sl = track.scrollLeft;
+            if (sl > -15) {
+              track.scrollLeft = sl - setWidth;
+            } else if (Math.abs(sl) >= (setWidth * 2) - 15) {
+              track.scrollLeft = sl + setWidth;
+            }
+          }, { passive: true });
+        }
+      }, 80);
+    }
+
     async function loadAutoGalleryOnDemand() {
       if (galleryLoaded) return;
       galleryLoaded = true;
@@ -1031,7 +1042,6 @@
       }
     }
 
-    /* التحميل الكسول: لا يحمّل المعرض أو التعليقات إلا عند وصول العميل إليها */
     (function initLazyViewportObserver() {
       var articlesSec = document.getElementById("home-auto-articles-section");
       var gallerySec = document.getElementById("gallery-section");

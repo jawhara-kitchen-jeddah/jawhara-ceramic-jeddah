@@ -130,8 +130,10 @@
       background: linear-gradient(155deg, #0b3d75 0%, #1565c0 100%);
       color: var(--white);
       text-align: center;
-      padding: 36px 16px 32px;
+      padding: 28px 16px 26px;
       border-bottom: 4px solid var(--gold);
+      border-radius: 18px;
+      margin-top: 12px;
     }
     .hero-badge {
       display: inline-block;
@@ -144,18 +146,18 @@
       font-weight: 800;
       margin-bottom: 10px;
     }
-    .hero-banner h1 {
-      font-size: clamp(22px, 5vw, 34px);
+    .hero-banner h1, .hero-banner h2 {
+      font-size: clamp(20px, 4.8vw, 30px);
       font-weight: 900;
       line-height: 1.4;
       max-width: 780px;
       margin: 0 auto 10px;
     }
     .hero-banner p {
-      font-size: 15.5px;
+      font-size: 15px;
       color: #eff6ff;
       max-width: 680px;
-      margin: 0 auto 18px;
+      margin: 0 auto 16px;
     }
     .hero-cta-row {
       display: flex;
@@ -177,7 +179,7 @@
     .hero-btn-call { background: var(--white); color: var(--blue-dark); }
     .hero-btn-wa { background: var(--green); color: var(--white); }
 
-    .section-block { padding: 26px 0 12px; }
+    .section-block { padding: 20px 0 10px; }
     .section-heading {
       text-align: center;
       font-size: clamp(20px, 4.4vw, 26px);
@@ -189,27 +191,15 @@
       text-align: center;
       font-size: 14.5px;
       color: var(--muted);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .slider-container { position: relative; overflow: hidden; background: var(--white); border-radius: 18px; padding: 14px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(11, 61, 117, 0.05); }
-    .slider-track { display: flex; gap: 14px; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; }
+    .slider-track { display: flex; gap: 14px; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     .slider-track::-webkit-scrollbar { display: none; }
-    .slide-card { flex: 0 0 265px; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: var(--bg); cursor: pointer; }
-    .slide-card img { width: 100%; height: 195px; object-fit: cover; }
-    .slide-card-title { padding: 9px 12px; font-size: 14px; font-weight: 700; color: var(--blue-dark); text-align: center; }
-    .gallery-nav-controls { display: flex; justify-content: center; gap: 12px; margin-top: 12px; }
-    .gallery-nav-btn {
-      background: var(--blue-dark);
-      color: var(--white);
-      border: none;
-      padding: 7px 18px;
-      border-radius: 50px;
-      font-size: 13.5px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-    .gallery-nav-btn:hover { background: var(--blue-mid); }
+    .slide-card { flex: 0 0 250px; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: var(--bg); cursor: pointer; }
+    .slide-card img { width: 100%; height: 185px; object-fit: cover; }
+    .slide-card-title { padding: 9px 12px; font-size: 13.5px; font-weight: 700; color: var(--blue-dark); text-align: center; }
 
     .services-grid-clean {
       display: grid;
@@ -242,12 +232,12 @@
       background: var(--white);
       border-radius: 18px;
       padding: 20px;
-      border: 1px solid var(--border);
+      border: 2px solid var(--blue-light);
       display: grid;
       grid-template-columns: 1fr 1.25fr;
       gap: 20px;
       align-items: center;
-      box-shadow: 0 4px 16px rgba(11, 61, 117, 0.05);
+      box-shadow: 0 6px 20px rgba(11, 61, 117, 0.07);
     }
     .cert-preview {
       background: var(--bg);
@@ -271,7 +261,7 @@
       font-size: 13px;
       font-weight: 800;
     }
-    .cert-info h2 { font-size: 20px; color: var(--blue-dark); margin-bottom: 8px; font-weight: 900; }
+    .cert-info h1, .cert-info h2 { font-size: 21px; color: var(--blue-dark); margin-bottom: 8px; font-weight: 900; }
     .date-ltr { direction: ltr; unicode-bidi: embed; display: inline-block; font-weight: 900; }
     .check-list { list-style: none; }
     .check-list li { padding: 5px 0; font-size: 14.5px; display: flex; align-items: flex-start; gap: 8px; }
@@ -317,22 +307,32 @@
       cursor: pointer;
     }
 
-    .fb-review-card-static {
-      max-width: 640px;
-      margin: 0 auto;
+    /* شريط التعليقات القابل للسحب بالإصبع بدون أزرار */
+    .reviews-swipe-track {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 6px 2px 12px;
+      scrollbar-width: none;
+    }
+    .reviews-swipe-track::-webkit-scrollbar { display: none; }
+    .fb-review-slide {
+      flex: 0 0 85%;
+      max-width: 340px;
+      scroll-snap-align: center;
       background: #ffffff;
-      border-radius: 18px;
-      padding: 18px 20px;
-      box-shadow: 0 6px 22px rgba(11, 61, 117, 0.08);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 16px rgba(11, 61, 117, 0.07);
       border: 1px solid #bfdbfe;
-      border-right: 5px solid var(--fb-blue);
-      touch-action: pan-y;
-      user-select: none;
+      border-right: 4px solid var(--fb-blue);
     }
     .fb-review-top { display: flex; align-items: center; gap: 11px; margin-bottom: 10px; }
     .fb-avatar {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       overflow: hidden;
       background: #e2e8f0;
@@ -343,14 +343,14 @@
       border: 2px solid #bfdbfe;
     }
     .fb-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .fb-user-line { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
-    .fb-user-name { font-size: 15px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 5px; }
+    .fb-user-line { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+    .fb-user-name { font-size: 14.5px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 5px; }
     .fb-verified {
       background: var(--fb-blue);
       color: var(--white);
       font-size: 10px;
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
@@ -360,31 +360,10 @@
     .fb-comment-body {
       background: #f1f5f9;
       border-radius: 12px;
-      padding: 12px 14px;
-      font-size: 14.5px;
+      padding: 11px 13px;
+      font-size: 14px;
       color: #1e293b;
       line-height: 1.75;
-    }
-    .fb-nav-bar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      margin-top: 14px;
-    }
-    .fb-nav-btn {
-      background: var(--blue-light);
-      color: var(--blue-dark);
-      border: 1px solid #bfdbfe;
-      padding: 7px 20px;
-      border-radius: 50px;
-      font-size: 13.5px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-    .fb-nav-btn:hover, .fb-nav-btn:active {
-      background: var(--blue-card);
-      color: #ffffff;
     }
 
     .faq-section {
@@ -608,9 +587,9 @@
 
     <nav class="nav-drawer" id="navDrawer">
       <a href="#home" class="active-link" onclick="switchView('home')">الرئيسية</a>
+      <a href="#home-auto-articles-section" onclick="switchView('home')">المقالات</a>
       <a href="#gallery-section" onclick="switchView('home')">معرض الأعمال</a>
       <a href="#services" onclick="switchView('services')">خدماتنا</a>
-      <a href="#articles" onclick="switchView('articles')">المقالات</a>
       <a href="#about" onclick="switchView('about')">من نحن</a>
       <a href="#contact-footer" onclick="closeDrawer()">تواصل معنا</a>
     </nav>
@@ -618,37 +597,61 @@
 
   <main id="view-home" class="page-view active-view">
 
-    <!-- 1. الواجهة الترحيبية الخفيفة الفورية -->
-    <section class="hero-banner">
+    <!-- 1. شهادة الخبرة في الواجهة مباشرة تحت جوهرة جدة -->
+    <section class="section-block" id="certificate-section">
       <div class="container">
-        <span class="hero-badge">فني متخصص في جميع أحياء جدة</span>
-        <h1>تركيب السيراميك والبورسلين والرخام بالليزر في جدة</h1>
-        <p>وزن كامل بالليزر والهزاز الميكانيكي والكلبسات الأمريكية لضمان استقامة البلاط بالملي ومنع التطبيل تماماً</p>
-        <div class="hero-cta-row">
-          <a href="tel:0561201914" class="hero-btn hero-btn-call js-phone-link">📞 اتصل للمعاينة <span class="js-phone-text">0561201914</span></a>
-          <a href="#" class="hero-btn hero-btn-wa js-wa-link" target="_blank" rel="noopener">💬 تواصل واتساب</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. معرض الصور (يتم تحميل صوره عند وصول العميل إليه فقط) -->
-    <section class="section-block" id="gallery-section">
-      <div class="container">
-        <h2 class="section-heading">معرض الصور وأحدث أعمالنا في جدة</h2>
-        <p class="section-sub">نماذج حية من تنفيذ البورسلين والسيراميك وخورنقات الحمامات بالليزر</p>
-        <div class="slider-container">
-          <div class="slider-track" id="homeGallerySlider"></div>
-          <div class="gallery-nav-controls">
-            <button type="button" class="gallery-nav-btn" onclick="scrollGallery(280)">&#8594; السابق</button>
-            <button type="button" class="gallery-nav-btn" onclick="scrollGallery(-280)">التالي &#8592;</button>
+        <div class="cert-box">
+          <div class="cert-preview" id="certImageContainer" onclick="openLightbox('1.png')">
+            <img src="1.png" alt="شهادة الخبرة المهنية جوهرة جدة" loading="eager" decoding="async">
+            <span class="cert-zoom-btn">🔍 اضغط لفتح وتكبير شهادة الخبرة</span>
+          </div>
+          <div class="cert-info">
+            <h1>شهادة الخبرة والاعتماد المهني — جوهرة جدة</h1>
+            <p style="font-size:14.5px;color:var(--blue-mid);font-weight:800;margin-bottom:8px;">الفني صلاح منصور — حاصل على شهادة خبرة مهنية معتمدة من القوات المسلحة المصرية خلال الفترة من <span class="date-ltr">2018/09/01</span> إلى <span class="date-ltr">2020/09/01</span></p>
+            <ul class="check-list">
+              <li><span class="check-icon">✔</span> وزن كامل للأرضيات والحوائط بالليزر قبل وأثناء التركيب</li>
+              <li><span class="check-icon">✔</span> استخدام المشط ذو الحدين والهزاز لمنع تطبيل البلاط تماماً</li>
+              <li><span class="check-icon">✔</span> قص نظيف للزوايا والفتحات بدون تكسير أو تشويه</li>
+              <li><span class="check-icon">✔</span> التزام تام بالمواعيد ونظافة موقع العمل في جميع أحياء جدة</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. خدماتنا المنظمة -->
+    <!-- 2. أحدث المقالات أسفل شهادة الخبرة مباشرة -->
+    <section class="section-block" id="home-auto-articles-section">
+      <div class="container">
+        <h2 class="section-heading">أحدث المقالات والأدلة الفنية</h2>
+        <p class="section-sub">اضغط على أي مقالة لقراءة التفاصيل الكاملة ومشاهدة الصور</p>
+        <div id="homeAutoArticlesGrid" class="services-cards-grid"></div>
+      </div>
+    </section>
+
+    <!-- 3. معرض الصور التلقائي (يسحب صور المقالات والمستودع تلقائياً بدون تكرار وبالتحميل الكسول) -->
+    <section class="section-block" id="gallery-section">
+      <div class="container">
+        <h2 class="section-heading">معرض الصور وأحدث أعمالنا في جدة</h2>
+        <p class="section-sub">اسحب بإصبعك يميناً ويساراً لمشاهدة جميع صور الأعمال المنفذة</p>
+        <div class="slider-container">
+          <div class="slider-track" id="homeGallerySlider"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. الواجهة الترحيبية وخدماتنا المنظمة -->
     <section class="section-block" id="home-services-section">
       <div class="container">
+        <div class="hero-banner" style="margin-bottom:22px;">
+          <span class="hero-badge">فني متخصص في جميع أحياء جدة</span>
+          <h2>تركيب السيراميك والبورسلين والرخام بالليزر في جدة</h2>
+          <p>وزن كامل بالليزر والهزاز الميكانيكي والكلبسات الأمريكية لضمان استقامة البلاط بالملي ومنع التطبيل تماماً</p>
+          <div class="hero-cta-row">
+            <a href="tel:0561201914" class="hero-btn hero-btn-call js-phone-link">📞 اتصل للمعاينة <span class="js-phone-text">0561201914</span></a>
+            <a href="#" class="hero-btn hero-btn-wa js-wa-link" target="_blank" rel="noopener">💬 تواصل واتساب</a>
+          </div>
+        </div>
+
         <h2 class="section-heading">خدمات جوهرة جدة المتخصصة</h2>
         <p class="section-sub">تنفيذ دقيق بأحدث معدات الوزن بالليزر والهزاز لضمان أعلى جودة</p>
         <div class="services-grid-clean">
@@ -675,62 +678,16 @@
       </div>
     </section>
 
-    <!-- 4. شهادة الخبرة (تُحمّل صورتها عند التمرير إليها فقط) -->
-    <section class="section-block" id="certificate-section">
-      <div class="container">
-        <div class="cert-box">
-          <div class="cert-preview" id="certImageContainer" onclick="openLightbox('1.png')">
-            <span class="cert-zoom-btn">🔍 اضغط لفتح وتكبير شهادة الخبرة</span>
-          </div>
-          <div class="cert-info">
-            <h2>شهادة الخبرة والاعتماد المهني</h2>
-            <p style="font-size:14.5px;color:var(--blue-mid);font-weight:800;margin-bottom:8px;">الفني صلاح منصور — حاصل على شهادة خبرة مهنية معتمدة من القوات المسلحة المصرية خلال الفترة من <span class="date-ltr">2018/09/01</span> إلى <span class="date-ltr">2020/09/01</span></p>
-            <ul class="check-list">
-              <li><span class="check-icon">✔</span> وزن كامل للأرضيات والحوائط بالليزر قبل وأثناء التركيب</li>
-              <li><span class="check-icon">✔</span> استخدام المشط ذو الحدين والهزاز لمنع تطبيل البلاط تماماً</li>
-              <li><span class="check-icon">✔</span> قص نظيف للزوايا والفتحات بدون تكسير أو تشويه</li>
-              <li><span class="check-icon">✔</span> التزام تام بالمواعيد ونظافة موقع العمل في جميع أحياء جدة</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. أحدث المقالات (تُسحب من articles.json عند وصول العميل للقسم أو فتح صفحة المقالات فقط) -->
-    <section class="section-block" id="home-auto-articles-section">
-      <div class="container">
-        <h2 class="section-heading">أحدث المقالات والأدلة الفنية</h2>
-        <p class="section-sub">نصائح وشروحات عملية حول اختيار وتركيب البورسلين والسيراميك بالليزر</p>
-        <div id="homeAutoArticlesGrid" class="services-cards-grid"></div>
-      </div>
-    </section>
-
-    <!-- 6. آراء وتقييمات العملاء (تُحمّل عند وصول العميل للقسم، والباقي عند الضغط على التالي/السابق فقط) -->
+    <!-- 5. آراء وتقييمات العملاء (سحب بالإصبع يمين ويسار بدون أزرار وبالتحميل الكسول) -->
     <section class="section-block" id="reviews-section">
       <div class="container">
         <h2 class="section-heading">آراء وتقييمات عملائنا في جدة</h2>
-        <p class="section-sub">تجارب حقيقية لعملاء تم تنفيذ أعمالهم في مختلف أحياء جدة</p>
-        <div class="fb-review-card-static" id="fbReviewToast" aria-live="polite">
-          <div class="fb-review-top">
-            <div class="fb-avatar" id="fbReviewAvatar"></div>
-            <div class="fb-user-line">
-              <div class="fb-user-name">
-                <span id="fbReviewName">أبو فيصل الزهراني - أبحر الشمالية</span>
-                <span class="fb-verified">✓</span>
-              </div>
-              <span class="fb-stars" id="fbReviewStars">★★★★★</span>
-            </div>
-          </div>
-          <div class="fb-comment-body" id="fbReviewText">شغل مرتب ودقيق جداً في تركيب بورسلين الأرضيات بالليزر وبدون أي تطبيل أو فراغات تحت البلاط.</div>
-          <div class="fb-nav-bar">
-            <button type="button" class="fb-nav-btn" onclick="prevToastReview()">&#8594; السابق</button>
-            <button type="button" class="fb-nav-btn" onclick="nextToastReview()">التالي &#8592;</button>
-          </div>
-        </div>
+        <p class="section-sub">اسحب بإصبعك يميناً ويساراً لقراءة تجارب العملاء في أحياء جدة</p>
+        <div class="reviews-swipe-track" id="homeReviewsTrack"></div>
       </div>
     </section>
 
-    <!-- 7. الأسئلة الشائعة -->
+    <!-- 6. الأسئلة الشائعة -->
     <section class="section-block">
       <div class="container">
         <div class="faq-section">
@@ -791,13 +748,11 @@
   </section>
 
   <section id="view-about" class="page-view">
-    <div class="hero-banner">
-      <div class="container">
+    <div class="container section-block">
+      <div class="hero-banner" style="margin-bottom:20px;">
         <h1>من نحن</h1>
         <p>جوهرة جدة متخصصة في خدمات تركيب السيراميك والبورسلين والرخام والألواح الكبيرة بالليزر في جميع أنحاء جدة وفق أعلى معايير الدقة والجودة.</p>
       </div>
-    </div>
-    <div class="container section-block">
       <div class="service-clean-card">
         <h3>أهدافنا في جوهرة جدة</h3>
         <ul class="check-list" style="margin-top:10px;">
@@ -927,151 +882,38 @@
     };
 
     var REALISTIC_REVIEWS = [
-      {
-        name: "أبو فيصل الزهراني - أبحر الشمالية",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/11.jpg",
-        text: "شغل مرتب ودقيق جداً في تركيب بورسلين الأرضيات بالليزر وبدون أي تطبيل أو فراغات تحت البلاط."
-      },
-      {
-        name: "Tariq Al-Ghamdi",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/12.jpg",
-        text: "التزام تام بالمواعيد واستخدام احترافي للكلبسات الأمريكية والغراء المرن في بورسلين 120×60 للحوائط."
-      },
-      {
-        name: "خالد الحربي - حي الحمدانية",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/15.jpg",
-        text: "نفذ لي حوائط 4 حمامات في الفيلا مع خورنقات، دقة الشطف 45 درجة خرافية والفواصل خط واحد."
-      },
-      {
-        name: "Mohammed Al-Otaibi",
-        stars: "★★★★☆",
-        photo: "https://randomuser.me/api/portraits/men/19.jpg",
-        text: "أكثر ما أعجبني الأمانة في الشغل واستخدام المشط ذو الحدين لتعبئة الغراء بالكامل خلف البلاط."
-      },
-      {
-        name: "سعيد الشهري - حي الشاطئ",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/21.jpg",
-        text: "فني فاهم شغله صح، ضبط لي ميول أرضية الحمامات والمطابخ بحيث تصرف المياه بسلاسة تامة."
-      },
-      {
-        name: "Faisal Bin Mahfouz",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/24.jpg",
-        text: "تعاملت مع جوهرة جدة في تركيب سيراميك المطبخ والحمامات، سرعة في الإنجاز واستقامة بالملي."
-      },
-      {
-        name: "عبدالرحمن المالكي - حي الخالدية",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/28.jpg",
-        text: "استلمت الأرضيات بالقدة وميزان الليزر قبل الترويبة، ما شاء الله تبارك الله ولا غلطة في الزوايا."
-      },
-      {
-        name: "Omar Al-Sulaimani",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/31.jpg",
-        text: "ركب لي سلابات رخام وبورسلين كبيرة في الصالة مع تطابق العروق، شغل احترافي بكل معنى الكلمة."
-      },
-      {
-        name: "ماجد القحطاني - حي السلامة",
-        stars: "★★★★☆",
-        photo: "https://randomuser.me/api/portraits/men/34.jpg",
-        text: "فرق كبير بين شغل الليزر والهزاز وبين الشغل العادي، الأرضية طالعة كأنها قطعة واحدة مستوية."
-      },
-      {
-        name: "Yasser Al-Harthi",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/36.jpg",
-        text: "دقة عالية في قص فتحات السباكة والكهرباء وعلب الأفياش بدون أي كسر أو تشويه للبلاطة."
-      },
-      {
-        name: "سلطان العتيبي - حي الصفا",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/41.jpg",
-        text: "الأخ صلاح محترم وأمين، نصحني بنوع الغراء المناسب للبورسلين وطلع الشغل فوق الممتاز."
-      },
-      {
-        name: "Ahmed Bajaber",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/43.jpg",
-        text: "تم تنفيذ خورنقات الشامبو في الحمام الرئيسي مع زوايا ستانلس، الفينش النهائي نظيف ومرتب."
-      },
-      {
-        name: "نايف السلمي - حي مشرف",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/47.jpg",
-        text: "دقة جوهرة جدة في وزن البلاط بالليزر ومنع التطبيل لا يعلى عليها في جدة، أنصح بالتعامل معهم."
-      },
-      {
-        name: "Sami Al-Juhani",
-        stars: "★★★★☆",
-        photo: "https://randomuser.me/api/portraits/men/51.jpg",
-        text: "شغل يبيض الوجه، التزام بالوقت من الصباح الباكر وتنفيذ دقيق لكل تفاصيل المخطط الهندسي."
-      },
-      {
-        name: "تركي الدوسري - حي الروضة",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/54.jpg",
-        text: "ركب لي بورسلين الدرج والمداخل والاحواش بتشطيب متين وميول مدروسة لتصريف مياه الأمطار."
-      },
-      {
-        name: "Kareem Al-Amoudi",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/58.jpg",
-        text: "أنصح أي شخص يبني أو يرمم في جدة يتواصل مع المعلم صلاح، شغل نظيف وضمان حقيقي على الاستقامة."
-      },
-      {
-        name: "بندر الثقفي - حي النعيم",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/61.jpg",
-        text: "الخورنقات في الحمام طلعت تحفة فنية، قص الزوايا والترويبة المقاومة للرطوبة متناسقة بشكل مبهر."
-      },
-      {
-        name: "Waleed Al-Qahtani",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/66.jpg",
-        text: "تعامل راقي ووضوح تام في الاتفاق من البداية، نفذ لي ترميم وتجديد الحمامات بأعلى جودة."
-      },
-      {
-        name: "فهد العمري - حي المرجان",
-        stars: "★★★★☆",
-        photo: "https://randomuser.me/api/portraits/men/73.jpg",
-        text: "البلاط ثابت كأنه صبة واحدة ولا يوجد أي صوت تطبيل نهائياً مع استخدام المشط ذو الحدين والهزاز."
-      },
-      {
-        name: "Nasser Al-Shehri",
-        stars: "★★★★★",
-        photo: "https://randomuser.me/api/portraits/men/78.jpg",
-        text: "من أفضل الفنيين في جدة لتركيب البورسلين والرخام بالليزر، دقة وأمانة ونظافة في موقع العمل."
-      }
+      { name: "أبو فيصل الزهراني - أبحر الشمالية", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/11.jpg", text: "شغل مرتب ودقيق جداً في تركيب بورسلين الأرضيات بالليزر وبدون أي تطبيل أو فراغات تحت البلاط." },
+      { name: "طارق الغامدي - حي الشاطئ", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/12.jpg", text: "التزام تام بالمواعيد واستخدام احترافي للكلبسات الأمريكية والغراء المرن في بورسلين 120×60 للحوائط." },
+      { name: "خالد الحربي - حي الحمدانية", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/15.jpg", text: "نفذ لي حوائط 4 حمامات في الفيلا مع خورنقات، دقة الشطف 45 درجة خرافية والفواصل خط واحد." },
+      { name: "محمد العتيبي - حي الخالدية", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/19.jpg", text: "أكثر ما أعجبني الأمانة في الشغل واستخدام المشط ذو الحدين لتعبئة الغراء بالكامل خلف البلاط." },
+      { name: "سعيد الشهري - حي الشاطئ", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/21.jpg", text: "فني فاهم شغله صح، ضبط لي ميول أرضية الحمامات والمطابخ بحيث تصرف المياه بسلاسة تامة." },
+      { name: "فيصل بن محفوظ - حي الروضة", stars: "★★★☆☆", photo: "https://randomuser.me/api/portraits/men/24.jpg", text: "تعاملت مع جوهرة جدة في تركيب سيراميك المطبخ والحمامات، أخذ يوم زيادة للتدقيق لكن النتيجة ممتازة." },
+      { name: "عبدالرحمن المالكي - حي الخالدية", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/28.jpg", text: "استلمت الأرضيات بالقدة وميزان الليزر قبل الترويبة، ما شاء الله تبارك الله ولا غلطة في الزوايا." },
+      { name: "عمر السليماني - حي السلامة", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/31.jpg", text: "ركب لي سلابات رخام وبورسلين كبيرة في الصالة مع تطابق العروق، شغل احترافي بكل معنى الكلمة." },
+      { name: "ماجد القحطاني - حي السلامة", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/34.jpg", text: "فرق كبير بين شغل الليزر والهزاز وبين الشغل العادي، الأرضية طالعة كأنها قطعة واحدة مستوية." },
+      { name: "ياسر الحارثي - حي الصفا", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/36.jpg", text: "دقة عالية في قص فتحات السباكة والكهرباء وعلب الأفياش بدون أي كسر أو تشويه للبلاطة." },
+      { name: "سلطان العتيبي - حي الصفا", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/41.jpg", text: "الأخ صلاح محترم وأمين، نصحني بنوع الغراء المناسب للبورسلين وطلع الشغل فوق الممتاز." },
+      { name: "أحمد باجابر - حي مشرف", stars: "★★★★☆", photo: "https://randomuser.me/api/portraits/men/43.jpg", text: "تم تنفيذ خورنقات الشامبو في الحمام الرئيسي مع زوايا ستانلس، الفينش النهائي نظيف ومرتب." },
+      { name: "نايف السلمي - حي مشرف", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/47.jpg", text: "دقة جوهرة جدة في وزن البلاط بالليزر ومنع التطبيل لا يعلى عليها في جدة، أنصح بالتعامل معهم." },
+      { name: "سامي الجهني - حي المروة", stars: "★★★☆☆", photo: "https://randomuser.me/api/portraits/men/51.jpg", text: "شغل يبيض الوجه وتنفيذ دقيق لكل تفاصيل المخطط الهندسي." },
+      { name: "تركي الدوسري - حي الروضة", stars: "★★★★★", photo: "https://randomuser.me/api/portraits/men/54.jpg", text: "ركب لي بورسلين الدرج والمداخل والاحواش بتشطيب متين وميول مدروسة لتصريف مياه الأمطار." }
     ];
 
     var CONFIG = {
       phone: "0561201914",
       whatsappInternational: "966561201914",
       whatsappMessage: "السلام عليكم ورحمة الله وبركاته حياكم الله جوهرة جدة عندي شغل تركيب سيراميك أو بورسلين في جدة وأرغب في الاستفسار والمعاينة",
-      designerName: "القمة للحلول الرقمية وتصميم المواقع",
-      designerPhoneDisplay: "00201055707291",
-      designerPhoneDial: "+201055707291",
       baseViews: 7591,
       socials: [
         { key: "facebook", name: "فيسبوك", cls: "bg-fb", url: "#contact-footer" },
         { key: "tiktok", name: "تيك توك", cls: "bg-tt", url: "#contact-footer" },
         { key: "instagram", name: "انستقرام", cls: "bg-ig", url: "#contact-footer" },
         { key: "telegram", name: "تليجرام", cls: "bg-tg", url: "#contact-footer" }
-      ],
-      galleryImages: [
-        { src: "١٠.jpg", title: "تركيب بورسلين حوائط بالليزر والكلبسات - جدة" },
-        { src: "١١.jpg", title: "تنفيذ خورنقات حمامات بالبورسلين - جدة" }
       ]
     };
 
     var articlesLoaded = false;
     var galleryLoaded = false;
-    var certLoaded = false;
     var reviewsLoaded = false;
 
     (function initContactLinks() {
@@ -1108,61 +950,63 @@
       });
     })();
 
-    var toastIndex = 0;
-    function renderToastReview(idx) {
-      var avatarEl = document.getElementById("fbReviewAvatar");
-      var nameEl = document.getElementById("fbReviewName");
-      var starsEl = document.getElementById("fbReviewStars");
-      var textEl = document.getElementById("fbReviewText");
-      var item = REALISTIC_REVIEWS[idx];
-      avatarEl.innerHTML = '<img src="' + item.photo + '" alt="' + item.name + '" loading="lazy" decoding="async">';
-      nameEl.textContent = item.name;
-      starsEl.textContent = item.stars;
-      textEl.textContent = item.text;
-    }
-    function nextToastReview() {
-      toastIndex = (toastIndex + 1) % REALISTIC_REVIEWS.length;
-      renderToastReview(toastIndex);
-    }
-    function prevToastReview() {
-      toastIndex = (toastIndex - 1 + REALISTIC_REVIEWS.length) % REALISTIC_REVIEWS.length;
-      renderToastReview(toastIndex);
-    }
-
-    function scrollGallery(offset) {
-      var track = document.getElementById("homeGallerySlider");
-      if (track) track.scrollBy({ left: offset, behavior: "smooth" });
-    }
-
-    function renderGalleryImages(imagesList) {
-      var track = document.getElementById("homeGallerySlider");
-      if (!track || !imagesList || imagesList.length === 0) return;
-      var sliderHtml = "";
-      imagesList.forEach(function(img) {
-        sliderHtml += '<div class="slide-card" onclick="openLightbox(\'' + img.src + '\')">' +
-          '<img src="' + img.src + '" alt="' + img.title + '" loading="lazy" decoding="async">' +
-          '<div class="slide-card-title">' + img.title + '</div>' +
+    function renderReviewsTrack() {
+      var track = document.getElementById("homeReviewsTrack");
+      if (!track) return;
+      var html = "";
+      REALISTIC_REVIEWS.forEach(function(item) {
+        html += '<div class="fb-review-slide">' +
+          '<div class="fb-review-top">' +
+            '<div class="fb-avatar"><img src="' + item.photo + '" alt="' + item.name + '" loading="lazy" decoding="async"></div>' +
+            '<div class="fb-user-line">' +
+              '<div class="fb-user-name"><span>' + item.name + '</span><span class="fb-verified">✓</span></div>' +
+              '<span class="fb-stars">' + item.stars + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="fb-comment-body">' + item.text + '</div>' +
         '</div>';
       });
-      track.innerHTML = sliderHtml;
+      track.innerHTML = html;
+    }
+
+    /* سحب جميع صور الأعمال تلقائياً من مستودع جيت هاب بدون تكرار */
+    async function loadAutoGalleryOnDemand() {
+      if (galleryLoaded) return;
+      galleryLoaded = true;
+      var track = document.getElementById("homeGallerySlider");
+      if (!track) return;
+      try {
+        var res = await fetch("https://api.github.com/repos/jawhara-kitchen-jeddah/jawhara-ceramic-jeddah/contents/");
+        if (!res.ok) return;
+        var files = await res.json();
+        if (!Array.isArray(files)) return;
+        var seen = {};
+        var sliderHtml = "";
+        files.forEach(function(f) {
+          var lower = (f.name || "").toLowerCase();
+          if (/\.(jpg|jpeg|png|webp)$/i.test(lower) && lower !== "1.png" && !seen[lower]) {
+            seen[lower] = true;
+            sliderHtml += '<div class="slide-card" onclick="openLightbox(\'' + f.name + '\')">' +
+              '<img src="' + f.name + '" alt="أعمال جوهرة جدة لتركيب البورسلين والسيراميك بالليزر" loading="lazy" decoding="async">' +
+              '<div class="slide-card-title">تنفيذ جوهرة جدة بالليزر</div>' +
+            '</div>';
+          }
+        });
+        track.innerHTML = sliderHtml;
+      } catch (e) {}
     }
 
     async function fetchArticlesOnDemand() {
       if (articlesLoaded) return;
       articlesLoaded = true;
-      var allSliderImages = CONFIG.galleryImages.slice();
       var articlesHtml = "";
-
       try {
         var jsonRes = await fetch("articles.json");
         if (jsonRes.ok) {
           var jsonArticles = await jsonRes.json();
           if (Array.isArray(jsonArticles)) {
             jsonArticles.forEach(function(art) {
-              var imgSrc = art.image || "١٠.jpg";
-              if (art.image && !allSliderImages.some(function(i) { return i.src === art.image; })) {
-                allSliderImages.push({ src: art.image, title: art.title });
-              }
+              var imgSrc = art.image || "13.jpg";
               articlesHtml += '<div class="s-card">' +
                 '<img class="s-card-cover" src="' + imgSrc + '" alt="' + art.title + '" loading="lazy" decoding="async">' +
                 '<div class="s-card-body">' +
@@ -1179,12 +1023,6 @@
         }
       } catch (e) {}
 
-      if (galleryLoaded) {
-        renderGalleryImages(allSliderImages);
-      } else {
-        CONFIG.galleryImages = allSliderImages;
-      }
-
       var homeArtGrid = document.getElementById("homeAutoArticlesGrid");
       var articlesGrid = document.getElementById("articlesContainer");
       if (articlesHtml !== "") {
@@ -1193,11 +1031,10 @@
       }
     }
 
-    /* مراقب ذكي: لا يحمّل أي صور أو ملفات إلا عندما يصل العميل للقسم */
+    /* التحميل الكسول: لا يحمّل المعرض أو التعليقات إلا عند وصول العميل إليها */
     (function initLazyViewportObserver() {
-      var gallerySec = document.getElementById("gallery-section");
-      var certSec = document.getElementById("certificate-section");
       var articlesSec = document.getElementById("home-auto-articles-section");
+      var gallerySec = document.getElementById("gallery-section");
       var reviewsSec = document.getElementById("reviews-section");
 
       if ("IntersectionObserver" in window) {
@@ -1205,49 +1042,27 @@
           entries.forEach(function(entry) {
             if (!entry.isIntersecting) return;
             var id = entry.target.id;
-            if (id === "gallery-section" && !galleryLoaded) {
-              galleryLoaded = true;
-              renderGalleryImages(CONFIG.galleryImages);
+            if (id === "home-auto-articles-section" && !articlesLoaded) {
               fetchArticlesOnDemand();
               obs.unobserve(entry.target);
-            } else if (id === "certificate-section" && !certLoaded) {
-              certLoaded = true;
-              var certBox = document.getElementById("certImageContainer");
-              if (certBox) {
-                certBox.innerHTML = '<img src="1.png" alt="شهادة الخبرة المهنية جوهرة جدة" loading="lazy" decoding="async">' +
-                  '<span class="cert-zoom-btn">🔍 اضغط لفتح وتكبير شهادة الخبرة</span>';
-              }
-              obs.unobserve(entry.target);
-            } else if (id === "home-auto-articles-section" && !articlesLoaded) {
-              fetchArticlesOnDemand();
+            } else if (id === "gallery-section" && !galleryLoaded) {
+              loadAutoGalleryOnDemand();
               obs.unobserve(entry.target);
             } else if (id === "reviews-section" && !reviewsLoaded) {
               reviewsLoaded = true;
-              renderToastReview(0);
-              var toastBox = document.getElementById("fbReviewToast");
-              var startX = 0;
-              if (toastBox) {
-                toastBox.addEventListener("touchstart", function(e) { startX = e.touches[0].clientX; }, { passive: true });
-                toastBox.addEventListener("touchend", function(e) {
-                  var endX = e.changedTouches[0].clientX;
-                  if (startX - endX > 30) nextToastReview();
-                  else if (endX - startX > 30) prevToastReview();
-                }, { passive: true });
-              }
+              renderReviewsTrack();
               obs.unobserve(entry.target);
             }
           });
         }, { rootMargin: "150px 0px" });
 
-        if (gallerySec) observer.observe(gallerySec);
-        if (certSec) observer.observe(certSec);
         if (articlesSec) observer.observe(articlesSec);
+        if (gallerySec) observer.observe(gallerySec);
         if (reviewsSec) observer.observe(reviewsSec);
       } else {
-        galleryLoaded = true;
-        renderGalleryImages(CONFIG.galleryImages);
         fetchArticlesOnDemand();
-        renderToastReview(0);
+        loadAutoGalleryOnDemand();
+        renderReviewsTrack();
       }
     })();
 
@@ -1258,12 +1073,11 @@
       localStorage.setItem("jawhara_views", count);
       el.textContent = (CONFIG.baseViews + count).toLocaleString("en-US");
     })();
+
     function toggleDrawer() { document.getElementById("navDrawer").classList.toggle("open"); }
     function closeDrawer() { document.getElementById("navDrawer").classList.remove("open"); }
     function switchView(viewName) {
-      if (viewName === "articles") {
-        fetchArticlesOnDemand();
-      }
+      if (viewName === "articles") fetchArticlesOnDemand();
       var views = document.querySelectorAll(".page-view");
       for (var i = 0; i < views.length; i++) { views[i].classList.remove("active-view"); }
       var target = document.getElementById("view-" + viewName);

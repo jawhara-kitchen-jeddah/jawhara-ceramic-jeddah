@@ -102,13 +102,14 @@
       text-align: center; font-size: 12.5px; color: #64748b !important; margin: 0 0 14px 0;
     }
     .auto-comments-track {
-      display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+      display: flex; gap: 12px; overflow-x: auto;
       -webkit-overflow-scrolling: touch; padding: 4px 2px 10px 2px; scrollbar-width: none;
     }
     .auto-comments-track::-webkit-scrollbar { display: none; }
     .comment-slide-card {
-      flex: 0 0 82%; max-width: 310px; scroll-snap-align: center;
-      background: #ffffff !important; border: 1px solid #e2e8f0;
+      flex: 0 0 82%; max-width: 310px;
+      background: #ffffff !important; border: 1px solid #bfdbfe;
+      border-right: 4px solid #1877f2;
       border-radius: 12px; padding: 15px; box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
       box-sizing: border-box;
     }
@@ -116,16 +117,21 @@
       display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
     }
     .comment-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: #ffffff !important; font-weight: 900; font-size: 16px; flex-shrink: 0;
+      width: 44px; height: 44px; border-radius: 50%; overflow: hidden;
+      border: 2px solid #bfdbfe; background: #e2e8f0; flex-shrink: 0;
+    }
+    .comment-avatar img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
     }
     .comment-author { font-weight: 800; font-size: 14.5px; color: #0b3d75 !important; }
     .comment-area { font-size: 12px; color: #64748b !important; }
     .comment-stars { font-size: 15px; margin-bottom: 6px; letter-spacing: 2px; }
     .star-on { color: #f5b400 !important; }
     .star-off { color: #cbd5e1 !important; }
-    .comment-body { font-size: 13.5px; color: #334155 !important; line-height: 1.75; margin: 0; }
+    .comment-body {
+      font-size: 13.5px; color: #334155 !important; line-height: 1.75; margin: 0;
+      background: #f1f5f9 !important; padding: 10px 12px; border-radius: 10px;
+    }
     .views-pill-box { text-align: center; margin: 15px 0; }
     .views-pill {
       display: inline-flex; align-items: center; gap: 8px;
@@ -208,7 +214,7 @@
     return html;
   }
 
-  /* قسم التعليقات الكسول 15 تعليق حسب موضوع المقالة */
+  /* قسم التعليقات الدائري الكسول بصور حقيقية مختلفة */
   if (!document.querySelector(".auto-comments-wrap")) {
     var commentsWrap = document.createElement("div");
     commentsWrap.className = "auto-comments-wrap";
@@ -223,73 +229,89 @@
 
       if (/ميلان|لياسة|لياسه|خالدية|خالديه|120|جدران|شطر/.test(pageText)) {
         reviewsList = [
-          { name: "أبو فهد العتيبي", area: "حي الخالدية جدة", color: "#0b3d75", init: "ف", stars: 5, text: "كان عندي ميلان واضح في جدران المجلس وحمام الضيوف والفني صلاح عدل الجدران باللياسة وميزان الليزر قبل تركيب بلاط 60 في 120 وطلع الاستواء ممتاز" },
-          { name: "خالد الغامدي", area: "حي الشاطئ جدة", color: "#15803d", init: "خ", stars: 4, text: "قاس الجدران بالليزر والقدة ووضح لي أماكن الشطرات وعدلها بالكامل قبل التركيب والنتيجة فواصل مستقيمة وشغل نظيف" },
-          { name: "سعود الحربي", area: "حي السلامة جدة", color: "#b45309", init: "س", stars: 5, text: "ركب لي سيراميك جدران مقاس كبير بالكلبسات والليزر بعد تعديل اللياسة ولا يوجد أي تطبيل أو فراغات خلف البلاط" },
-          { name: "ماجد الزهراني", area: "حي مشرف جدة", color: "#4338ca", init: "م", stars: 4, text: "دقة عالية في ضبط زوايا الجدران واستواء السطح بالكامل التزم بالموعد وسلم الشغل مرتب" },
-          { name: "تركي الشمري", area: "حي الحمدانية جدة", color: "#0f766e", init: "ت", stars: 5, text: "تعديل اللياسة قبل تركيب البلاط فرق كثير في شكل الجدار النهائي وصارت كل البلاطات على مستوى واحد" },
-          { name: "نايف الشهري", area: "حي الخالدية جدة", color: "#9a3412", init: "ن", stars: 3, text: "الشغل أخذ يوم زيادة بسبب تعديل ميلان الجدران باللياسة لكن النتيجة النهائية ممتازة وتستاهل الانتظار" },
-          { name: "عمر الحازمي", area: "حي الروضة جدة", color: "#1d4ed8", init: "ع", stars: 5, text: "ميزان الليزر ضبط استقامة الجدران والزوايا بدقة ممتازة أنصح بالتعامل مع الفني صلاح منصور" },
-          { name: "بندر الجهني", area: "حي الصفا جدة", color: "#6d28d9", init: "ب", stars: 4, text: "تركيب سيراميك 60 في 120 على الجدران بدون أي بروز في الفواصل وشغل متقن جداً" },
-          { name: "وليد السبيعي", area: "حي الشاطئ جدة", color: "#be123c", init: "و", stars: 5, text: "عالج لي شطرات الجدار بالكامل قبل الغراء والتركيب طلع كأنه قطعة واحدة" },
-          { name: "سالم باوزير", area: "حي السلامة جدة", color: "#0369a1", init: "س", stars: 4, text: "أمانة في العمل وفحص دقيق للميول قبل بدء التركيب وتعامل راقي" },
-          { name: "فهد الدوسري", area: "حي الخالدية جدة", color: "#166534", init: "ف", stars: 5, text: "ضبط استواء حمام الضيوف بالكامل بالليزر والكلبسات شغل يبيض الوجه" },
-          { name: "طارق العمري", area: "حي مشرف جدة", color: "#7c2d12", init: "ط", stars: 3, text: "التركيب والاستواء ممتاز جداً بس كنت أتمنى يبدأ بدري شوي لكن ما قصر وسلم الشغل مضبوط" },
-          { name: "عبدالرحمن المالكي", area: "حي الحمدانية جدة", color: "#3730a3", init: "ع", stars: 5, text: "ركب لي جدران المطبخ والحمامات بعد تعديل اللياسة ولا غلطة في الفواصل" },
-          { name: "يوسف القرني", area: "حي المروة جدة", color: "#0e7490", init: "ي", stars: 4, text: "شغل نظيف ودقيق في تركيب الألواح الكبيرة وتعديل ميلان الجدران" },
-          { name: "أحمد السلمي", area: "حي الخالدية جدة", color: "#4d7c0f", init: "أ", stars: 5, text: "فني فاهم شغله صح يوزن كل بلاطة بالليزر والقدة أنصح به لكل من يبحث عن دقة التركيب" }
+          { name: "أبو فهد العتيبي", area: "", photo: "https://randomuser.me/api/portraits/men/16.jpg", stars: 5, text: "كان عندي ميلان واضح في جدران المجلس وحمام الضيوف والفني صلاح عدل الجدران باللياسة وميزان الليزر قبل تركيب بلاط 60 في 120 وطلع الاستواء ممتاز" },
+          { name: "خالد الغامدي", area: "حي الشاطئ جدة", photo: "https://randomuser.me/api/portraits/men/17.jpg", stars: 4, text: "قاس الجدران بالليزر والقدة ووضح لي أماكن الشطرات وعدلها بالكامل قبل التركيب والنتيجة فواصل مستقيمة وشغل نظيف" },
+          { name: "سعود الحربي", area: "", photo: "https://randomuser.me/api/portraits/men/18.jpg", stars: 5, text: "ركب لي سيراميك جدران مقاس كبير بالكلبسات والليزر بعد تعديل اللياسة ولا يوجد أي تطبيل أو فراغات خلف البلاط" },
+          { name: "ماجد الزهراني", area: "حي مشرف جدة", photo: "https://randomuser.me/api/portraits/men/19.jpg", stars: 4, text: "دقة عالية في ضبط زوايا الجدران واستواء السطح بالكامل التزم بالموعد وسلم الشغل مرتب" },
+          { name: "تركي الشمري", area: "", photo: "https://randomuser.me/api/portraits/men/20.jpg", stars: 5, text: "تعديل اللياسة قبل تركيب البلاط فرق كثير في شكل الجدار النهائي وصارت كل البلاطات على مستوى واحد" },
+          { name: "نايف الشهري", area: "حي الخالدية جدة", photo: "https://randomuser.me/api/portraits/men/21.jpg", stars: 3, text: "الشغل أخذ يوم زيادة بسبب تعديل ميلان الجدران باللياسة لكن النتيجة النهائية ممتازة وتستاهل الانتظار" },
+          { name: "عمر الحازمي", area: "", photo: "https://randomuser.me/api/portraits/men/22.jpg", stars: 5, text: "ميزان الليزر ضبط استقامة الجدران والزوايا بدقة ممتازة أنصح بالتعامل مع الفني صلاح منصور" },
+          { name: "بندر الجهني", area: "حي الصفا جدة", photo: "https://randomuser.me/api/portraits/men/23.jpg", stars: 4, text: "تركيب سيراميك 60 في 120 على الجدران بدون أي بروز في الفواصل وشغل متقن جداً" },
+          { name: "وليد السبيعي", area: "", photo: "https://randomuser.me/api/portraits/men/24.jpg", stars: 5, text: "عالج لي شطرات الجدار بالكامل قبل الغراء والتركيب طلع كأنه قطعة واحدة" },
+          { name: "سالم باوزير", area: "حي السلامة جدة", photo: "https://randomuser.me/api/portraits/men/25.jpg", stars: 4, text: "أمانة في العمل وفحص دقيق للميول قبل بدء التركيب وتعامل راقي" },
+          { name: "فهد الدوسري", area: "", photo: "https://randomuser.me/api/portraits/men/26.jpg", stars: 5, text: "ضبط استواء حمام الضيوف بالكامل بالليزر والكلبسات شغل يبيض الوجه" },
+          { name: "طارق العمري", area: "حي مشرف جدة", photo: "https://randomuser.me/api/portraits/men/27.jpg", stars: 3, text: "التركيب والاستواء ممتاز جداً بس كنت أتمنى يبدأ بدري شوي لكن ما قصر وسلم الشغل مضبوط" },
+          { name: "عبدالرحمن المالكي", area: "", photo: "https://randomuser.me/api/portraits/men/28.jpg", stars: 5, text: "ركب لي جدران المطبخ والحمامات بعد تعديل اللياسة ولا غلطة في الفواصل" },
+          { name: "يوسف القرني", area: "حي المروة جدة", photo: "https://randomuser.me/api/portraits/men/29.jpg", stars: 4, text: "شغل نظيف ودقيق في تركيب الألواح الكبيرة وتعديل ميلان الجدران" },
+          { name: "أحمد السلمي", area: "", photo: "https://randomuser.me/api/portraits/men/30.jpg", stars: 5, text: "فني فاهم شغله صح يوزن كل بلاطة بالليزر والقدة أنصح به لكل من يبحث عن دقة التركيب" }
         ];
       } else if (/أرضي|ارضي|أرضيات|ارضيات|صالة|مجلس/.test(pageText)) {
         reviewsList = [
-          { name: "عبدالله القحطاني", area: "حي الحمدانية جدة", color: "#0b3d75", init: "ع", stars: 5, text: "استواء الأرضيات بعد التركيب بميزان الليزر والكلبسات ممتاز جداً البلاط كله قطعة واحدة بدون أي ارتفاع" },
-          { name: "فيصل الدوسري", area: "حي السلامة جدة", color: "#15803d", init: "ف", stars: 4, text: "فرز كراتين البورسلين قبل التركيب ووزن منسوب الصالة بالكامل بالليزر الشغل متقن" },
-          { name: "سلطان المالكي", area: "حي الخالدية جدة", color: "#b45309", init: "س", stars: 5, text: "تركيب أرضيات بورسلين بدون تطبيل واستخدام الغراء بالطريقة الصحيحة مع الهزاز" },
-          { name: "نايف الشهري", area: "حي الشاطئ جدة", color: "#4338ca", init: "ن", stars: 4, text: "ضبط ميول الأرضيات واستواء الصالة بدقة عالية وتسليم في الوقت المحدد" },
-          { name: "مشاري العنزي", area: "حي مشرف جدة", color: "#0f766e", init: "م", stars: 5, text: "أرضية المجلس والصالة طلعت مستوية بالكامل والفواصل رفيعة ومرتبة" },
-          { name: "راشد الغامدي", area: "حي الصفا جدة", color: "#9a3412", init: "ر", stars: 3, text: "استغرق التركيب وقت أطول شوي بسبب ضبط منسوب الأرضية بالليزر لكن النتيجة ممتازة" },
-          { name: "سعيد الزهراني", area: "حي الروضة جدة", color: "#1d4ed8", init: "س", stars: 5, text: "ما شاء الله دقة في تركيب بورسلين الأرضيات وتناسق في العروق واللون" },
-          { name: "حسين الحربي", area: "حي الحمدانية جدة", color: "#6d28d9", init: "ح", stars: 4, text: "استخدم الكلبسات وميزان الليزر في كامل الشقة ولا يوجد أي فراغ تحت البلاط" },
-          { name: "محمد العتيبي", area: "حي السلامة جدة", color: "#be123c", init: "م", stars: 5, text: "أفضل شغل تركيب أرضيات شفته في جدة نظافة ودقة في الفواصل" },
-          { name: "زياد السبيعي", area: "حي الشاطئ جدة", color: "#0369a1", init: "ز", stars: 4, text: "وزن أرضية الحوش والمدخل بميلان مضبوط للتصريف وشغل مرتب" },
-          { name: "نواف الشمري", area: "حي الخالدية جدة", color: "#166534", init: "ن", stars: 5, text: "بورسلين 60 في 120 للأرضيات طلع كأنه رخام طبيعي من دقة التركيب" },
-          { name: "عادل الجهني", area: "حي المروة جدة", color: "#7c2d12", init: "ع", stars: 3, text: "الاستواء ممتاز والشغل نظيف وكان فيه تأخير بسيط في أول يوم فقط" },
-          { name: "بدر القرني", area: "حي مشرف جدة", color: "#3730a3", init: "ب", stars: 5, text: "فني أمين يفرز الكراتين قبل التركيب عشان ما يصير فيه اختلاف لون في الأرضية" },
-          { name: "ياسر العمري", area: "حي الحمدانية جدة", color: "#0e7490", init: "ي", stars: 4, text: "التزام بالمواعيد ودقة في تركيب أرضيات الغرف والصالة بالليزر" },
-          { name: "إبراهيم السلمي", area: "حي السلامة جدة", color: "#4d7c0f", init: "إ", stars: 5, text: "تسلم يده على شغل الأرضيات استواء تام بدون أي هبوط أو تطبيل" }
+          { name: "عبدالله القحطاني", area: "", photo: "https://randomuser.me/api/portraits/men/31.jpg", stars: 5, text: "استواء الأرضيات بعد التركيب بميزان الليزر والكلبسات ممتاز جداً البلاط كله قطعة واحدة بدون أي ارتفاع" },
+          { name: "فيصل الدوسري", area: "حي السلامة جدة", photo: "https://randomuser.me/api/portraits/men/32.jpg", stars: 4, text: "فرز كراتين البورسلين قبل التركيب ووزن منسوب الصالة بالكامل بالليزر الشغل متقن" },
+          { name: "سلطان المالكي", area: "", photo: "https://randomuser.me/api/portraits/men/33.jpg", stars: 5, text: "تركيب أرضيات بورسلين بدون تطبيل واستخدام الغراء بالطريقة الصحيحة مع الهزاز" },
+          { name: "نايف الشهري", area: "حي الشاطئ جدة", photo: "https://randomuser.me/api/portraits/men/34.jpg", stars: 4, text: "ضبط ميول الأرضيات واستواء الصالة بدقة عالية وتسليم في الوقت المحدد" },
+          { name: "مشاري العنزي", area: "", photo: "https://randomuser.me/api/portraits/men/35.jpg", stars: 5, text: "أرضية المجلس والصالة طلعت مستوية بالكامل والفواصل رفيعة ومرتبة" },
+          { name: "راشد الغامدي", area: "حي الصفا جدة", photo: "https://randomuser.me/api/portraits/men/36.jpg", stars: 3, text: "استغرق التركيب وقت أطول شوي بسبب ضبط منسوب الأرضية بالليزر لكن النتيجة ممتازة" },
+          { name: "سعيد الزهراني", area: "", photo: "https://randomuser.me/api/portraits/men/37.jpg", stars: 5, text: "ما شاء الله دقة في تركيب بورسلين الأرضيات وتناسق في العروق واللون" },
+          { name: "حسين الحربي", area: "حي الحمدانية جدة", photo: "https://randomuser.me/api/portraits/men/38.jpg", stars: 4, text: "استخدم الكلبسات وميزان الليزر في كامل الشقة ولا يوجد أي فراغ تحت البلاط" },
+          { name: "محمد العتيبي", area: "", photo: "https://randomuser.me/api/portraits/men/39.jpg", stars: 5, text: "أفضل شغل تركيب أرضيات شفته في جدة نظافة ودقة في الفواصل" },
+          { name: "زياد السبيعي", area: "حي الشاطئ جدة", photo: "https://randomuser.me/api/portraits/men/40.jpg", stars: 4, text: "وزن أرضية الحوش والمدخل بميلان مضبوط للتصريف وشغل مرتب" },
+          { name: "نواف الشمري", area: "", photo: "https://randomuser.me/api/portraits/men/41.jpg", stars: 5, text: "بورسلين 60 في 120 للأرضيات طلع كأنه رخام طبيعي من دقة التركيب" },
+          { name: "عادل الجهني", area: "حي المروة جدة", photo: "https://randomuser.me/api/portraits/men/42.jpg", stars: 3, text: "الاستواء ممتاز والشغل نظيف وكان فيه تأخير بسيط في أول يوم فقط" },
+          { name: "بدر القرني", area: "", photo: "https://randomuser.me/api/portraits/men/43.jpg", stars: 5, text: "فني أمين يفرز الكراتين قبل التركيب عشان ما يصير فيه اختلاف لون في الأرضية" },
+          { name: "ياسر العمري", area: "حي الحمدانية جدة", photo: "https://randomuser.me/api/portraits/men/44.jpg", stars: 4, text: "التزام بالمواعيد ودقة في تركيب أرضيات الغرف والصالة بالليزر" },
+          { name: "إبراهيم السلمي", area: "", photo: "https://randomuser.me/api/portraits/men/45.jpg", stars: 5, text: "تسلم يده على شغل الأرضيات استواء تام بدون أي هبوط أو تطبيل" }
         ];
       } else {
         reviewsList = [
-          { name: "طارق العمري", area: "حي الخالدية جدة", color: "#0b3d75", init: "ط", stars: 5, text: "شغل احترافي في تركيب البورسلين والسيراميك بميزان الليزر وضبط الفواصل بدقة عالية بدون أي تطبيل" },
-          { name: "بندر الجهني", area: "حي السلامة جدة", color: "#15803d", init: "ب", stars: 4, text: "أفضل فني بلاط تعاملت معه في جدة التزام بالمواعيد ونظافة في التنفيذ والزوايا طالعة ممتازة" },
-          { name: "وليد السبيعي", area: "حي الحمدانية جدة", color: "#b45309", init: "و", stars: 5, text: "استخدم ميزان الليزر والكلبسات في كامل الحمامات والمطبخ والنتيجة استواء كامل" },
-          { name: "عمر الحازمي", area: "حي مشرف جدة", color: "#4338ca", init: "ع", stars: 4, text: "دقة في التركيب وأمانة في النصيحة الفنية قبل بدء العمل أنصح بالتواصل مع جوهرة جدة" },
-          { name: "سعد القحطاني", area: "حي الشاطئ جدة", color: "#0f766e", init: "س", stars: 5, text: "تركيب بورسلين الحوائط والأرضيات طلع ممتاز جداً بدون أي بروز في الحواف" },
-          { name: "مازن الغامدي", area: "حي الصفا جدة", color: "#9a3412", init: "م", stars: 3, text: "الشغل متقن جداً بس يحتاج صبر لأن الفني يدقق في كل بلاطة قبل يثبتها" },
-          { name: "خالد الحربي", area: "حي الروضة جدة", color: "#1d4ed8", init: "خ", stars: 5, text: "فني محترف ومعه كامل عدته من ليزر وهزاز وكلبسات وشغله نظيف ومرتب" },
-          { name: "فارس العتيبي", area: "حي الخالدية جدة", color: "#6d28d9", init: "ف", stars: 4, text: "تعامل راقي وسرعة في الإنجاز مع المحافظة على دقة الاستواء والفواصل" },
-          { name: "عبدالعزيز الزهراني", area: "حي السلامة جدة", color: "#be123c", init: "ع", stars: 5, text: "ركب لي سيراميك الحمامات والمطبخ والخورنق طالع ممتاز وموزون بالليزر" },
-          { name: "متعب الدوسري", area: "حي الحمدانية جدة", color: "#0369a1", init: "م", stars: 4, text: "أنصح بالتعامل مع الفني صلاح منصور شغله مرتب ويلتزم بالاتفاق" },
-          { name: "هاني المالكي", area: "حي الشاطئ جدة", color: "#166534", init: "ه", stars: 5, text: "جودة عالية في تركيب البورسلين والرخام واهتمام بأدق التفاصيل" },
-          { name: "أنس الشهري", area: "حي المروة جدة", color: "#7c2d12", init: "أ", stars: 3, text: "النتيجة ممتازة والاستواء مضبوط وكان فيه ضغط مواعيد بسيط لكنه التزم وخلص الشغل صح" },
-          { name: "صالح الشمري", area: "حي مشرف جدة", color: "#3730a3", init: "ص", stars: 5, text: "شغل يبرد الخاطر فواصل متساوية وبلاط راكب بدون أي فراغات" },
-          { name: "عصام القرني", area: "حي الخالدية جدة", color: "#0e7490", init: "ع", stars: 4, text: "دقة ممتازة في القص والزوايا وتنفيذ نظيف جداً" },
-          { name: "زياد السلمي", area: "حي السلامة جدة", color: "#4d7c0f", init: "ز", stars: 5, text: "تجربة ممتازة مع جوهرة جدة في تركيب سيراميك وبورسلين كامل الشقة" }
+          { name: "طارق العمري", area: "", photo: "https://randomuser.me/api/portraits/men/46.jpg", stars: 5, text: "شغل احترافي في تركيب البورسلين والسيراميك بميزان الليزر وضبط الفواصل بدقة عالية بدون أي تطبيل" },
+          { name: "بندر الجهني", area: "حي السلامة جدة", photo: "https://randomuser.me/api/portraits/men/47.jpg", stars: 4, text: "أفضل فني بلاط تعاملت معه في جدة التزام بالمواعيد ونظافة في التنفيذ والزوايا طالعة ممتازة" },
+          { name: "وليد السبيعي", area: "", photo: "https://randomuser.me/api/portraits/men/48.jpg", stars: 5, text: "استخدم ميزان الليزر والكلبسات في كامل الحمامات والمطبخ والنتيجة استواء كامل" },
+          { name: "عمر الحازمي", area: "حي مشرف جدة", photo: "https://randomuser.me/api/portraits/men/49.jpg", stars: 4, text: "دقة في التركيب وأمانة في النصيحة الفنية قبل بدء العمل أنصح بالتواصل مع جوهرة جدة" },
+          { name: "سعد القحطاني", area: "", photo: "https://randomuser.me/api/portraits/men/50.jpg", stars: 5, text: "تركيب بورسلين الحوائط والأرضيات طلع ممتاز جداً بدون أي بروز في الحواف" },
+          { name: "مازن الغامدي", area: "حي الصفا جدة", photo: "https://randomuser.me/api/portraits/men/51.jpg", stars: 3, text: "الشغل متقن جداً بس يحتاج صبر لأن الفني يدقق في كل بلاطة قبل يثبتها" },
+          { name: "خالد الحربي", area: "", photo: "https://randomuser.me/api/portraits/men/52.jpg", stars: 5, text: "فني محترف ومعه كامل عدته من ليزر وهزاز وكلبسات وشغله نظيف ومرتب" },
+          { name: "فارس العتيبي", area: "حي الخالدية جدة", photo: "https://randomuser.me/api/portraits/men/53.jpg", stars: 4, text: "تعامل راقي وسرعة في الإنجاز مع المحافظة على دقة الاستواء والفواصل" },
+          { name: "عبدالعزيز الزهراني", area: "", photo: "https://randomuser.me/api/portraits/men/54.jpg", stars: 5, text: "ركب لي سيراميك الحمامات والمطبخ والخورنق طالع ممتاز وموزون بالليزر" },
+          { name: "متعب الدوسري", area: "حي الحمدانية جدة", photo: "https://randomuser.me/api/portraits/men/55.jpg", stars: 4, text: "أنصح بالتعامل مع الفني صلاح منصور شغله مرتب ويلتزم بالاتفاق" },
+          { name: "هاني المالكي", area: "", photo: "https://randomuser.me/api/portraits/men/56.jpg", stars: 5, text: "جودة عالية في تركيب البورسلين والرخام واهتمام بأدق التفاصيل" },
+          { name: "أنس الشهري", area: "حي المروة جدة", photo: "https://randomuser.me/api/portraits/men/57.jpg", stars: 3, text: "النتيجة ممتازة والاستواء مضبوط وكان فيه ضغط مواعيد بسيط لكنه التزم وخلص الشغل صح" },
+          { name: "صالح الشمري", area: "", photo: "https://randomuser.me/api/portraits/men/58.jpg", stars: 5, text: "شغل يبرد الخاطر فواصل متساوية وبلاط راكب بدون أي فراغات" },
+          { name: "عصام القرني", area: "حي الخالدية جدة", photo: "https://randomuser.me/api/portraits/men/59.jpg", stars: 4, text: "دقة ممتازة في القص والزوايا وتنفيذ نظيف جداً" },
+          { name: "زياد السلمي", area: "", photo: "https://randomuser.me/api/portraits/men/60.jpg", stars: 5, text: "تجربة ممتازة مع جوهرة جدة في تركيب سيراميك وبورسلين كامل الشقة" }
         ];
       }
 
-      var html = "";
+      var oneSetHtml = "";
       for (var r = 0; r < reviewsList.length; r++) {
         var rev = reviewsList[r];
-        html += '<div class="comment-slide-card">' +
+        oneSetHtml += '<div class="comment-slide-card">' +
           '<div class="comment-head">' +
-            '<div class="comment-avatar" style="background:' + rev.color + ';">' + rev.init + '</div>' +
-            '<div><div class="comment-author">' + rev.name + '</div><div class="comment-area">' + rev.area + '</div></div>' +
+            '<div class="comment-avatar"><img src="' + rev.photo + '" alt="' + rev.name + '" loading="lazy" decoding="async"></div>' +
+            '<div><div class="comment-author">' + rev.name + '</div>' + (rev.area ? '<div class="comment-area">' + rev.area + '</div>' : '') + '</div>' +
           '</div>' +
           '<div class="comment-stars">' + buildStars(rev.stars) + '</div>' +
           '<p class="comment-body">' + rev.text + '</p>' +
         '</div>';
       }
-      track.innerHTML = html;
+
+      track.innerHTML = oneSetHtml + oneSetHtml + oneSetHtml;
+
+      setTimeout(function() {
+        var setWidth = track.scrollWidth / 3;
+        if (setWidth > 0) {
+          track.scrollLeft = -setWidth;
+          track.addEventListener("scroll", function() {
+            var sl = track.scrollLeft;
+            if (sl > -15) {
+              track.scrollLeft = sl - setWidth;
+            } else if (Math.abs(sl) >= (setWidth * 2) - 15) {
+              track.scrollLeft = sl + setWidth;
+            }
+          }, { passive: true });
+        }
+      }, 80);
     });
   }
 
